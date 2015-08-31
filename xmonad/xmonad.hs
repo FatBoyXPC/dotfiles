@@ -137,5 +137,4 @@ main = do
             -- spawn "pgrep albert || albert"
             spawn "pgrep synapse || synapse -s"
             spawn "pgrep screencloud || screencloud"
-            spawn "pgrep trayer || trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --height 17 --transparent true --alpha 0 --tint 0"
     } `additionalKeys` myKeys
