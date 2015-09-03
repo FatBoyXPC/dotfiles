@@ -1,0 +1,13 @@
+ServerAliveInterval 120
+
+Host sidev
+    HostName 74.207.228.101
+    LocalForward 19200 es001:9200
+    LocalForward 18080 127.0.0.1:8080
+    User admin
+
+Host silogs
+    HostName 173.230.135.249
+    LocalForward 8081 127.0.0.1:80
+    LocalForward 9205 127.0.0.1:9200
+    User admin
