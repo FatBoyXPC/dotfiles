@@ -30,3 +30,8 @@ Symlink aliases
 ```
 ln -s /path/to/desktop-environment/alises ~/.bash_aliases
 ```
+
+Symlink ssh_config
+```
+ln -s /path/to/desktop-environment/ssh_config ~/.ssh/config
+```
