@@ -134,7 +134,7 @@ main = do
         XMonad.borderWidth = myBorderWidth,
         startupHook = do
             setWMName "LG3D"
-            -- spawn "pgrep albert || albert"
             spawn "pgrep synapse || synapse -s"
             spawn "pgrep screencloud || screencloud"
+            spawn "numlockx on"
     } `additionalKeys` myKeys
