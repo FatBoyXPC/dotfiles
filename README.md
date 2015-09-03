@@ -20,3 +20,13 @@ Symlink xmonad.desktop
 ```
 ln -s /path/to/desktop-environment/xmonad.desktop /usr/share/applications/xmonad.desktop
 ```
+
+Symlink zshrc
+```
+ln -s /path/to/desktop-environment/zshrc ~/.zshrc
+```
+
+Symlink aliases
+```
+ln -s /path/to/desktop-environment/alises ~/.bash_aliases
+```

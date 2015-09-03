@@ -1,0 +1,2 @@
+alias aelog="tail -f /var/log/apache2/error.log"
+alias sit="ssh admin@74.207.228.101 -L19200:es001:9200 -L18080:127.0.0.1:8080"
