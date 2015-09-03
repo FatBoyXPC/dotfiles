@@ -43,24 +43,11 @@ trayer \
 # Run the gnome-keyring-daemon to avoid issues you otherwise may encounter
 # when using gnome applications which expect access to the keyring, such
 # as Empathy. This prevents prompts you may otherwise get for invalid
-# certificates and the like.
+# certificates and the like. On login, we unlock the ssh keychain so we're not
+# prompted for  passphrases later. We pipe /dev/null to ssh-add to make it
+# realize it's not running in a terminal. Otherwise, it won't launch the prompt.
 gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
-# export SSH_AUTH_SOCK
-# export GPG_AGENT_INFO
-
-# On login, we unlock the ssh keychain so we're not prompted for 
-# passphrases later. We pipe /dev/null to ssh-add to make it realize 
-# it's not running in a terminal. Otherwise, it won't launch the prompt.
-# 
-# If you don't use the ssh keychain you may not want this. Commented
-# by default as it is assumed many users will not want this feature.
-
-# export SSH_ASKPASS="/usr/bin/ssh-askpass"
 cat /dev/null | ssh-add &
-
-# Remap caps lock to left control. This is not strictly speaking
-# xmonad related, but it's handy if you're a vim user.
-# setxkbmap -option 'ctrl:nocaps'
 
 # Now, finally, start xmonad
 exec xmonad
