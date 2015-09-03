@@ -2,7 +2,9 @@ How To Use
 ===========
 
 Install required packages:
-xmonad, numlockx
+```
+sudo apt-get install xmonad numlockx
+```
 
 Symlink xmonad directory
 ```
