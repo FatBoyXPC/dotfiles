@@ -1,0 +1,19 @@
+- clean: ['~']
+
+- link:
+    ~/.bash_aliases: aliases
+    ~/.gitconfig: gitconfig
+    ~/.ssh/config:
+        create: true
+        path: ssh_config
+    ~/.xmobarrc: xmobarrc
+    ~/.xmonad: xmonad/
+    /usr/share/xsessions/xmonad.desktop:
+        force: true
+        path: xmonad.desktop
+    ~/.zshrc: zshrc
+
+- shell:
+  -
+    - git update-submodules
+    - Install/update submodules
