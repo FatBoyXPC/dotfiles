@@ -1,37 +1,11 @@
 How To Use
 ===========
 
-Install required packages:
+Install required packages ([Screencloud](https://screencloud.net/#download)'s
+latest is not in the Ubuntu repo):
 ```
-sudo apt-get install xmonad numlockx
-```
-
-Symlink xmonad directory
-```
-ln -s /path/to/desktop-environment/xmonad ~/.xmonad
+sudo apt-get install xmonad numlockx trayer synapse
 ```
 
-Symlink xmobar
-```
-ln -s /path/to/desktop-environment/xmobarrc ~/.xmobarrc
-```
-
-Symlink xmonad.desktop
-```
-ln -s /path/to/desktop-environment/xmonad.desktop /usr/share/applications/xmonad.desktop
-```
-
-Symlink zshrc
-```
-ln -s /path/to/desktop-environment/zshrc ~/.zshrc
-```
-
-Symlink aliases
-```
-ln -s /path/to/desktop-environment/alises ~/.bash_aliases
-```
-
-Symlink ssh_config
-```
-ln -s /path/to/desktop-environment/ssh_config ~/.ssh/config
-```
+I'm using the excellent [dotbot](https://github.com/anishathalye/dotbot) to
+manage everything. Just git clone, and run the `./install` script!
