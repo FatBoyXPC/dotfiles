@@ -3,6 +3,7 @@
 - link:
     ~/.bash_aliases: aliases
     ~/.gitconfig: gitconfig
+    ~/.gtkrc-2.0: gtkrc-2.0
     ~/.ssh/config:
         create: true
         path: ssh_config
@@ -13,7 +14,7 @@
         path: xmonad.desktop
     ~/.zshrc: zshrc
 
-- shell:
-  -
-    - git update-submodules
-    - Install/update submodules
+#- shell:
+#  -
+#    - git update-submodules
+#    - Install/update submodules
