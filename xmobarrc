@@ -12,7 +12,7 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
                         , Run Swap [] 10
                         , Run Date "%a %b %_d %Y %H:%M" "date" 10
-                        , Run Com "/bin/bash" ["-c", "~/desktop-environment/get-volume.sh"] "myvolume" 10
+                        , Run Com "/bin/bash" ["-c", "~/dotfiles/get-volume.sh"] "myvolume" 10
                         , Run StdinReader
                         ]
         , sepChar = "%"
