@@ -7,6 +7,7 @@
     ~/.ssh/config:
         create: true
         path: ssh_config
+    ~/update.sh: update.sh
     ~/.xmobarrc: xmobarrc
     ~/.xmonad: xmonad/
     /usr/share/xsessions/xmonad.desktop:
