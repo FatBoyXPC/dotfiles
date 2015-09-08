@@ -1,0 +1,15 @@
+{
+	"detect_indentation": false,
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"rulers":
+	[
+		80,
+		120
+	],
+	"translate_tabs_to_spaces": true,
+	"word_wrap": false
+}

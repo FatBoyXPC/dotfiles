@@ -1,0 +1,20 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"DocBlockr",
+		"Emmet",
+		"Gist",
+		"GitGutter",
+		"LESS",
+		"Markdown Preview",
+		"Package Control",
+		"SublimeCodeIntel",
+		"SVN",
+		"W3CValidators",
+		"Xdebug Client"
+	]
+}
