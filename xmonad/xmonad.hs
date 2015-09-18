@@ -42,8 +42,8 @@ windowPlacement = composeAll [
             -- Steam Chat
             className =? "Steam" <&&> fmap (isInfixOf "Chat") title --> doShift "3",
 
-            -- All Steam Windows (except previously mentioned)
-            className =? "Steam" --> doShift "9",
+            -- All Steam Windows (except Game Info & previously mentioned)
+            className =? "Steam" <&&> fmap (not . isInfixOf "Game Info") title --> doShift "9",
 
             className =? "Google-chrome-stable" --> doShift "1",
             className =? "Sublime_text" --> doShift "2",
