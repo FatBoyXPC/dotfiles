@@ -1,3 +1,5 @@
 [user]
 	name = James LaChance
 	email = fatboyxpc@gmail.com
+[core]
+	editor = subl -n -w
