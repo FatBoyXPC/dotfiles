@@ -19,9 +19,9 @@
     ~/.ssh/config:
         create: true
         path: ssh_config
-    ~/update.sh: update.sh
     ~/.xmobarrc: xmobarrc
     ~/.xmonad: xmonad/
+    ~/bin: bin/
     /usr/share/xsessions/xmonad.desktop:
         force: true
         path: xmonad.desktop
