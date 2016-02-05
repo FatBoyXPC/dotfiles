@@ -1,1 +1,2 @@
 alias aelog="tail -f /var/log/apache2/error.log"
+alias simysql="mysql -u si2web -p -D si2web"
