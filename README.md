@@ -1,6 +1,9 @@
 How To Use
 ===========
 
+Install [ohmyzsh](https://github.com/robbyrussell/oh-my-zsh) because it's
+awesome!
+
 Add the repos for
 [insync](https://www.insynchq.com/downloads),
 [Screencloud](https://screencloud.net/#download),
