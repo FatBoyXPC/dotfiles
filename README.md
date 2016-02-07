@@ -1,10 +1,16 @@
 How To Use
 ===========
 
-Install required packages ([Screencloud](https://screencloud.net/#download)'s
-latest is not in the Ubuntu repo):
+Add the repos for
+[insync](https://www.insynchq.com/downloads),
+[Screencloud](https://screencloud.net/#download),
+and [Synapse](https://launchpad.net/~synapse-core/+archive/ubuntu/ppa).
+
+
+Update sources and install packages:
 ```
-sudo apt-get install xmonad numlockx trayer synapse
+sudo apt-get update
+sudo apt-get install xmonad xmobar numlockx trayer synapse screencloud insync
 ```
 
 Install Sublime's [Package Control](https://packagecontrol.io/installation)
