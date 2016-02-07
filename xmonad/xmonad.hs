@@ -137,5 +137,6 @@ main = do
             spawn "pgrep synapse || synapse -s"
             spawn "pgrep screencloud || screencloud"
             spawn "pgrep insync || insync start"
+            spawn "pgrep nm-applet || nm-applet"
             spawn "numlockx on"
     } `additionalKeys` myKeys
