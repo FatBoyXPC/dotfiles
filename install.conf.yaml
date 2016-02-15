@@ -26,6 +26,10 @@
         force: true
         path: xmonad.desktop
     ~/.zshrc: zshrc
+    /etc/default/keyboard:
+        create: true
+        force: true
+        path: keyboard-default
 
 #- shell:
 #  -
