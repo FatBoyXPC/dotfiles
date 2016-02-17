@@ -49,5 +49,8 @@ trayer \
 gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
 cat /dev/null | ssh-add &
 
+# seems like /etc/default/keyboard is getting ignored, so let's set this here
+setxkbmap -option compose:lwin
+
 # Now, finally, start xmonad
 exec xmonad
