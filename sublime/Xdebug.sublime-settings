@@ -1,4 +1,6 @@
 {
+    "max_depth": 5,
+
 	"break_on_exception": [
         // E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR
         "Fatal error",
