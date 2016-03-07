@@ -23,23 +23,6 @@ xrdb -merge .Xresources
 
 xrandr --output DVI-I-1 --auto --output DVI-D-0 --auto --right-of DVI-I-1 --output HDMI-0 --auto --right-of DVI-D-0
 
-#
-# STARTUP ICON TRAY
-#
-
-trayer \
-  --edge top \
-  --align right \
-  --SetDockType true \
-  --SetPartialStrut true \
-  --expand true \
-  --width 10 \
-  --height 17 \
-  --transparent true \
-  --alpha 0 \
-  --tint 0 \
-&
-
 # Run the gnome-keyring-daemon to avoid issues you otherwise may encounter
 # when using gnome applications which expect access to the keyring, such
 # as Empathy. This prevents prompts you may otherwise get for invalid
