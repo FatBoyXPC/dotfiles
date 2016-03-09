@@ -4,6 +4,7 @@ Host sidev
     HostName 74.207.228.101
     LocalForward 19200 es001:9200
     LocalForward 18080 127.0.0.1:8080
+    LocalForward 23306 galera000:13306
     User admin
 
 Host silogs
