@@ -2,6 +2,7 @@
 
 - link:
     ~/.bash_aliases: aliases
+    ~/.config/synapse/config.json: synapse-config.json
     ~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings:
         force: true
         path: sublime/Package Control.sublime-settings
@@ -14,7 +15,10 @@
     ~/.config/sublime-text-3/Packages/User/Xdebug.sublime-settings:
         force: true
         path: sublime/Xdebug.sublime-settings
-    ~/.gitconfig: gitconfig
+    ~/.gitconfig:
+        create: true
+        force: true
+        path: gitconfig
     ~/.gtkrc-2.0: gtkrc-2.0
     ~/.ssh/config:
         create: true
@@ -24,12 +28,8 @@
     ~/bin: bin/
     /usr/share/xsessions/xmonad.desktop:
         force: true
-        path: xmonad.desktop
+        path: xmonad/xmonad.desktop
     ~/.zshrc: zshrc
-    /etc/default/keyboard:
-        create: true
-        force: true
-        path: keyboard-default
 
 #- shell:
 #  -
