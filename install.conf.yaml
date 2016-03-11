@@ -1,7 +1,9 @@
 - clean: ['~']
 
 - link:
-    ~/.bash_aliases: aliases
+    ~/.bash_aliases:
+        force: true
+        path: aliases
     ~/.config/synapse/config.json:
         force: true
         path: synapse-config.json
@@ -24,6 +26,7 @@
     ~/.gtkrc-2.0: gtkrc-2.0
     ~/.ssh/config:
         create: true
+        force: true
         path: ssh_config
     ~/.xmobarrc: xmobarrc
     ~/.xmonad: xmonad/
@@ -31,7 +34,9 @@
     /usr/share/xsessions/xmonad.desktop:
         force: true
         path: xmonad/xmonad.desktop
-    ~/.zshrc: zshrc
+    ~/.zshrc:
+        force: true
+        path: zshrc
 
 #- shell:
 #  -
