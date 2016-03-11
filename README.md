@@ -13,7 +13,7 @@ and [Synapse](https://launchpad.net/~synapse-core/+archive/ubuntu/ppa).
 Update sources and install packages:
 ```
 sudo apt-get update
-sudo apt-get install xmonad xmobar numlockx trayer synapse screencloud insync
+sudo apt-get install xmonad xmobar numlockx trayer synapse screencloud insync git
 ```
 
 Install [Sublime](http://www.sublimetext.com/) and its [Package Control](https://packagecontrol.io/installation)
