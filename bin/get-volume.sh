@@ -14,7 +14,7 @@
 # N, where N is an integer. If you have two cards, try using "-c 1" to make
 # it use the second card.
 
-str=`amixer sget Master,0`
+str=`amixer -D pulse sget Master,0`
 str1=${str#Simple*[}
 v1=${str1%%]*]}
 il=`expr index "$str1" [`
