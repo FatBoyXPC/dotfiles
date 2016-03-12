@@ -45,7 +45,7 @@ windowPlacement = composeAll [
             -- All Steam Windows (except Game Info & previously mentioned)
             className =? "Steam" <&&> fmap (not . isInfixOf "Game Info") title --> doShift "9",
 
-            className =? "Google-chrome-stable" --> doShift "1",
+            className =? "google-chrome" --> doShift "1",
             className =? "Sublime_text" --> doShift "2",
             className =? "VirtualBox" --> doShift "8",
 
@@ -63,9 +63,9 @@ windowPlacement = composeAll [
         ] where role = stringProperty "WM_WINDOW_ROLE"
 
 -- https://github.com/hcchu/dotfiles/blob/master/.xmonad/xmonad.hs
-showVolume = "get-volume.sh"
-changeVolume s = "amixer set Master " ++ s ++ "; get-volume.sh"
-changeBrightness s = "sudo change-brightness.py " ++ s ++ "; show-brightness.sh"
+showVolume = "toggle-mute.sh; show-volume.sh"
+changeVolume s = "amixer -D pulse set Master " ++ s ++ "; show-volume.sh"
+changeBrightness s = "xbacklight " ++ s ++ "; show-brightness.sh"
 
 myKeys =
     [
@@ -97,19 +97,15 @@ myKeys =
 
         ((0, xF86XK_AudioMute), spawn showVolume),
         ((0, xF86XK_AudioRaiseVolume), spawn $ changeVolume "5%+"),
-        ((0, xF86XK_AudioLowerVolume), spawn $ changeVolume "5%-")
+        ((0, xF86XK_AudioLowerVolume), spawn $ changeVolume "5%-"),
 
-        --((0, xF86XK_MonBrightnessUp), spawn $ changeBrightness "5%+"),
-        --((0, xF86XK_MonBrightnessDown), spawn $ changeBrightness "5%-"),
-        -- https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3)
-        -- "Brightness controls are due only in Linux 4.1"
-        --((0, xK_F6), spawn $ changeBrightness "5%+"),
-        --((0, xK_F5), spawn $ changeBrightness "5%-")
+        ((0, xF86XK_MonBrightnessUp), spawn $ changeBrightness "+5%"),
+        ((0, xF86XK_MonBrightnessDown), spawn $ changeBrightness "-5%"),
 
-        --((controlMask .|. altMask, xK_Left), spawn "xrandr -o right"),
-        --((controlMask .|. altMask, xK_Right), spawn "xrandr -o left"),
-        --((controlMask .|. altMask, xK_Down), spawn "xrandr -o normal"),
-        --((controlMask .|. altMask, xK_Up), spawn "xrandr -o inverted")
+        ((controlMask .|. altMask, xK_Left), spawn "xrandr -o right"),
+        ((controlMask .|. altMask, xK_Right), spawn "xrandr -o left"),
+        ((controlMask .|. altMask, xK_Down), spawn "xrandr -o normal"),
+        ((controlMask .|. altMask, xK_Up), spawn "xrandr -o inverted")
     ]
 
     ++
