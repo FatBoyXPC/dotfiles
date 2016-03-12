@@ -4,7 +4,7 @@
 # to run xmonad and some associated programs.
 # 
 # Author: David Brewer
-# Repository: https://github.com/davidbrewer/xmonad-ubuntu-conf
+# Repository: https://github.com/davidbrewer/xmonad- -conf
 
 #
 # GENERAL INITIALIZATION
@@ -20,8 +20,9 @@ xrdb -merge .Xresources
 #
 # SCREEN CONFIGURATION
 #
-
-xrandr --output DVI-I-1 --auto --output DVI-D-0 --auto --right-of DVI-I-1 --output HDMI-0 --auto --right-of DVI-D-0
+if [ "`hostname`" == "jamespc" ]; then
+	xrandr --output DVI-I-1 --auto --output DVI-D-0 --auto --right-of DVI-I-1 --output HDMI-0 --auto --right-of DVI-D-0
+fi
 
 # Run the gnome-keyring-daemon to avoid issues you otherwise may encounter
 # when using gnome applications which expect access to the keyring, such
@@ -31,6 +32,8 @@ xrandr --output DVI-I-1 --auto --output DVI-D-0 --auto --right-of DVI-I-1 --outp
 # realize it's not running in a terminal. Otherwise, it won't launch the prompt.
 gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
 cat /dev/null | ssh-add &
+
+disable-touchpad
 
 # seems like /etc/default/keyboard is getting ignored, so let's set this here
 setxkbmap -option compose:lwin
