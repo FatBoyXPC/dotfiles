@@ -1,2 +1,12 @@
+#!/bin/bash
+
+if [ "`hostname`" == "jamespc" ]; then
+	DISTANCE=465
+fi
+
+if [ "`hostname`" == "fatboyxpc" ]; then
+	DISTANCE=545   
+fi
+
 killall trayer
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --height 17 --transparent true --alpha 0 --tint 0 --widthtype request --distance 465 --distancefrom right
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --height 17 --transparent true --alpha 0 --tint 0 --widthtype request --distance $DISTANCE --distancefrom right &
