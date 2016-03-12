@@ -1,10 +1,14 @@
 - clean: ['~']
 
+- shell:
+    - ./bin/gen-xmobarrc > ~/.xmobarrc
+
 - link:
     ~/.bash_aliases:
         force: true
         path: aliases
     ~/.config/synapse/config.json:
+        create: true
         force: true
         path: synapse-config.json
     ~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings:
@@ -28,9 +32,9 @@
         create: true
         force: true
         path: ssh_config
-    ~/.xmobarrc: xmobarrc
     ~/.xmonad: xmonad/
     ~/bin: bin/
+    /usr/bin/xmobar: $HOME/.cabal/bin/xmobar
     /usr/share/xsessions/xmonad.desktop:
         force: true
         path: xmonad/xmonad.desktop
