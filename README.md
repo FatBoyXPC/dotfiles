@@ -7,16 +7,25 @@ awesome!
 Add the repos for
 [insync](https://www.insynchq.com/downloads),
 [Screencloud](https://screencloud.net/#download),
-and [Synapse](https://launchpad.net/~synapse-core/+archive/ubuntu/ppa).
+and [Synapse](https://launchpad.net/~synapse-core/+archive/ubuntu/testing).
 
 
 Update sources and install packages:
 ```
 sudo apt-get update
-sudo apt-get install xmonad xmobar numlockx trayer synapse screencloud insync git
+sudo apt-get install xmonad numlockx trayer synapse screencloud insync git tree
 ```
 
 Install [Sublime](http://www.sublimetext.com/) and its [Package Control](https://packagecontrol.io/installation)
+
+Make sure to install PHP command line before running dotbot!
+
+Go to Google Chrome settings and check "Use system title bar and borders"
+
+To install [volnoti](https://github.com/hcchu/volnoti#compilation-from-source-archive),
+first install the dependencies: `sudo apt-get install libgtk2.0-dev libdbus-glib-1-dev libdbus-1-dev`
+
+If on X1 Carbon 3rd Gen, make sure to read that section before continuing!
 
 I'm using the excellent [dotbot](https://github.com/anishathalye/dotbot) to
 manage everything. Just git clone, and run the `./install` script!
@@ -35,7 +44,7 @@ to get 3.19 installed on Ubuntu 14.04:
 sudo apt-get install linux-generic-lts-vivid
 ```
 
-Reboot and ensure you're on the right kernel with ```uname -r``` and remove old kernels:
+Reboot and ensure you're on the right kernel with `uname -r` and remove old kernels:
 ```
 sudo apt-get purge linux-generic linux-image-generic linux-headers-generic linux-signed-generic
 ```
@@ -45,4 +54,11 @@ Check for other packages with 3.16 or older kernels:
 dpkg -l | grep -E "linux-(generic|headers|image|signed)" | colrm 80
 ```
 
-Remove packages that were found with ```sudo apt-get purge```
+Remove packages that were found with `sudo apt-get purge`
+
+Install cabal-install/Hackage, and libxpm-dev and install xmobar:
+```
+sudo apt-get install cabal-install libxpm-dev xbacklight
+cabal update
+cabal install xmobar
+```
