@@ -32,9 +32,10 @@ Common Software
 
 PPAs:
 [Darktable](https://launchpad.net/~pmjdebruijn/+archive/ubuntu/darktable-release)
+[Mumble](https://wiki.mumble.info/wiki/Installing_Mumble#Ubuntu)
 
 ```
-sudo apt-get install darktable pidgin keepass2 filezilla
+sudo apt-get install darktable pidgin keepass2 filezilla mumble
 ```
 
 Install [Sublime](http://www.sublimetext.com/) and its [Package Control](https://packagecontrol.io/installation)
