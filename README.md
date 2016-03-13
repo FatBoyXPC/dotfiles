@@ -16,7 +16,7 @@ sudo apt-get update
 sudo apt-get install xmonad xmobar numlockx trayer synapse screencloud insync git tree xbacklight php5-cli
 ```
 
-Note: xbacklight is only really necessary on laptops.
+Note: xbacklight is only necessary on laptops.
 
 Install [volnoti](https://github.com/hcchu/volnoti#compilation-from-source-archive)
 after installing installing the dependencies: `sudo apt-get install libgtk2.0-dev libdbus-glib-1-dev libdbus-1-dev`
