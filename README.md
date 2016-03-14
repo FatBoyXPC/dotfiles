@@ -35,6 +35,7 @@ PPAs:
 [Mumble](https://wiki.mumble.info/wiki/Installing_Mumble#Ubuntu)
 
 ```
+sudo apt-get update
 sudo apt-get install darktable pidgin keepass2 filezilla mumble
 ```
 
