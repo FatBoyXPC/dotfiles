@@ -40,7 +40,6 @@
     /etc/systemd/logind.conf:
         force: true
         path: logind.conf
-    /usr/bin/xmobar: $HOME/.cabal/bin/xmobar
     /usr/share/xsessions/xmonad.desktop:
         force: true
         path: xmonad/xmonad.desktop
