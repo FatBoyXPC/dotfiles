@@ -35,6 +35,9 @@ cat /dev/null | ssh-add &
 
 disable-touchpad
 
+# volume & brightness notification daemon
+volnoti -t 1
+
 # seems like /etc/default/keyboard is getting ignored, so let's set this here
 setxkbmap -option compose:lwin
 

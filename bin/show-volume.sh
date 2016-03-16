@@ -1,6 +1,6 @@
 #!/bin/bash
 VOLUME=`get-volume.py`
-if [ $VOLUME == 'off' ]; then
+if [ $VOLUME == 'Mute' ]; then
     volnoti-show -m
 else
     volnoti-show $VOLUME
