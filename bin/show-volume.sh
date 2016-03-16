@@ -1,5 +1,5 @@
 #!/bin/bash
-VOLUME=`get-volume.sh`
+VOLUME=`get-volume.py`
 if [ $VOLUME == 'off' ]; then
     volnoti-show -m
 else
