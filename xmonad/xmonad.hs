@@ -131,7 +131,7 @@ main = do
         startupHook = do
             setWMName "LG3D"
             spawn "trayer-fix"
-            spawn "pgrep volnoti || volnoti -t 5"
+            spawn "pgrep volnoti || volnoti -t 1"
             spawn "pgrep synapse || synapse -s"
             spawn "pgrep screencloud || screencloud"
             spawn "pgrep insync || insync start"
