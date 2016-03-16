@@ -20,7 +20,7 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
         , commands = [ Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
                         , Run Date "%a %b %_d %Y %H:%M" "date" 10
-                        , Run Com "/bin/bash" ["-c", "~/bin/get-volume.sh"] "myvolume" 10
+                        , Run Com "bin/get-volume.py" [] "myvolume" 10
                         , Run StdinReader
                         
                         <?php if ($laptop) : ?>
