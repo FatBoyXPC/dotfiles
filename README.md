@@ -47,6 +47,15 @@ The `git update-submodules` command is failing currently!
 
 ## X1 Carbon 3rd Gen Ubuntu 14.04 Specific:
 
+Disable auto mute to avoid headphone popping:
+```
+alsamixer
+F6 to select device
+Arrow key down to HDA Intel PCH
+Arrow key over to Auto-Mute Mode
+Up/Down arrow keys to change
+```
+
 #### 3.19 Kernel
 The trackpoint needs linux kernel 3.19+ in order to work properly. Ubuntu 14.04
 has kernel 3.16.
