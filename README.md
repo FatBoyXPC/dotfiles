@@ -47,13 +47,12 @@ The `git update-submodules` command is failing currently!
 
 ## X1 Carbon 3rd Gen Ubuntu 14.04 Specific:
 
-Disable auto mute to avoid headphone popping:
+To avoid headphone popping:
 ```
-alsamixer
-F6 to select device
-Arrow key down to HDA Intel PCH
-Arrow key over to Auto-Mute Mode
-Up/Down arrow keys to change
+sudo vi /usr/lib/pm-utils/power.d/intel-audio-powersave
+Change: INTEL_AUDIO_POWERSAVE=${INTEL_AUDIO_POWERSAVE:-true}
+To: INTEL_AUDIO_POWERSAVE=false
+Reboot
 ```
 
 #### 3.19 Kernel
