@@ -105,7 +105,9 @@ myKeys =
         ((controlMask .|. altMask, xK_Left), spawn "xrandr -o right"),
         ((controlMask .|. altMask, xK_Right), spawn "xrandr -o left"),
         ((controlMask .|. altMask, xK_Down), spawn "xrandr -o normal"),
-        ((controlMask .|. altMask, xK_Up), spawn "xrandr -o inverted")
+        ((controlMask .|. altMask, xK_Up), spawn "xrandr -o inverted"),
+
+        ((altMask, xK_v), spawn "middle-paste")
     ]
 
     ++
