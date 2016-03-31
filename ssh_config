@@ -12,3 +12,11 @@ Host silogs
     LocalForward 8081 127.0.0.1:80
     LocalForward 9205 127.0.0.1:9200
     User admin
+
+Host cusau
+    HostName cubingusa.com
+    user unioncube
+
+Host cusak
+    HostName cubingusa.com
+    user koii
