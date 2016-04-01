@@ -23,7 +23,7 @@ winMask = mod4Mask
 -- Rebind Mod to the Windows key
 myModMask = altMask
 
-myTerminal = "gnome-terminal"
+myTerminal = "roxterm"
 tall = Tall 1 (3/100) (1/2)
 myLayout = avoidStruts $ smartBorders $ Full ||| Mirror tall ||| tall
 
@@ -93,7 +93,7 @@ myKeys =
         ((myModMask .|. shiftMask, xK_m), windows W.focusMaster),
 
         -- Force window back to tiling mode
-        -- ((myModMask .|. shiftMask, xK_t), withFocused $ windows . W.sink),
+         ((myModMask .|. shiftMask, xK_t), withFocused $ windows . W.sink),
 
         ((0, xF86XK_AudioMute), spawn showVolume),
         ((0, xF86XK_AudioRaiseVolume), spawn $ changeVolume "5%+"),

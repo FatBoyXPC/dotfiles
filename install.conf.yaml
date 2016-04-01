@@ -7,6 +7,10 @@
     ~/.bash_aliases:
         force: true
         path: aliases
+    ~/.config/roxterm.sourceforge.net:
+        force: true
+        create: true
+        path: roxterm.sourceforge.net
     ~/.config/synapse/config.json:
         create: true
         force: true

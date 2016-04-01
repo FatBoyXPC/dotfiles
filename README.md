@@ -13,7 +13,7 @@ and [Synapse](https://launchpad.net/~synapse-core/+archive/ubuntu/testing).
 Update sources and install packages:
 ```
 sudo apt-get update
-sudo apt-get install xmonad xmobar numlockx trayer synapse screencloud insync git tree xbacklight php5-cli xvkbd
+sudo apt-get install xmonad xmobar numlockx trayer synapse screencloud insync git tree xbacklight php5-cli xvkbd roxterm
 ```
 
 Note: xbacklight is only necessary on laptops.
