@@ -77,3 +77,8 @@ export XDEBUG_CONFIG="idekey=sublime.xdebug"
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# Show hostname in the prompt if ssh
+if [[ -n "$SSH_CONNECTION" ]]; then
+    PROMPT='%m ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+fi
