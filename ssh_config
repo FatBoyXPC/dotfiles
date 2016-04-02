@@ -1,5 +1,25 @@
 ServerAliveInterval 120
 
+Host do
+    HostName api.fatboyxpc.com
+    user james
+
+Host csnades
+    HostName csnades.com
+    user james
+
+Host cusau
+    HostName cubingusa.com
+    user unioncube
+
+Host cusak
+    HostName cubingusa.com
+    user koii
+
+Host fatboyxpc
+    HostName fatboyxpc.com
+    user fatboyxp
+
 Host sidev
     HostName 74.207.228.101
     LocalForward 19200 es001:9200
@@ -12,11 +32,3 @@ Host silogs
     LocalForward 8081 127.0.0.1:80
     LocalForward 9205 127.0.0.1:9200
     User admin
-
-Host cusau
-    HostName cubingusa.com
-    user unioncube
-
-Host cusak
-    HostName cubingusa.com
-    user koii
