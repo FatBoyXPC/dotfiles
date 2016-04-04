@@ -65,7 +65,7 @@ windowPlacement = composeAll [
 -- https://github.com/hcchu/dotfiles/blob/master/.xmonad/xmonad.hs
 showVolume = "toggle-mute.sh; show-volume.sh"
 changeVolume s = "amixer -D pulse set Master " ++ s ++ "; show-volume.sh"
-changeBrightness s = "xbacklight " ++ s ++ "; show-brightness.sh"
+changeBrightness s = "xbacklight " ++ s ++ "; show-brightness.sh; xbacklight > ~/.xbacklight"
 
 myKeys =
     [
@@ -138,4 +138,5 @@ main = do
             spawn "pgrep insync || insync start"
             spawn "pgrep nm-applet || nm-applet"
             spawn "numlockx on"
+            spawn "BRIGHTNESS=`cat ~/.xbacklight`; xbacklight -set $BRIGHTNESS"
     } `additionalKeys` myKeys
