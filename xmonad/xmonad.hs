@@ -137,6 +137,7 @@ main = do
             spawn "pgrep screencloud || screencloud"
             spawn "pgrep insync || insync start"
             spawn "pgrep nm-applet || nm-applet"
+            spawn "pgrep compton || compton"
             spawn "numlockx on"
             spawn "xbacklight -set `cat ~/.brightness`"
     } `additionalKeys` myKeys
