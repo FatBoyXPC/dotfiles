@@ -89,3 +89,10 @@ cabal install xmobar
 sudo rm /usr/bin/xmobar
 sudo cp ~/.cabal/bin/xmobar /usr/bin/xmobar
 ```
+
+
+#### NOTE
+With xmonad > 0.11, this change is relevant:
+https://wiki.haskell.org/Xmonad/Notable_changes_since_0.11#updatePointer
+
+This means the updatePointer (Relative x y) line needs to change!
