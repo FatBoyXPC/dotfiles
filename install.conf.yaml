@@ -32,6 +32,10 @@
         force: true
         path: gitconfig
     ~/.gtkrc-2.0: gtkrc-2.0
+    ~/.irssi/config:
+      create: true
+      force: true
+      path: irssi_config
     ~/.ssh/config:
         create: true
         force: true
