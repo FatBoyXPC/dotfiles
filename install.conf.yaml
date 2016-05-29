@@ -2,6 +2,7 @@
 
 - shell:
     - ./bin/gen-xmobarrc > ~/.xmobarrc
+    - sudo update-alternatives --set editor /usr/bin/vim.tiny
 
 - link:
     ~/.bash_aliases:
