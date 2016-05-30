@@ -8,7 +8,7 @@ Add the repo for [Synapse](https://launchpad.net/~synapse-core/+archive/ubuntu/t
 Update sources and install packages:
 ```
 sudo apt-get update
-sudo apt-get install xmonad xmobar numlockx trayer synapse git xbacklight php5-cli xvkbd
+sudo apt-get install xmonad xmobar numlockx trayer synapse git xbacklight php5-cli xvkbd xsel
 ```
 
 Note: xbacklight is only necessary on laptops.
