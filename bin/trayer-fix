@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "`hostname`" == "jamespc" ]; then
+if [ "`hostname`" == "jamespc" ] || [ "`hostname`" == "jlachance-VirtualBox" ]; then
 	DISTANCE=385
 fi
 

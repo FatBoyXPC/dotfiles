@@ -125,7 +125,7 @@ main = do
         logHook = logHook desktopConfig <+> dynamicLogWithPP xmobarPP {
             ppOutput = hPutStrLn xmproc,
             ppTitle = xmobarColor "green" "" . shorten 100
-        } >> updatePointer (Relative 0.95 0.05),
+        } >> updatePointer (0.95,0.05) (1,1),
 
         modMask = myModMask,
         XMonad.terminal = myTerminal,
