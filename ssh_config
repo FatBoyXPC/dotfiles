@@ -8,27 +8,14 @@ Host csnades
     HostName csnades.com
     user james
 
-Host cusau
+Host cusa
     HostName cubingusa.com
-    user unioncube
+    user ubuntu
 
-Host cusak
-    HostName cubingusa.com
-    user koii
+Host cusaold
+    HostName 69.163.224.168
+    user unioncube
 
 Host fatboyxpc
     HostName fatboyxpc.com
     user fatboyxp
-
-Host sidev
-    HostName 74.207.228.101
-    LocalForward 19200 es001:9200
-    LocalForward 18080 127.0.0.1:8080
-    LocalForward 23306 galera000:13306
-    User admin
-
-Host silogs
-    HostName 173.230.135.249
-    LocalForward 8081 127.0.0.1:80
-    LocalForward 9205 127.0.0.1:9200
-    User admin
