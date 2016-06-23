@@ -16,6 +16,10 @@ Host cusaold
     HostName 69.163.224.168
     user unioncube
 
+Host dmsdev
+    HostName 192.168.160.94
+    user jlachance
+
 Host fatboyxpc
     HostName fatboyxpc.com
     user fatboyxp

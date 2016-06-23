@@ -30,6 +30,8 @@ myLayout = avoidStruts $ smartBorders $ Full ||| Mirror tall ||| tall
 myBorderWidth = 2
 
 windowPlacement = composeAll [
+            -- use `xprop` to get window information
+
             -- Skype Conversations
             role =? "conversation" --> doShift "3",
 
@@ -46,7 +48,9 @@ windowPlacement = composeAll [
             className =? "Steam" <&&> fmap (not . isInfixOf "Game Info") title --> doShift "9",
 
             className =? "google-chrome" --> doShift "1",
+            className =? "Slack" --> doShift "3",
             className =? "Sublime_text" --> doShift "2",
+            className =? "Thunderbird" --> doShift "7",
             className =? "VirtualBox" --> doShift "8",
 
             -- Skype Windows (except previously mentioned)
@@ -102,6 +106,7 @@ myKeys =
         ((0, xF86XK_MonBrightnessUp), spawn $ changeBrightness "+5%"),
         ((0, xF86XK_MonBrightnessDown), spawn $ changeBrightness "-5%"),
 
+        ((0, xF86XK_Display), spawn $ "toggle-display"),
         ((controlMask .|. altMask, xK_Left), spawn "xrandr -o right"),
         ((controlMask .|. altMask, xK_Right), spawn "xrandr -o left"),
         ((controlMask .|. altMask, xK_Down), spawn "xrandr -o normal"),
