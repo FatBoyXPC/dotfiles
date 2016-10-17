@@ -53,6 +53,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:~/.local/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 export XDEBUG_CONFIG="idekey=sublime.xdebug"
 
