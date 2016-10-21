@@ -89,3 +89,4 @@ function de {
   echo $CMD
   $CMD
 }
+eval `dircolors ~/.dircolors`

@@ -1,7 +1,6 @@
 [roxterm profile]
 font=Ubuntu Mono 12
-colour_scheme=
+colour_scheme=solarized-dark
 hide_menubar=1
 always_show_tabs=0
 scrollback_lines=10000
-font=Monospace 12
