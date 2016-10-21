@@ -79,6 +79,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+eval `dircolors ~/.dircolors`
+
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+autoload -Uz compinit
+compinit
+
 # Show hostname in the prompt if ssh
 if [[ -n "$SSH_CONNECTION" ]]; then
     PROMPT='%m ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
@@ -89,4 +95,3 @@ function de {
   echo $CMD
   $CMD
 }
-eval `dircolors ~/.dircolors`
