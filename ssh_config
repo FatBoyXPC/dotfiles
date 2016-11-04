@@ -1,3 +1,4 @@
+#AddKeysToAgent yes
 ServerAliveInterval 120
 
 Host do
@@ -13,8 +14,8 @@ Host cusa
     user ubuntu
 
 Host cusaold
-    HostName 69.163.224.168
-    user unioncube
+    HostName 54.149.170.248
+    user ubuntu
 
 Host dmsdev
     HostName 192.168.160.94
@@ -23,3 +24,11 @@ Host dmsdev
 Host fatboyxpc
     HostName fatboyxpc.com
     user fatboyxp
+
+Host wcap
+    HostName worldcubeassociation.org
+    user cubing
+
+Host wcas
+    HostName staging.worldcubeassociation.org
+    user cubing

@@ -56,6 +56,7 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:~/.local/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 export XDEBUG_CONFIG="idekey=sublime.xdebug"
+export TERM="xterm-256color"
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -78,6 +79,9 @@ export XDEBUG_CONFIG="idekey=sublime.xdebug"
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# I like auto Updates...
+DISABLE_UPDATE_PROMPT=true
 
 eval `dircolors ~/.dircolors`
 

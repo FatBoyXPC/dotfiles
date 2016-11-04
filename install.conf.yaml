@@ -28,6 +28,9 @@
     ~/.config/sublime-text-3/Packages/User/Xdebug.sublime-settings:
         force: true
         path: sublime/Xdebug.sublime-settings
+    ~/.dircolors:
+        force: true
+        path: dircolors
     ~/.gitconfig:
         create: true
         force: true
@@ -41,6 +44,9 @@
         create: true
         force: true
         path: ssh_config
+    ~/.tmux.conf:
+        force: true
+        path: tmux.conf
     ~/.xmonad: xmonad/
     ~/bin: bin/
     ~/.zshrc:

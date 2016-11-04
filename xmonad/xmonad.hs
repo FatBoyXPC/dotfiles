@@ -47,7 +47,7 @@ windowPlacement = composeAll [
             -- All Steam Windows (except Game Info & previously mentioned)
             className =? "Steam" <&&> fmap (not . isInfixOf "Game Info") title --> doShift "9",
 
-            className =? "google-chrome" --> doShift "1",
+            className =? "Google-chrome" --> doShift "1",
             className =? "Slack" --> doShift "3",
             className =? "Sublime_text" --> doShift "2",
             className =? "Thunderbird" --> doShift "7",

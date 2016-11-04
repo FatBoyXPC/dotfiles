@@ -24,6 +24,10 @@ if [ "`hostname`" == "jamespc" ]; then
 	xrandr --output DVI-I-1 --auto --output DVI-D-0 --auto --right-of DVI-I-1 --output HDMI-0 --auto --right-of DVI-D-0
 fi
 
+if [ "`hostname`" == "fatboyxpc" ]; then
+    xrandr --output eDP1 --auto --output DP5 --auto
+fi
+
 # Run the gnome-keyring-daemon to avoid issues you otherwise may encounter
 # when using gnome applications which expect access to the keyring, such
 # as Empathy. This prevents prompts you may otherwise get for invalid
