@@ -40,6 +40,10 @@
       create: true
       force: true
       path: irssi_config
+    ~/.local/share/applications/mimeapps.list:
+        create: true
+        force: true
+        path: mimeapps.list
     ~/.ssh/config:
         create: true
         force: true

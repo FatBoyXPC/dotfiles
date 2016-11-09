@@ -8,8 +8,10 @@ Add the repo for [Synapse](https://launchpad.net/~synapse-core/+archive/ubuntu/t
 Update sources and install packages:
 ```
 sudo apt-get update
-sudo apt-get install xmonad xmobar numlockx trayer synapse git xbacklight php5-cli xvkbd xsel
+sudo apt-get install xmonad xmobar numlockx trayer synapse git xbacklight php5-cli xvkbd xsel silversearcher-ag
 ```
+
+Install [spf13-vim](https://github.com/spf13/spf13-vim)
 
 Note: xbacklight is only necessary on laptops.
 
@@ -22,6 +24,7 @@ before continuing!
 I'm using the excellent [dotbot](https://github.com/anishathalye/dotbot) to
 manage everything. Just git clone, and run the `./install` script!
 
+~/.vimrc\*local ~/.agignore
 
 
 Common Software
@@ -41,6 +44,26 @@ sudo apt-get install insync screencloud tree roxterm darktable pidgin keepass2 f
 Install [Sublime](http://www.sublimetext.com/) and its [Package Control](https://packagecontrol.io/installation)
 
 The `git update-submodules` command is failing currently!
+
+install emacs:
+``````
+sudo add-apt-repository ppa:ubuntu-elisp/ppa
+sudo apt-get update
+sudo apt-get install emacs-snapshot
+```
+
+Make sure the correct alternatives version is used:
+```
+sudo update-alternatives --config emacs
+```
+
+Dealing with `xdg-open`:
+```
+xdg-mime query filetype /path/to/file
+xdg-mime default eog.desktop image/x-apple-ios-png
+```
+Or the appropriate `.desktop` file and mime type can be added to `mimeapps.list`
+in the `[Default Applications]` section
 
 ## X1 Carbon 3rd Gen Ubuntu 14.04 Specific:
 
