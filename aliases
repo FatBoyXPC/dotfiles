@@ -6,5 +6,5 @@ alias dmsqls="mysql -h 192.168.33.31 -u fireSale -p"
 alias sjsql='mysql -h dms-prd-sj-mysql.cxy1wcof78qg.us-west-2.rds.amazonaws.com -u simplyjobs -p'
 alias o="xdg-open"
 alias phps="php -S localhost:8080"
+alias taillaravel="tail -f storage/logs/system.log"
 alias wakejamespc="wakeonlan 50:46:5D:66:46:87"
-alias tailsj="tail -f ~/dev/dms/simplyjobs/storage/logs/system.log"
