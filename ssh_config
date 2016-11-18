@@ -13,14 +13,6 @@ Host cusa
     HostName cubingusa.com
     user ubuntu
 
-Host cusaold
-    HostName 54.149.170.248
-    user ubuntu
-
-Host dmsdev
-    HostName 192.168.160.94
-    user jlachance
-
 Host fatboyxpc
     HostName fatboyxpc.com
     user fatboyxp
