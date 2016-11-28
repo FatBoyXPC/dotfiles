@@ -5,6 +5,10 @@ Host do
     HostName api.fatboyxpc.com
     user james
 
+host jfly
+    HostName clark.jflei.com
+    user clark
+
 Host csnades
     HostName csnades.com
     user james
