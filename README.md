@@ -73,6 +73,8 @@ sudo vi /usr/lib/pm-utils/power.d/intel-audio-powersave
 Change: INTEL_AUDIO_POWERSAVE=${INTEL_AUDIO_POWERSAVE:-true}
 To: INTEL_AUDIO_POWERSAVE=false
 Reboot
+
+Install compton: `sudo apt-get install compton`
 ```
 
 #### Kernel
