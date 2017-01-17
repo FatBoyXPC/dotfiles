@@ -1,0 +1,28 @@
+set mouse=
+set colorcolumn=80,120
+set relativenumber
+set nofoldenable
+let g:DisableAutoPHPFolding = 1
+let g:neocomplete#enable_at_startup = 0
+let vim_markdown_preview_github = 1
+let g:PreviewBrowsers = 'google-chrome,firefox,safari,chromium-browser,epiphany,opera'
+let g:syntastic_php_phpcs_args = '--standard=PSR2'
+
+if !has('gui_running')
+    set nocursorline
+endif
+
+map <leader>b :CtrlPBuffer<CR>
+nnoremap d<Backspace> :set background=dark<CR>
+nnoremap l<Backspace> :set background=light<CR>
+
+" - Move lines
+nnoremap <C-J> :m .+1<CR>==
+nnoremap <C-K> :m .-2<CR>==
+inoremap <C-J> <Esc>:m .+1<CR>==gi
+inoremap <C-K> <Esc>:m .-2<CR>==gi
+vnoremap <C-J> :m '>+1<CR>gv=gv
+vnoremap <C-K> :m '<-2<CR>gv=gv
+
+let g:vdebug_options = {"break_on_open": 0}
+

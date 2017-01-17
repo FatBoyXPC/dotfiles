@@ -7,6 +7,12 @@ Host do
 
 host jfly
     HostName clark.jflei.com
+    LocalForward 8887 10.5.0.1:80
+    LocalForward 8888 10.5.1.1:80
+    user clark
+
+host clark
+    HostName clark
     user clark
 
 Host csnades

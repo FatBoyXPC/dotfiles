@@ -1,0 +1,5 @@
+Bundle 'vim-markdown-preview'
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_hotkey='<C-k>'
+
+Plugin 'joonty/vdebug'

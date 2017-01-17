@@ -1,0 +1,9 @@
+#!/bin/bash
+
+HDMI="HDMI2"
+
+if (xrandr | grep "$HDMI connected"); then
+    xrandr --output $HDMI --auto
+else
+    xrandr --output $HDMI --off
+fi
