@@ -1,6 +1,10 @@
 #AddKeysToAgent yes
 ServerAliveInterval 120
 
+Host directmail
+    HostName qa.directmail2.com
+    user directmail
+
 Host do
     HostName api.fatboyxpc.com
     user james

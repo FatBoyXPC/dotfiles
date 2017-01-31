@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 function dark() {
-  xdotool sleep 0.5 mousemove -w `xdotool getwindowfocus` 0 0 key --clearmodifiers shift+F10 Up Up Up Right Down Right Up Up Up Return d+BackSpace # Dark
+  xdotool sleep 0.5 mousemove -w `xdotool getwindowfocus` 0 0 key --clearmodifiers shift+F10 Up Up Up Right Down Right Up Up Up Return 1+BackSpace # Dark
 }
 
 function light() {
-  xdotool sleep 0.5 mousemove -w `xdotool getwindowfocus` 0 0 key --clearmodifiers shift+F10 Up Up Up Right Down Right Up Up Return l+BackSpace # Light
+  xdotool sleep 0.5 mousemove -w `xdotool getwindowfocus` 0 0 key --clearmodifiers shift+F10 Up Up Up Right Down Right Up Up Return 2+BackSpace # Light
 }
 
 allowed_commands="dark light"

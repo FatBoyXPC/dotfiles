@@ -13,8 +13,8 @@ if !has('gui_running')
 endif
 
 map <leader>b :CtrlPBuffer<CR>
-nnoremap d<Backspace> :set background=dark<CR>
-nnoremap l<Backspace> :set background=light<CR>
+nnoremap 1<Backspace> :set background=dark<CR>
+nnoremap 2<Backspace> :set background=light<CR>
 
 " - Move lines
 nnoremap <C-J> :m .+1<CR>==
