@@ -1,14 +1,13 @@
 #!/usr/bin/python2
 #
-# Git Last Commit Link
+# Git Commit Link
 # That pun on git/get! LOLOL!
 
 from subprocess import check_output
+import sys
 
-lastCommit = check_output('git rev-parse HEAD', shell=True).rstrip()
+commit = sys.argv[1]
 remoteOrigin = check_output('git config --get remote.origin.url', shell=True).rstrip()
-# print lastCommit
-# print remoteOrigin
 url = remoteOrigin.replace(':', '/').replace('git@', 'https://').replace('.git', '/')
-url = url + 'commit/' + lastCommit
+url = url + 'commit/' + commit
 print url

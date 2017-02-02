@@ -95,7 +95,15 @@ if [[ -n "$SSH_CONNECTION" ]]; then
 fi
 
 function de {
-  CMD="docker exec -it --detach-keys='ctrl-^,q' $1 env TERM=xterm bash"
-  echo $CMD
-  $CMD
+    CMD="docker exec -it --detach-keys='ctrl-^,q' $1 env TERM=xterm bash"
+    echo $CMD
+    $CMD
+}
+
+function cgl {
+    ~/bin/git-commit-link.py $1 | clipit
+}
+
+function clcl {
+    cgl `git rev-parse HEAD`
 }

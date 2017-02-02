@@ -1,6 +1,5 @@
 alias aelog="tail -f /var/log/apache2/error.log"
 alias alg="alias | grep"
-alias clcl="git-last-commit-link.py | clipit"
 alias o="xdg-open"
 alias phps="php -S localhost:8080"
 alias taillaravel="tail -f storage/logs/system.log"
