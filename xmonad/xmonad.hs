@@ -107,6 +107,8 @@ myKeys =
         ((0, xF86XK_MonBrightnessDown), spawn $ changeBrightness "-5%"),
         ((shiftMask, xF86XK_MonBrightnessUp), spawn "colorscheme light"),
         ((shiftMask, xF86XK_MonBrightnessDown), spawn "colorscheme dark"),
+        ((controlMask, xF86XK_MonBrightnessUp), spawn "xbacklight -set 100"),
+        ((controlMask, xF86XK_MonBrightnessDown), spawn "xbacklight -set `cat ~/.brightness`"),
 
         ((0, xF86XK_Display), spawn $ "toggle-display"),
         ((controlMask .|. altMask, xK_Left), spawn "xrandr -o right"),

@@ -25,6 +25,7 @@ I'm using the excellent [dotbot](https://github.com/anishathalye/dotbot) to
 manage everything. Just git clone, and run the `./install` script!
 
 ~/.vimrc\*local ~/.agignore
+`gem install tmuxinator`
 
 
 Common Software

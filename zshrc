@@ -57,6 +57,7 @@ export PATH=$PATH:~/.local/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 export XDEBUG_CONFIG="idekey=sublime.xdebug"
 export TERM="xterm-256color"
+export EDITOR="vim"
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
