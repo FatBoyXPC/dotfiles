@@ -33,8 +33,9 @@ Host fatboyxpc
 
 Host wcap
     HostName worldcubeassociation.org
-    user cubing
 
 Host wcas
     HostName staging.worldcubeassociation.org
+
+Host wca*
     user cubing
