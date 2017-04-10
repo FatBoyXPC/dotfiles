@@ -108,3 +108,5 @@ function cgl {
 function clcl {
     cgl `git rev-parse HEAD`
 }
+
+bindkey '\ev' edit-command-line
