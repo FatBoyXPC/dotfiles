@@ -1,5 +1,6 @@
 alias aelog="tail -f /var/log/apache2/error.log"
 alias alg="alias | ag"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias o="xdg-open"
 alias phps="php -S localhost:8080"
 alias wakejamespc="wakeonlan 50:46:5D:66:46:87"
