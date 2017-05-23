@@ -35,6 +35,7 @@
         create: true
         force: true
         path: gitconfig
+    ~/.git_templates: git_templates/
     ~/.gtkrc-2.0: gtkrc-2.0
     ~/.irssi/config:
       create: true

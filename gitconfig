@@ -3,3 +3,7 @@
 	email = fatboyxpc@gmail.com
 [core]
     editor = vim
+[init]
+	templatedir = ~/.git_templates
+[alias]
+	ctags = !.git/hooks/ctags
