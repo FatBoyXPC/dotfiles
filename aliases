@@ -1,8 +1,10 @@
 alias aelog="tail -f /var/log/apache2/error.log"
 alias alg="alias | ag"
+alias gaws="git add -A && git diff --cached -w | git apply --cached -R"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias o="xdg-open"
 alias phps="php -S localhost:8080"
+alias phpu="vendor/bin/phpunit"
 alias wakejamespc="wakeonlan 50:46:5D:66:46:87"
 
 
