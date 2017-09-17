@@ -7,3 +7,5 @@
 	templatedir = ~/.git_templates
 [alias]
 	ctags = !.git/hooks/ctags
+[github]
+	user = FatBoyXPC
