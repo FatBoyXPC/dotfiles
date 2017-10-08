@@ -8,9 +8,13 @@ let vim_markdown_preview_github = 1
 let g:PreviewBrowsers = 'google-chrome,firefox,safari,chromium-browser,epiphany,opera'
 let g:syntastic_php_phpcs_args = '--standard=PSR2'
 
+
 if !has('gui_running')
     set nocursorline
 endif
+
+let g:vdebug_options = {"break_on_open": 0}
+let g:vim_markdown_conceal = 0
 
 map <leader>b :CtrlPBuffer<CR>
 nnoremap 1<Backspace> :set background=dark<CR>
@@ -24,5 +28,7 @@ inoremap <C-K> <Esc>:m .-2<CR>==gi
 vnoremap <C-J> :m '>+1<CR>gv=gv
 vnoremap <C-K> :m '<-2<CR>gv=gv
 
-let g:vdebug_options = {"break_on_open": 0}
-
+" - Testing goodness!
+nnoremap <leader>ta :TestSuite<CR>
+nnoremap <leader>tc :TestFile<CR>
+nnoremap <leader>tm :TestNearest<CR>
