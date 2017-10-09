@@ -1,3 +1,4 @@
 Plugin 'joonty/vdebug'
 Plugin 'ervandew/supertab'
 Plugin 'janko-m/vim-test'
+Plugin 'benmills/vimux'
