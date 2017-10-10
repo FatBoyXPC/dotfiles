@@ -52,6 +52,15 @@
     ~/.tmux.conf:
         force: true
         path: tmux.conf
+    ~/.vimrc.local:
+        force: true
+        path: vim/local
+    ~/.vimrc.before.local:
+        force: true
+        path: vim/before.local
+    ~/.vimrc.bundles.local:
+        force: true
+        path: vim/bundles.local
     ~/.xmonad: xmonad/
     ~/bin: bin/
     ~/.zshrc:
