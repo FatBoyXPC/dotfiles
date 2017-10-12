@@ -8,6 +8,10 @@
     ~/.bash_aliases:
         force: true
         path: aliases
+    ~/.config/dunst:
+        force: true
+        create: true
+        path: dunst/
     ~/.config/roxterm.sourceforge.net:
         force: true
         create: true
