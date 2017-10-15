@@ -1,0 +1,21 @@
+#!/bin/sh
+
+BIN=""
+BIN_PATH="/usr/bin/"
+LOCAL_BIN="/usr/local/bin/php"
+
+if [ "$1" == "5" ]; then
+  BIN="php56"
+fi
+
+if [ "$1" == "7" ]; then
+  BIN="php"
+fi
+
+if [[ -z $BIN ]]; then
+  echo "Unrecognized PHP version"
+  exit 1
+fi
+
+sudo ln -s --force $BIN_PATH$BIN $LOCAL_BIN
+echo `php --version`

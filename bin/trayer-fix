@@ -5,7 +5,7 @@ if [ "`hostname`" == "jamespc" ]; then
 fi
 
 if [ "`hostname`" == "fatboyxpc" ]; then
-	DISTANCE=545   
+	DISTANCE=740
 fi
 
 # We need to wait on xmobar to spawn before we spawn trayer, that way trayer

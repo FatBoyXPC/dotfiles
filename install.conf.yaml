@@ -2,7 +2,6 @@
 
 - shell:
     - ./bin/gen-xmobarrc > ~/.xmobarrc
-    - sudo update-alternatives --set editor /usr/bin/vim.gtk
 
 - link:
     ~/.bash_aliases:
@@ -12,6 +11,10 @@
         force: true
         create: true
         path: dunst/
+    ~/.config/nvim/init.vim:
+        force: true
+        create: true
+        path: ~/.vimrc
     ~/.config/roxterm.sourceforge.net:
         force: true
         create: true
@@ -20,6 +23,10 @@
         create: true
         force: true
         path: synapse-config.json
+    ~/.config/termite:
+        create: true
+        force: true
+        path: termite
     ~/.dircolors:
         force: true
         path: dircolors
@@ -28,11 +35,6 @@
         force: true
         path: gitconfig
     ~/.git_templates: git_templates/
-    ~/.gtkrc-2.0: gtkrc-2.0
-    ~/.irssi/config:
-      create: true
-      force: true
-      path: irssi_config
     ~/.local/share/applications/mimeapps.list:
         create: true
         force: true
@@ -53,14 +55,28 @@
     ~/.vimrc.bundles.local:
         force: true
         path: vim/bundles.local
+    ~/.Xresources: Xresources
+    ~/.xinitrc: xinitrc
     ~/.xmonad: xmonad/
     ~/bin: bin/
     ~/.zshrc:
         force: true
         path: zshrc
-    /etc/systemd/logind.conf:
+    /etc/modprobe.d/nobeep.conf:
         force: true
-        path: logind.conf
+        path: nobeep.conf
+    /etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf:
+        create: true
+        force: true
+        path: no-suspend-on-lidswitch.conf
+    /etc/systemd/logind.conf.d/suspend-on-powerbutton.conf:
+        create: true
+        force: true
+        path: suspend-on-powerbutton.conf
+    /etc/vconsole.conf:
+        create: true
+        force: true
+        path: vconsole.conf
     /usr/share/xsessions/xmonad.desktop:
         force: true
         path: xmonad/xmonad.desktop

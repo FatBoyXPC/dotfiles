@@ -1,11 +1,30 @@
-#!/usr/bin/env bash
+#/usr/bin/env bash
+
+function roxterm_dark() {
+  xdotool sleep 0.5 mousemove -w `xdotool getwindowfocus` 0 0 key --clearmodifiers shift+F10 Up Up Up Right Down Right Up Up Up Return 1 BackSpace # Dark
+}
+
+function roxterm_light() {
+  xdotool sleep 0.5 mousemove -w `xdotool getwindowfocus` 0 0 key --clearmodifiers shift+F10 Up Up Up Right Down Right Up Up Return 2 BackSpace # Light
+}
+
+function set_termite_colorscheme_file {
+  colorscheme_file=$1
+  ~/.config/termite/config.template.sh "$colorscheme_file"
+}
+
+function reload_termite_config() {
+  xdotool sleep 0.2 key --clearmodifiers ctrl+shift+r
+}
 
 function dark() {
-  xdotool sleep 0.5 mousemove -w `xdotool getwindowfocus` 0 0 key --clearmodifiers shift+F10 Up Up Up Right Down Right Up Up Up Return 1+BackSpace # Dark
+  set_termite_colorscheme_file "solarized-dark"
+  reload_termite_config
 }
 
 function light() {
-  xdotool sleep 0.5 mousemove -w `xdotool getwindowfocus` 0 0 key --clearmodifiers shift+F10 Up Up Up Right Down Right Up Up Return 2+BackSpace # Light
+  set_termite_colorscheme_file "solarized-light"
+  reload_termite_config
 }
 
 allowed_commands="dark light"

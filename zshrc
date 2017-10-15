@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:~/.local/bin
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -110,3 +110,13 @@ function clcl {
 }
 
 bindkey '\ev' edit-command-line
+
+# From https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent
+if ! pgrep -u $USER ssh-agent > /dev/null; then
+  ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+  eval $(<~/.ssh-agent-thing)
+fi
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

@@ -23,7 +23,7 @@ winMask = mod4Mask
 -- Rebind Mod to the Windows key
 myModMask = altMask
 
-myTerminal = "roxterm"
+myTerminal = "termite"
 tall = Tall 1 (3/100) (1/2)
 myLayout = avoidStruts $ smartBorders $ Full ||| Mirror tall ||| tall
 
@@ -47,7 +47,7 @@ windowPlacement = composeAll [
             -- All Steam Windows (except Game Info & previously mentioned)
             className =? "Steam" <&&> fmap (not . isInfixOf "Game Info") title --> doShift "9",
 
-            className =? "Google-chrome" --> doShift "1",
+            className =? "Chromium" --> doShift "1",
             className =? "Slack" --> doShift "3",
             className =? "Sublime_text" --> doShift "2",
             className =? "Thunderbird" --> doShift "7",
@@ -67,8 +67,9 @@ windowPlacement = composeAll [
         ] where role = stringProperty "WM_WINDOW_ROLE"
 
 -- https://github.com/hcchu/dotfiles/blob/master/.xmonad/xmonad.hs
-showVolume = "toggle-mute.sh; show-volume.sh"
-changeVolume s = "amixer -D pulse set Master " ++ s ++ "; show-volume.sh"
+muteAndShowVolume = "set_volume.py toggle-mute; show-volume.sh"
+changeVolume s = "set_volume.py " ++ s ++ "; show-volume.sh"
+toggleMicMute = "pactl set-source-mute 1 toggle"
 changeBrightness s = "xbacklight " ++ s ++ "; show-brightness.sh; xbacklight > ~/.brightness"
 
 myKeys =
@@ -99,9 +100,13 @@ myKeys =
         -- Force window back to tiling mode
          ((myModMask .|. shiftMask, xK_t), withFocused $ windows . W.sink),
 
-        ((0, xF86XK_AudioMute), spawn showVolume),
-        ((0, xF86XK_AudioRaiseVolume), spawn $ changeVolume "5%+"),
-        ((0, xF86XK_AudioLowerVolume), spawn $ changeVolume "5%-"),
+	-- Run dmenu2 with custom font
+	((myModMask, xK_p), spawn "dmenu_run -fn 'Ubuntu Mono Regular:size=8:bold:antialias=true'"),
+
+        ((0, xF86XK_AudioMute), spawn muteAndShowVolume),
+        ((0, xF86XK_AudioRaiseVolume), spawn $ changeVolume "5+"),
+        ((0, xF86XK_AudioLowerVolume), spawn $ changeVolume "5-"),
+        ((0, xF86XK_AudioMicMute), spawn toggleMicMute),
 
         ((0, xF86XK_MonBrightnessUp), spawn $ changeBrightness "+5%"),
         ((0, xF86XK_MonBrightnessDown), spawn $ changeBrightness "-5%"),
@@ -134,7 +139,7 @@ main = do
         logHook = logHook desktopConfig <+> dynamicLogWithPP xmobarPP {
             ppOutput = hPutStrLn xmproc,
             ppTitle = xmobarColor "green" "" . shorten 100
-        } >> updatePointer (Relative 0.95 0.05),
+        },
 
         modMask = myModMask,
         XMonad.terminal = myTerminal,
