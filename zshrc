@@ -58,6 +58,7 @@ export PATH=$PATH:~/.local/bin
 export XDEBUG_CONFIG="idekey=sublime.xdebug"
 export TERM="xterm-256color"
 export EDITOR="vim"
+export VISUAL=$EDITOR
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -119,4 +120,4 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
   eval $(<~/.ssh-agent-thing)
 fi
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+[[ -z $DISPLAY && -z $TMUX && $XDG_VTNR -eq 1 ]] && exec startx
