@@ -1,0 +1,30 @@
+[2017-10-20 09:54:51] WeeChat 0.4.2 (compiled on Apr 27 2017 02:25:30)
+[2017-10-20 09:54:51] Reading configuration file sec.conf
+[2017-10-20 09:54:51] Reading configuration file weechat.conf
+[2017-10-20 09:54:51] Reading configuration file plugins.conf
+[2017-10-20 09:54:51] Reading configuration file charset.conf
+[2017-10-20 09:54:51] Reading configuration file relay.conf
+[2017-10-20 09:54:51] Reading configuration file buffers.conf
+[2017-10-20 09:54:51] Reading configuration file iset.conf
+[2017-10-20 09:54:51] Reading configuration file aspell.conf
+[2017-10-20 09:54:51] Reading configuration file xfer.conf
+[2017-10-20 09:54:51] Reading configuration file irc.conf
+[2017-10-20 09:54:51] irc: connecting to server chat.freenode.net/6697 (SSL)...
+[2017-10-20 09:54:51] Reading configuration file script.conf
+[2017-10-20 09:54:51] Reading configuration file logger.conf
+[2017-10-20 09:54:51] Reading configuration file rmodifier.conf
+[2017-10-20 09:54:51] Reading configuration file alias.conf
+[2017-10-20 09:55:21] Writing configuration file plugins.conf 
+[2017-10-20 09:55:21] Writing configuration file alias.conf 
+[2017-10-20 09:55:21] Writing configuration file rmodifier.conf 
+[2017-10-20 09:55:21] Writing configuration file logger.conf 
+[2017-10-20 09:55:21] Writing configuration file script.conf 
+[2017-10-20 09:55:21] Writing configuration file irc.conf 
+[2017-10-20 09:55:21] Writing configuration file xfer.conf 
+[2017-10-20 09:55:21] Writing configuration file aspell.conf 
+[2017-10-20 09:55:21] Writing configuration file buffers.conf 
+[2017-10-20 09:55:21] Writing configuration file iset.conf 
+[2017-10-20 09:55:21] Writing configuration file relay.conf 
+[2017-10-20 09:55:21] Writing configuration file charset.conf 
+[2017-10-20 09:55:21] Writing configuration file weechat.conf 
+[2017-10-20 09:55:21] Writing configuration file sec.conf 
