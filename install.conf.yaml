@@ -58,6 +58,10 @@
     ~/.Xresources: Xresources
     ~/.xinitrc: xinitrc
     ~/.xmonad: xmonad/
+    ~/.weechat:
+        create: true
+        force: true
+        path: weechat/
     ~/bin: bin/
     ~/.zshrc:
         force: true
