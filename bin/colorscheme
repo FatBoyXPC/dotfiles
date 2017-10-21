@@ -25,6 +25,7 @@ function dark() {
 function light() {
   set_termite_colorscheme_file "solarized-light"
   reload_termite_config
+  set_termite_colorscheme_file "solarized-dark"
 }
 
 allowed_commands="dark light"

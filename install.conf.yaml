@@ -81,6 +81,10 @@
         create: true
         force: true
         path: vconsole.conf
+    /etc/X11/xorg.conf.d/20-intel.conf:
+        create: true
+        force: true
+        path: 20-intel.conf
     /usr/share/xsessions/xmonad.desktop:
         force: true
         path: xmonad/xmonad.desktop
