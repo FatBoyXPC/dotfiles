@@ -1,4 +1,5 @@
 logs/
 sec.conf
 ecdsa.pem
+urlserver_list.txt
 weechat.log
