@@ -1,6 +1,7 @@
 [user]
 	name = James LaChance
 	email = fatboyxpc@gmail.com
+	signingkey = C4ED3CA232118969
 [core]
     editor = vim
 [init]
