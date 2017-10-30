@@ -10,3 +10,5 @@
 	ctags = !.git/hooks/ctags
 [github]
 	user = FatBoyXPC
+[commit]
+	gpgsign = true
