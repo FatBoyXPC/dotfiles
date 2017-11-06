@@ -8,6 +8,7 @@ let g:neocomplete#enable_at_startup = 0
 let vim_markdown_preview_github = 1
 let g:PreviewBrowsers = 'google-chrome,firefox,safari,chromium-browser,epiphany,opera'
 let g:syntastic_php_phpcs_args = '--standard=PSR2'
+set rtp+=~/3rdrepos/fzf
 
 
 if !has('gui_running')

@@ -5,30 +5,33 @@ if [ "$1" == "disapproval" ]; then
 fi
 
 if [ "$1" == "fliptable" ]; then
-  echo -n "(╯°□°)╯︵ ┻━" | clipit
+  echo -n "(╯°□°)╯︵ ┻━┻" | clipit
 fi
 
 if [ "$1" == "fliptableharder" ]; then
   echo -n "(ノಠ益ಠ)ノ彡 ┻━┻" | clipit
 fi
-if [ "$1" == "shrug" ]; then
-  echo -n "¯\_(ツ)_/¯" | clipit
-fi
+
 if [ "$1" == "tableflipsyou" ]; then
   echo -n "ノ┬─┬ノ ︵ ( \\o°o )\\" | clipit
 fi
+
 if [ "$1" == "puttableback" ]; then
   echo -n "┬──┬◡ﾉ(° -°ﾉ)" | clipit
 fi
+
 if [ "$1" == "puttablesback" ]; then
   echo -n "┬──┬︵/(ツ)\︵┬──┬" | clipit
 fi
+
 if [ "$1" == "shrug" ]; then
   echo -n "¯\_(ツ)_/¯" | clipit
 fi
+
 if [ "$1" == "handsup" ]; then
   echo -n "٩◔̯◔۶" | clipit
 fi
+
 if [ "$1" == "sad" ]; then
   echo -n "(˘_˘٥)" | clipit
 fi

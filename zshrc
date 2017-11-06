@@ -112,6 +112,8 @@ function clcl {
 
 bindkey '\ev' edit-command-line
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # From https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent
 if ! pgrep -u $USER ssh-agent > /dev/null; then
   ssh-agent > ~/.ssh-agent-thing
