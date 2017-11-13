@@ -21,8 +21,6 @@ fi
 gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
 cat /dev/null | ssh-add &
 
-disable-touchpad
-
 # volume & brightness notification daemon
 volnoti -t 1
 
