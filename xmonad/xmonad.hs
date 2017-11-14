@@ -78,7 +78,7 @@ myKeys =
         ((myModMask, xK_b), sendMessage ToggleStruts),
 
         -- Launch a terminal (changed from return to semicolon)
-        ((myModMask .|. shiftMask, xK_semicolon), spawn myTerminal),
+        ((myModMask .|. shiftMask, xK_semicolon), spawn "emoji-keyboard -k"),
 
         -- Lock the screen using gnome-screensaver
         ((winMask, xK_l), spawn "gnome-screensaver-command -l"),
@@ -147,7 +147,7 @@ main = do
         startupHook = do
             setWMName "LG3D"
             spawn "trayer-fix"
-            spawn "pgrep synapse || synapse -s"
+            spawn "pgrep emoji-keyboard || emoji-keyboard"
             spawn "pgrep screencloud || screencloud"
             spawn "pgrep insync || insync start"
             spawn "pgrep nm-applet || nm-applet"
