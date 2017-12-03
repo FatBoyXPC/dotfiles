@@ -1,4 +1,6 @@
 set mouse=
+set scrolloff=0
+set scrolljump=0
 set colorcolumn=80,120
 set relativenumber
 set nofoldenable
@@ -10,11 +12,6 @@ let g:PreviewBrowsers = 'google-chrome,firefox,safari,chromium-browser,epiphany,
 let g:syntastic_php_phpcs_args = '--standard=PSR2'
 let g:ctrlp_cmd = 'Files'
 set rtp+=~/3rdrepos/fzf
-
-
-if !has('gui_running')
-    set nocursorline
-endif
 
 let g:vdebug_options = {"break_on_open": 0}
 let g:vim_markdown_conceal = 0
