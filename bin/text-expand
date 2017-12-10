@@ -8,6 +8,10 @@ if [ "$1" == "fliptable" ]; then
   echo -n "(╯°□°)╯︵ ┻━┻" | clipit
 fi
 
+if [ "$1" == "flipbigtable" ]; then
+  echo -n "(╯°□°)╯︵ ┻━━━┻" | clipit
+fi
+
 if [ "$1" == "fliptableharder" ]; then
   echo -n "(ノಠ益ಠ)ノ彡 ┻━┻" | clipit
 fi
