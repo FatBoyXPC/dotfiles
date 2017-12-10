@@ -19,7 +19,7 @@ let test#strategy = "vimux"
 let g:phpactorPhpBin = '/usr/bin/php'
 
 unmap <C-e>
-nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>b :Buffers<CR>
 nnoremap 1<Backspace> :set background=dark<CR>
 nnoremap 2<Backspace> :set background=light<CR>
 
@@ -37,10 +37,10 @@ nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>tl :TestLast<CR>
 nnoremap <leader>tn :TestNearest<CR>
 
-"nnoremap <Leader>u :call phpactor#UseAdd()<CR>
+nnoremap <Leader>u :call phpactor#UseAdd()<CR>
 "nnoremap <Leader>e :call phpactor#ClassExpand()<CR>
 "nnoremap <Leader>pp :call phpactor#ContextMenu()<CR>
-"nnoremap <Leader>o :call phpactor#GotoDefinition()<CR>
+nnoremap <Leader>o :call phpactor#GotoDefinition()<CR>
 "nnoremap <Leader>pd :call phpactor#OffsetTypeInfo()<CR>
 "nnoremap <Leader>pfm :call phpactor#MoveFile()<CR>
 "nnoremap <Leader>pfc :call phpactor#CopyFile()<CR>
