@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 colorscheme light &> /dev/null
-ssh $@
+/usr/sbin/ssh $@
 colorscheme dark &> /dev/null

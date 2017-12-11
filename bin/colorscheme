@@ -14,7 +14,10 @@ function set_termite_colorscheme_file {
 }
 
 function reload_termite_config() {
-  xdotool sleep 0.2 key --clearmodifiers ctrl+shift+r
+  # Termite reloads its config on SIGUSR1.
+  # https://github.com/thestinger/termite/blob/3bc2a43bef9b0842cb242dd19853d0344c8a2766/termite.cc#L1715
+
+  kill -s USR1 `xdotool getwindowpid $(xdotool getwindowfocus)`
 }
 
 function dark() {
