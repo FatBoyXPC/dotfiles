@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+IS_GIT_MY_ANCESTOR=$(pstree -s $$ | grep 'git')
+
+if [ -n "$IS_GIT_MY_ANCESTOR" ]; then
+    /usr/sbin/ssh $@
+    exit
+fi
+
 colorscheme light &> /dev/null
 /usr/sbin/ssh $@
 colorscheme dark &> /dev/null
