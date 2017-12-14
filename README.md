@@ -122,3 +122,6 @@ With xmonad > 0.11, this change is relevant:
 https://wiki.haskell.org/Xmonad/Notable_changes_since_0.11#updatePointer
 
 This means the updatePointer (Relative x y) line needs to change!
+
+DONT FORGET /usr/lib/ssh/x11-ssh-askpass
+`pacman -Ql x11-ssh-askpass`

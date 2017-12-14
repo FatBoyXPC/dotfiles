@@ -58,6 +58,7 @@ export XDEBUG_CONFIG="idekey=sublime.xdebug"
 export TERM="xterm-256color"
 export EDITOR="vim"
 export VISUAL=$EDITOR
+export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then

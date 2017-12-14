@@ -12,6 +12,7 @@ import XMonad.Hooks.SetWMName
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Run(spawnPipe)
 import qualified XMonad.StackSet as W
+import XMonad.Layout.PerWorkspace
 
 -- http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Layout-NoBorders.html
 import XMonad.Layout.NoBorders
@@ -25,7 +26,15 @@ myModMask = altMask
 
 myTerminal = "termite"
 tall = Tall 1 (3/100) (1/2)
-myLayout = avoidStruts $ smartBorders $ Full ||| Mirror tall ||| tall
+devTall = Tall 1 (3/100) (59.45/100)
+chatLayout = avoidStruts $ smartBorders $ tall ||| Full
+defaultLayout = avoidStruts $ smartBorders $ Full ||| tall ||| Mirror tall
+devLayout = avoidStruts $ smartBorders $ devTall ||| Full
+serverLayout = avoidStruts $ smartBorders $ Mirror tall ||| Full
+myLayout = onWorkspace "2" devLayout $
+    onWorkspace "3" chatLayout $
+    onWorkspace "5" serverLayout $
+    defaultLayout
 
 myBorderWidth = 2
 
@@ -34,6 +43,9 @@ windowPlacement = composeAll [
 
             -- Skype Conversations
             role =? "conversation" --> doShift "3",
+
+            role =? "dev-window" --> doShift "2",
+            role =? "server-window" --> doShift "5",
 
             -- Pidgin Conversations
             role =? "ConversationsWindow" --> doShift "3",

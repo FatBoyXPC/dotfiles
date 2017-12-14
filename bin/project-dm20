@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+source "$(dirname "$0")/project-functions.sh"
+
+cd ~/dev/dm20
+
+switchphp 5
+
+setupDevWorkspace dm20
+setupServerWorkspace
+startAndConnectMysql dm_production

@@ -1,5 +1,5 @@
 Plugin 'joonty/vdebug'
-"Plugin 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 Plugin 'janko-m/vim-test'
 Plugin 'benmills/vimux'
 Plugin 'phpactor/phpactor'
