@@ -98,10 +98,10 @@ myKeys =
         ((myModMask .|. shiftMask, xK_m), windows W.focusMaster),
 
         -- Force window back to tiling mode
-         ((myModMask .|. shiftMask, xK_t), withFocused $ windows . W.sink),
+        ((myModMask .|. shiftMask, xK_t), withFocused $ windows . W.sink),
 
-	-- Run dmenu2 with custom font
-	((myModMask, xK_p), spawn "dmenu_run -fn 'Ubuntu Mono Regular:size=8:bold:antialias=true'"),
+        -- Run dmenu2 with custom font
+        ((myModMask, xK_p), spawn "dmenu_run -fn 'Ubuntu Mono Regular:size=8:bold:antialias=true'"),
 
         ((0, xF86XK_AudioMute), spawn muteAndShowVolume),
         ((0, xF86XK_AudioRaiseVolume), spawn $ changeVolume "5+"),
