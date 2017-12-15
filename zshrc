@@ -114,6 +114,9 @@ bindkey '\ev' edit-command-line
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+autoload -U select-word-style
+select-word-style bash
+
 # From https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent
 if ! pgrep -u $USER ssh-agent > /dev/null; then
   ssh-agent > ~/.ssh-agent-thing
