@@ -4,15 +4,16 @@ if [ $EUID != 0 ]; then
 fi
 
 function terminalOn() {
-  CMD=$1
+  CMD="$1"
   WORKSPACE="$2-window"
 
-  sudo -u $SUDO_USER termite -r $WORKSPACE -e "zsh -ic '$CMD; zsh -i'" &
+  sudo -u $SUDO_USER termite -r $WORKSPACE -e "shell-and-stuff \"$CMD\"" &
   sleep 0.1 # force windows to be created in order
 }
 
 function setupDevWorkspace() {
-  terminalOn "tmux attach -t $1 || tmux new -s $1" dev
+  terminalOn "artisan tinker" dev
+  terminalOn "fat-runner become" dev
   terminalOn nvim dev
 }
 

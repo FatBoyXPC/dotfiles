@@ -15,8 +15,14 @@ set rtp+=~/3rdrepos/fzf
 
 let g:vdebug_options = {"break_on_open": 0}
 let g:vim_markdown_conceal = 0
-let test#strategy = "vimux"
+let test#strategy = "fat_runner"
 let g:phpactorPhpBin = '/usr/bin/php'
+
+function! FatRunnerStrategy(cmd)
+  call system("fat-runner run " . shellescape("clear;" . a:cmd))
+endfunction
+
+let g:test#custom_strategies = {'fat_runner': function('FatRunnerStrategy')}
 
 unmap <C-e>
 nnoremap <leader>b :Buffers<CR>
