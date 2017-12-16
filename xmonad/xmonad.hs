@@ -22,7 +22,7 @@ altMask = mod1Mask
 winMask = mod4Mask
 
 -- Rebind Mod to the Windows key
-myModMask = altMask
+myModMask = winMask
 
 myTerminal = "termite"
 tall = Tall 1 (3/100) (1/2)

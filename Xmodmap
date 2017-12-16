@@ -1,0 +1,9 @@
+! 66 is the keycode of Caps_Lock
+clear Lock
+keycode 66 = Escape Escape
+
+! Make regular escape key do escape, and shift escape do capslock.
+keycode 9 = Escape Caps_Lock Escape
+
+! 107 is the keycode of PrtSc
+keycode 107 = Super_L

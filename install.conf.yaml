@@ -57,6 +57,9 @@
         path: vim/bundles.local
     ~/.Xresources: Xresources
     ~/.xinitrc: xinitrc
+    ~/.Xmodmap:
+        force: true
+        path: Xmodmap
     ~/.xmonad: xmonad/
     ~/.weechat:
         create: true

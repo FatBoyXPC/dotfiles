@@ -27,6 +27,8 @@ volnoti -t 1
 # seems like /etc/default/keyboard is getting ignored, so let's set this here
 #setxkbmap -option compose:lwin
 
+xmodmap ~/.Xmodmap
+
 # xmonad doesn't set a cursor
 xsetroot -cursor_name left_ptr
 
