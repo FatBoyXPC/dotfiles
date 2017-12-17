@@ -25,7 +25,7 @@ cat /dev/null | ssh-add &
 volnoti -t 1
 
 # seems like /etc/default/keyboard is getting ignored, so let's set this here
-setxkbmap -option compose:lwin
+#setxkbmap -option compose:lwin
 
 xmodmap ~/.Xmodmap
 
