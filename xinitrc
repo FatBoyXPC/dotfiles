@@ -5,7 +5,7 @@ xrdb -merge .Xresources
 # SCREEN CONFIGURATION
 #
 if [ "`hostname`" == "jamespc" ]; then
-	xrandr --output DVI-I-1 --auto --output DVI-D-0 --auto --right-of DVI-I-1 --output HDMI-0 --auto --right-of DVI-D-0
+    xrandr --output DVI-I-1 --auto --output DVI-D-0 --auto --right-of DVI-I-1 --output HDMI-0 --auto --right-of DVI-D-0
 fi
 
 if [ "`hostname`" == "fatboyxpc" ]; then
