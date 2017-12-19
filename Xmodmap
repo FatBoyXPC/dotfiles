@@ -1,9 +1,14 @@
-! 66 is the keycode of Caps_Lock
 clear Lock
-keycode 66 = Escape Escape
+clear control
+! 66 is the keycode of Caps_Lock
+keycode 66 = Control_L Control_L
+add control = Control_L Control_R
 
-! Make regular escape key do escape, and shift escape do capslock.
-keycode 9 = Escape Caps_Lock Escape
+! 108 is the keycode for Alt_R, setting our mode switch key to allow us to set Caps_Lock
+keycode 108 = Alt_R Mode_switch
+
+! Make regular escape key do escape, and right alt shift escape do capslock.
+keycode 9 = Escape Escape Caps_Lock
 
 ! 107 is the keycode of PrtSc
 keycode 107 = Super_L

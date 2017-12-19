@@ -125,4 +125,4 @@ This means the updatePointer (Relative x y) line needs to change!
 
 DONT FORGET /usr/lib/ssh/x11-ssh-askpass
 `pacman -Ql x11-ssh-askpass`
-`pacman -S expect`
+`pacman -S expect xcape`

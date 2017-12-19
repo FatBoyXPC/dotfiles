@@ -28,6 +28,7 @@ volnoti -t 1
 #setxkbmap -option compose:lwin
 
 xmodmap ~/.Xmodmap
+xcape
 
 # xmonad doesn't set a cursor
 xsetroot -cursor_name left_ptr
