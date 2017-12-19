@@ -1,2 +1,3 @@
 __pycache__
 weechat/script/plugins.xml.gz
+bin/php

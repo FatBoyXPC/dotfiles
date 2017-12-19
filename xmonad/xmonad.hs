@@ -90,7 +90,11 @@ myKeys =
         ((myModMask, xK_b), sendMessage ToggleStruts),
 
         -- Launch a terminal (changed from return to semicolon)
-        ((myModMask .|. shiftMask, xK_semicolon), spawn "emoji-keyboard -k"),
+        ((myModMask .|. shiftMask, xK_semicolon), spawn myTerminal),
+
+        ((myModMask, xK_semicolon), windows W.swapMaster),
+
+        ((myModMask .|. shiftMask, xK_Return), spawn "emoji-keyboard -k"),
 
         -- Lock the screen using gnome-screensaver
         ((winMask, xK_l), spawn "gnome-screensaver-command -l"),

@@ -2,7 +2,7 @@
 
 BIN=""
 BIN_PATH="/usr/bin/"
-LOCAL_BIN="/usr/local/bin/php"
+LOCAL_BIN="$HOME/bin/php"
 
 if [ "$1" == "5" ]; then
   BIN="php56"
