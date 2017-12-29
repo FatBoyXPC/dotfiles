@@ -114,8 +114,34 @@ bindkey '\ev' edit-command-line
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-autoload -U select-word-style
-select-word-style bash
+###
+### Bash-like navigation - stolen from https://github.com/jfly/dotfiles/blob/d0e0fa39442783b299be741aa2e171b97fef5357/zshrc
+### Copied from: https://stackoverflow.com/a/10860628/1739415
+### Also see https://stackoverflow.com/a/3483679/1739415
+###
+
+# Bind ctrl-u to cut to beginning of line.
+bindkey "^U" backward-kill-line
+
+# Change behavior of alt-b and alt-f to behave more like bash with regards to
+# trailing whitespace.
+autoload -Uz forward-word-match
+zle -N forward-word forward-word-match
+zstyle ':zle:*' skip-whitespace-first true
+zstyle ':zle:*' word-chars ''
+
+# Bind alt-backspace to delete one not so aggressive word backwards.
+bindkey '^[^?' backward-kill-word
+
+### Bind ctrl-w to delete one aggressive word backwards.
+backward-kill-dir() {
+    local WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+    zle backward-kill-word
+}
+zle -N backward-kill-dir
+bindkey "^W" backward-kill-dir
+
+#####################
 
 # From https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent
 if ! pgrep -u $USER ssh-agent > /dev/null; then
