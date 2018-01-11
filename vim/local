@@ -38,10 +38,10 @@ vnoremap <C-J> :m '>+1<CR>gv=gv
 vnoremap <C-K> :m '<-2<CR>gv=gv
 
 " - Testing goodness!
-nnoremap <leader>ts :TestSuite<CR>
-nnoremap <leader>tf :TestFile<CR>
-nnoremap <leader>tl :TestLast<CR>
-nnoremap <leader>tn :TestNearest<CR>
+nnoremap <leader>ts :w<CR>:TestSuite<CR>
+nnoremap <leader>tf :w<CR>:TestFile<CR>
+nnoremap <leader>tl :w<CR>:TestLast<CR>
+nnoremap <leader>tn :w<CR>:TestNearest<CR>
 
 nnoremap <Leader>u :call phpactor#UseAdd()<CR>
 "nnoremap <Leader>e :call phpactor#ClassExpand()<CR>
