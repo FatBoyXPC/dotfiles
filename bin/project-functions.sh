@@ -14,7 +14,7 @@ function terminalOn() {
 function setupDevWorkspace() {
   terminalOn "artisan tinker" dev
   terminalOn "fat-runner become" dev
-  terminalOn nvim dev
+  terminalOn vim dev
 }
 
 function setupServerWorkspace() {

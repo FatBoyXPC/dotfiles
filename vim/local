@@ -9,7 +9,9 @@ let g:DisableAutoPHPFolding = 1
 let g:neocomplete#enable_at_startup = 0
 let vim_markdown_preview_github = 1
 let g:PreviewBrowsers = 'google-chrome,firefox,safari,chromium-browser,epiphany,opera'
-let g:syntastic_php_phpcs_args = '--standard=PSR2'
+let g:syntastic_php_phpcs_exec = 'vendor/bin/phpcs'
+let g:syntastic_php_phpcs_args = '--standard=phpcs_ruleset.xml'
+let g:php_cs_fixer_config_file = ".php_cs"
 let g:ctrlp_cmd = 'Files'
 set rtp+=~/3rdrepos/fzf
 
