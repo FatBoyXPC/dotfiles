@@ -88,6 +88,10 @@
         create: true
         force: true
         path: 20-intel.conf
+    /etc/X11/xorg.conf.d/20-trackpoint.conf:
+        create: true
+        force: true
+        path: 20-trackpoint.conf
     /usr/share/xsessions/xmonad.desktop:
         force: true
         path: xmonad/xmonad.desktop
