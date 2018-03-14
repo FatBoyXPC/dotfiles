@@ -112,7 +112,8 @@ function clcl {
 
 bindkey '\ev' edit-command-line
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 ###
 ### Bash-like navigation - stolen from https://github.com/jfly/dotfiles/blob/d0e0fa39442783b299be741aa2e171b97fef5357/zshrc
