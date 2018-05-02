@@ -39,3 +39,8 @@ fi
 if [ "$1" == "sad" ]; then
   echo -n "(˘_˘٥)" | clipit
 fi
+
+if [ "$1" == "ayy" ]; then
+  echo -n "ԅ(≖‿≖ԅ" | clipit
+fi
+
