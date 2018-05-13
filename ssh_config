@@ -5,9 +5,9 @@ Host directmail
     HostName qa.directmail2.com
     user directmail
 
-Host do
-    HostName api.fatboyxpc.com
-    user james
+Host cidm
+    HostName ci.dm20.com
+    user directmail
 
 host jfly
     HostName clark.jflei.com
@@ -30,6 +30,10 @@ Host cusa
 Host fatboyxpc
     HostName fatboyxpc.com
     user fatboyxp
+
+Host matchdevs
+    HostName dev.matchdevs.com
+    user matchdevs
 
 Host wcap
     HostName worldcubeassociation.org
