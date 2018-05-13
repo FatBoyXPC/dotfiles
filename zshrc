@@ -144,6 +144,13 @@ bindkey "^W" backward-kill-dir
 
 #####################
 
+
+####
+### Set up ctrl-shift-n for VTE
+###
+[[ -f /etc/profile.d/vte.sh ]] && source /etc/profile.d/vte.sh
+##################################
+
 # From https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent
 if ! pgrep -u $USER ssh-agent > /dev/null; then
   ssh-agent > ~/.ssh-agent-thing
