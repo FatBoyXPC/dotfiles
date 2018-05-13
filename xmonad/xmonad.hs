@@ -95,9 +95,6 @@ myKeys =
 
         ((myModMask .|. shiftMask, xK_Return), spawn "emoji-keyboard -k"),
 
-        -- Lock the screen using gnome-screensaver
-        ((winMask, xK_l), spawn "gnome-screensaver-command -l"),
-
         -- Swap the focused window and the master window
         -- The default uses return, but semicolon is easier, and
         -- doesn't conflict with browers =)
