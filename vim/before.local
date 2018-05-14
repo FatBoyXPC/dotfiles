@@ -1,3 +1,0 @@
-let g:spf13_no_views = 1
-let g:spf13_no_easyWindows = 1
-let g:spf13_no_autochdir = 1
