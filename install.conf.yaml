@@ -11,10 +11,10 @@
         force: true
         create: true
         path: dunst/
-    ~/.config/nvim/init.vim:
+    ~/.config/nvim:
         force: true
         create: true
-        path: ~/.vimrc
+        path: vim
     ~/.config/roxterm.sourceforge.net:
         force: true
         create: true
