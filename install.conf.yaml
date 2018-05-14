@@ -46,12 +46,12 @@
     ~/.tmux.conf:
         force: true
         path: tmux.conf
-    ~/.vimrc.local:
+    ~/.vimrc:
         force: true
-        path: vim/local
-    ~/.vimrc.before.local:
+        path: vim/vimrc
+    ~/.vim:
         force: true
-        path: vim/before.local
+        path: vim
     ~/.vimrc.bundles.local:
         force: true
         path: vim/bundles.local

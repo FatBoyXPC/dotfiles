@@ -1,8 +1,0 @@
-Plugin 'joonty/vdebug'
-Plugin 'ervandew/supertab'
-Plugin 'janko-m/vim-test'
-Plugin 'benmills/vimux'
-Plugin 'phpactor/phpactor'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'airblade/vim-gitgutter'
