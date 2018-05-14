@@ -22,7 +22,7 @@ Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'xtal8/traces.vim'
+Plug 'markonm/traces.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
 Plug 'neomake/neomake'
