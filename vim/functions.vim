@@ -12,6 +12,10 @@ function! FatRunnerStrategy(cmd)
   call system("fat-runner run " . shellescape("clear;" . a:cmd))
 endfunction
 
+function! ExpandSnippet(snippet)
+    execute 'normal! a'.a:snippet."\<c-r>=UltiSnips#ExpandSnippet()\<cr>"
+endfunction
+
 "function! Shtuff(...)
     "if exists(a:1)
         "echo a:1

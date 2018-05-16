@@ -1,5 +1,7 @@
 let mapleader = ','
 
+nnoremap <leader>deh O<esc>:call ExpandSnippet('deh')<cr>==
+nnoremap <leader>weh O<esc>:call ExpandSnippet('weh')<cr>==
 nnoremap <Leader>cf :let @+ = expand("%")<CR> " copy file path
 nnoremap <Leader>sp :e ~/scratchpad<CR>
 nnoremap <Leader>sv :source ~/.vimrc<CR>

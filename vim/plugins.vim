@@ -26,6 +26,7 @@ Plug 'markonm/traces.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
 Plug 'neomake/neomake'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -42,3 +43,7 @@ let g:vdebug_options = {"break_on_open": 0}
 let test#strategy = "fat_runner"
 let g:phpactorPhpBin = '/usr/bin/php'
 let g:test#custom_strategies = {'fat_runner': function('FatRunnerStrategy')}
+"let g:UltiSnipsSnippetsDir = g:configPath . '/UltiSnips'
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
