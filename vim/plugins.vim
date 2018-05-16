@@ -27,9 +27,15 @@ Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
 Plug 'neomake/neomake'
 Plug 'SirVer/ultisnips'
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 Plug 'kristijanhusak/deoplete-phpactor'
 
 call plug#end()
