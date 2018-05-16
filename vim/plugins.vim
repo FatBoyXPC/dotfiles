@@ -27,6 +27,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
 Plug 'neomake/neomake'
 Plug 'SirVer/ultisnips'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'kristijanhusak/deoplete-phpactor'
 
 call plug#end()
 
@@ -39,6 +43,7 @@ let g:syntastic_php_phpcs_args = '--standard=phpcs_ruleset.xml'
 let g:php_cs_fixer_config_file = ".php_cs"
 set rtp+=/usr/bin/fzf
 
+let g:deoplete#enable_at_startup = 1
 let g:vdebug_options = {"break_on_open": 0}
 let test#strategy = "fat_runner"
 let g:phpactorPhpBin = '/usr/bin/php'
