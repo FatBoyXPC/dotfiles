@@ -3,14 +3,22 @@ let mapleader = ','
 nnoremap <leader>deh O<esc>:call ExpandSnippet('deh')<cr>==
 nnoremap <leader>weh O<esc>:call ExpandSnippet('weh')<cr>==
 nnoremap <Leader>cf :let @+ = expand("%")<CR> " copy file path
-nnoremap <Leader>sp :e ~/scratchpad<CR>
-nnoremap <Leader>sv :source ~/.vimrc<CR>
+
+" Files: {
+    nnoremap <Leader>sp :e ~/scratchpad<CR>
+
+    nnoremap <Leader>vf :e ~/.vim/functions.vim<CR>
+    nnoremap <Leader>vm :e ~/.vim/mappings.vim<CR>
+    nnoremap <Leader>vr :e ~/.vim/myrc.vim<CR>
+    nnoremap <Leader>vp :e ~/.vim/plugins.vim<CR>
+" }
 
 " Editing: {
     inoremap ;; <ESC>A;<ESC>
     inoremap ,, <ESC>A,<ESC>
 
-    xmap S <Plug>(operator-sandwich-add) " Surround in visual/selection mode
+    " Surround in visual/selection mode
+    xmap S <Plug>(operator-sandwich-add)
 
     nnoremap Y y$
 
@@ -36,15 +44,21 @@ nnoremap <Leader>sv :source ~/.vimrc<CR>
     nnoremap <leader>b :Buffers<CR>
     nnoremap <C-p> :Files<CR>
     nnoremap <Leader>fu :BTags<CR>
-    nnoremap <silent> <leader>gb :Gblame<CR>
     nnoremap <silent> <leader>tt :TagbarToggle<CR>
     nnoremap <Leader>ut :UndotreeToggle<CR>
 
+    " Display all lines with keyword under cursor " and ask which one to jump to
+    nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+" }
+
+" Git: {
     " Find merge conflict markers
     map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 
-    " Display all lines with keyword under cursor " and ask which one to jump to
-    nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+    nnoremap <leader>dg2 :diffget //2<CR>:diffupdate<CR>
+    nnoremap <leader>dg3 :diffget //3<CR>:diffupdate<CR>
+    nnoremap <leader>gd :Gvdiff<CR>
+    nnoremap <silent> <leader>gb :Gblame<CR>
 " }
 
 " Testing: {
