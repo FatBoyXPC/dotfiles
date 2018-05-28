@@ -46,15 +46,9 @@
     ~/.tmux.conf:
         force: true
         path: tmux.conf
-    ~/.vimrc:
-        force: true
-        path: vim/vimrc
     ~/.vim:
         force: true
         path: vim
-    ~/.vimrc.bundles.local:
-        force: true
-        path: vim/bundles.local
     ~/.Xresources: Xresources
     ~/.xinitrc: xinitrc
     ~/.Xmodmap:
