@@ -103,8 +103,10 @@ runtime! mappings.vim
 
     autocmd BufWritePre * call StripTrailingWhitespace()
 
-    autocmd FileType php setlocal omnifunc=phpactor#Complete
-    autocmd FileType php let g:phpactorPhpBin = '/usr/bin/php'
+    augroup autosource_vimrc
+        autocmd!
+        autocmd autosource_vimrc BufWritePost $MYVIMRC,{myrc,plugins,functions,mappings}.vim nested source $MYVIMRC | AirlineRefresh
+    augroup END
 
     "autocmd BufWritePost * execute Shtuff()
 " }
