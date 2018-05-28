@@ -2,9 +2,6 @@ runtime! functions.vim
 runtime! plugins.vim
 runtime! mappings.vim
 
-"neomake or ale instead of syntastic
-"ultisnip instead of neosnippet
-
 " General: {
     syntax on
     filetype plugin indent on
