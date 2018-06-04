@@ -28,7 +28,7 @@ Config { font = "xft:Ubuntu Mono Regular:size=8:bold:antialias=true"
                         , Run Battery[ "--template" , "Battery: <acstatus>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
-                             , "--low"      , "darkred"
+                             , "--low"      , "red"
                              , "--normal"   , "darkorange"
                              , "--high"     , "darkgreen"
 
