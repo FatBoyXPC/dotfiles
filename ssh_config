@@ -31,6 +31,10 @@ Host fatboyxpc
     HostName fatboyxpc.com
     user fatboyxp
 
+Host htpc
+    HostName 192.168.2.90
+    user james
+
 Host matchdevs
     HostName dev.matchdevs.com
     user matchdevs
