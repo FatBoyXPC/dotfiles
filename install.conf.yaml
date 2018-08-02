@@ -15,10 +15,6 @@
         force: true
         create: true
         path: vim
-    ~/.config/roxterm.sourceforge.net:
-        force: true
-        create: true
-        path: roxterm.sourceforge.net
     ~/.config/synapse/config.json:
         create: true
         force: true
