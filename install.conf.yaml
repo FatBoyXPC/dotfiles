@@ -30,6 +30,10 @@
         create: true
         force: true
         path: gitconfig
+    ~/.floorc.json:
+        create: true
+        force: true
+        path: floorc.json
     ~/.git_templates: git_templates/
     ~/.local/share/applications/mimeapps.list:
         create: true
