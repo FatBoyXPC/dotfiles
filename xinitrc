@@ -16,7 +16,7 @@ fi
 volnoti -t 1
 
 # seems like /etc/default/keyboard is getting ignored, so let's set this here
-#setxkbmap -option compose:lwin
+setxkbmap -option compose:rctrl
 
 xmodmap ~/.Xmodmap
 xcape
