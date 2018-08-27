@@ -42,7 +42,8 @@ nnoremap <Leader>cf :let @+ = expand("%")<CR> " copy file path
 
 " Navigation: {
     nnoremap <leader>b :Buffers<CR>
-    nnoremap <C-p> :Files<CR>
+    nnoremap <C-P> :GFiles<CR>
+    nnoremap <Leader>af :Files<CR>
     nnoremap <Leader>fu :BTags<CR>
     nnoremap <silent> <leader>tt :TagbarToggle<CR>
     nnoremap <Leader>ut :UndotreeToggle<CR>
@@ -81,7 +82,7 @@ nnoremap <Leader>cf :let @+ = expand("%")<CR> " copy file path
 " Refactoring: {
     nnoremap <Leader>u :call phpactor#UseAdd()<CR>
     nnoremap <Leader>e :call phpactor#ClassExpand()<CR>
-    vnoremap <silent><Leader>em :call phpactor#ExtractMethod()<CR>
+    vnoremap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
     "nnoremap <Leader>pp :call phpactor#ContextMenu()<CR>
     nnoremap <Leader>o :call phpactor#GotoDefinition()<CR>
     "nnoremap <Leader>pd :call phpactor#OffsetTypeInfo()<CR>
