@@ -4,6 +4,7 @@
 	signingkey = C4ED3CA232118969
 [core]
     editor = vim
+    pager = diff-so-fancy | less $LESS
 [init]
 	templatedir = ~/.git_templates
 [alias]
