@@ -1,15 +1,15 @@
 [user]
-	name = James LaChance
-	email = fatboyxpc@gmail.com
-	signingkey = C4ED3CA232118969
+    name = James LaChance
+    email = fatboyxpc@gmail.com
+    signingkey = C4ED3CA232118969
 [core]
     editor = vim
     pager = diff-so-fancy | less $LESS
 [init]
-	templatedir = ~/.git_templates
+    templatedir = ~/.git_templates
 [alias]
-	ctags = !.git/hooks/ctags
+    ctags = !.git/hooks/ctags
 [github]
-	user = FatBoyXPC
+    user = FatBoyXPC
 [commit]
-	gpgsign = true
+    gpgsign = true
