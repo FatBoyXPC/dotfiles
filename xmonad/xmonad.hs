@@ -41,14 +41,8 @@ myBorderWidth = 2
 windowPlacement = composeAll [
             -- use `xprop` to get window information
 
-            -- Skype Conversations
-            role =? "conversation" --> doShift "3",
-
             role =? "dev-window" --> doShift "2",
             role =? "server-window" --> doShift "5",
-
-            -- Pidgin Conversations
-            role =? "ConversationsWindow" --> doShift "3",
 
             -- Steam Login
             className =? "Steam" <&&> fmap (isInfixOf "Steam Login") title --> doShift "1",
@@ -60,21 +54,12 @@ windowPlacement = composeAll [
             className =? "Steam" <&&> fmap (not . isInfixOf "Game Info") title --> doShift "9",
 
             className =? "Slack" --> doShift "3",
-            className =? "Sublime_text" --> doShift "2",
             className =? "Thunderbird" --> doShift "7",
-            className =? "VirtualBox" --> doShift "8",
-
-            -- Skype Windows (except previously mentioned)
-            className =? "Skype" --> doShift "9",
-
-            -- Pidgin Buddy List
-            role =? "buddy_list" --> doShift "9",
 
             -- Fix for GIMP windows
             className =? "Gimp" --> doFloat,
 
-            -- Fix for KeePass2
-            className =? "KeePass2" --> doFloat
+            className =? "Emoji-keyboard" --> doFloat
         ] where role = stringProperty "WM_WINDOW_ROLE"
 
 -- https://github.com/hcchu/dotfiles/blob/master/.xmonad/xmonad.hs
@@ -143,7 +128,7 @@ myKeys =
       | (key, sc) <- zip [xK_w, xK_r, xK_e] [0..]
       , (f, m) <- [(W.view, 0), ((\t -> W.view t . W.shift t), shiftMask)]]
 
-main = do 
+main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ desktopConfig {
         manageHook = manageDocks <+> manageHook desktopConfig <+> windowPlacement,
