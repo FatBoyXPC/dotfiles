@@ -58,10 +58,11 @@ let g:php_cs_fixer_config_file = '.php_cs'
 
 let g:deoplete#enable_at_startup = 1
 let g:vdebug_options = {"break_on_open": 0}
-let test#strategy = "fat_runner"
 let g:phpactorPhpBin = '/usr/bin/php'
+let g:gist_post_private = 1
+let test#strategy = "fat_runner"
 let g:test#custom_strategies = {'fat_runner': function('FatRunnerStrategy')}
-"let g:UltiSnipsSnippetsDir = g:configPath . '/UltiSnips'
+
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
