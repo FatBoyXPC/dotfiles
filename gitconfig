@@ -5,6 +5,7 @@
 [core]
     editor = vim
     pager = diff-so-fancy | less $LESS
+    excludesfile = ~/.gitignore_global
 [init]
     templatedir = ~/.git_templates
 [alias]

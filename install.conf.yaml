@@ -30,6 +30,10 @@
         create: true
         force: true
         path: gitconfig
+    ~/.gitignore_global:
+        create: true
+        force: true
+        path: gitignore_global
     ~/.floorc.json:
         create: true
         force: true
