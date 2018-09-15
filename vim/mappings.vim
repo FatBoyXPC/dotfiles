@@ -80,7 +80,7 @@ nnoremap <Leader>cf :let @+ = expand("%")<CR> " copy file path
 " }
 
 " Refactoring: {
-    nnoremap <Leader>u :call phpactor#UseAdd()<CR>
+    nnoremap <Leader>ua :call phpactor#UseAdd()<CR>
     nnoremap <Leader>e :call phpactor#ClassExpand()<CR>
     vnoremap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
     "nnoremap <Leader>pp :call phpactor#ContextMenu()<CR>
