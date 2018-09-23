@@ -4,6 +4,7 @@ source "$(dirname "$0")/project-functions.sh"
 
 cd ~/dev/dm20
 
+needSudo
 switchphp 5
 
 setupDevWorkspace dm20

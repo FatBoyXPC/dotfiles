@@ -1,14 +1,24 @@
-if [ $EUID != 0 ]; then
-  sudo -E "$0" "$@"
-  exit $?
-fi
+function needSudo() {
+    if [ $EUID != 0 ]; then
+        sudo -E "$0" "$@"
+        exit $?
+    fi
+}
 
 function terminalOn() {
   CMD="$1"
   WORKSPACE="$2-window"
 
-  sudo -u $SUDO_USER termite -r $WORKSPACE -e "shell-and-stuff \"$CMD\"" &
+  unsudo termite -r $WORKSPACE -e "shell-and-stuff \"$CMD\"" &
   sleep 0.1 # force windows to be created in order
+}
+
+function unsudo() {
+    if [ $EUID != 0 ]; then
+        "$@"
+    else
+        sudo -u $SUDO_USER "$@"
+    fi
 }
 
 function setupDevWorkspace() {

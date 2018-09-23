@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+source "$(dirname "$0")/project-functions.sh"
+
+cd ~/aware3/source
+
+terminalOn "git status" dev
+
+terminalOn "fat-runner become
+docker exec -it source_webhost_1 bash
+cd tests" dev
+
+terminalOn vim dev
+
+terminalOn "ngrok start --all" server
+terminalOn "mycli -u airealmo_201206 -p Hvhxpkf95BMVGS2ukbT4wCbha4wJQ7MKQGuv82T6 -P 3000 -D airealmo_ampdev" server
