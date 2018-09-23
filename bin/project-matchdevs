@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
+needSudo
 source "$(dirname "$0")/project-functions.sh"
 
 cd ~/dev/matchdevs
 
-needSudo
 switchphp 7
 
 setupDevWorkspace matchdevs
