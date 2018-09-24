@@ -59,7 +59,8 @@ windowPlacement = composeAll [
             -- Fix for GIMP windows
             className =? "Gimp" --> doFloat,
 
-            className =? "Emoji-keyboard" --> doFloat
+            -- Emoji picker!
+            role =? "emoji-picker" --> doFloat
         ] where role = stringProperty "WM_WINDOW_ROLE"
 
 -- https://github.com/hcchu/dotfiles/blob/master/.xmonad/xmonad.hs
@@ -78,7 +79,7 @@ myKeys =
 
         ((myModMask, xK_semicolon), windows W.swapMaster),
 
-        ((myModMask .|. shiftMask, xK_Return), spawn "emoji-keyboard -k"),
+        ((myModMask .|. shiftMask, xK_Return), spawn "emoji"),
 
         -- Swap the focused window and the master window
         -- The default uses return, but semicolon is easier, and
@@ -144,7 +145,6 @@ main = do
         startupHook = do
             setWMName "LG3D"
             spawn "trayer-fix"
-            spawn "pgrep emoji-keyboard || emoji-keyboard"
             spawn "pgrep screencloud || screencloud"
             spawn "pgrep insync || insync start"
             spawn "pgrep nm-applet || nm-applet"
