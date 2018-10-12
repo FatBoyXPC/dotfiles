@@ -102,6 +102,10 @@ function de {
     $CMD
 }
 
+function dsf {
+    diff -u --color=always "$@" | diff-so-fancy | less "$LESS"
+}
+
 function cgl {
     ~/bin/git-commit-link.py $1 | clipit
 }
