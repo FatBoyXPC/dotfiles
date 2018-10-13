@@ -6,6 +6,10 @@ function main() {
 
     SELECTED_EMOJI=$(cat ~/tmp/emoji | grep -o .$)
 
+    if [ -z "$SELECTED_EMOJI" ]; then
+        return 0
+    fi
+
     echo -n $SELECTED_EMOJI | clipit
     xdotool type --clearmodifiers $SELECTED_EMOJI
 }
