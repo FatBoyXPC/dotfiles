@@ -15,6 +15,23 @@ function main() {
 }
 
 EMOJIS=$(echo '
+disapproval                                     |ಠ_ಠ
+fliptable                                       | (╯°□°)╯︵ ┻━┻
+flipbigtable                                    | (╯°□°)╯︵ ┻━━━┻
+fliptableharder                                 | (ノಠ益ಠ)ノ彡 ┻━┻
+tableflipsyou                                   | ノ┬─┬ノ ︵ ( \\o°o )\\
+puttableback                                    | ┬──┬◡ﾉ(° -°ﾉ)
+puttablesback                                   | ┬──┬︵/(ツ)\︵┬──┬
+shrug text                                      | ¯\_(ツ)_/¯
+handsup                                         | ٩◔̯◔۶
+sad                                             | sad
+ayy                                             | ԅ(≖‿≖ԅ
+eyy                                             | 👈👈😎
+fight                                           | (ง'̀-'́)ง
+troll                                           | ( ͡° ͜ʖ ͡°)
+middle fingers                                  | ╭∩╮（︶︿︶）╭∩
+dual wield                                      |  ̿'̿'̵͇̿̿\з=(•_•)=ε/̵͇̿̿/'̿'̿
+pew pew                                         | (⌐■_■)–︻╦╤─ • • • • •
 grinning face                                   |😀
 smiling face with open mouth                    |😃
 smiling face with open mouth & smiling eyes     |😄
