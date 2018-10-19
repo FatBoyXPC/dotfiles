@@ -14,3 +14,5 @@
     user = FatBoyXPC
 [commit]
     gpgsign = true
+[interactive]
+    diffFilter = /usr/share/git/diff-highlight/diff-highlight | less
