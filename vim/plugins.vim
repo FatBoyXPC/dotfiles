@@ -27,6 +27,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
 Plug 'SirVer/ultisnips'
 Plug 'w0rp/ale'
+Plug 'jesseleite/vim-agriculture'
 
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
