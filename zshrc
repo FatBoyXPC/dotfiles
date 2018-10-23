@@ -114,6 +114,35 @@ function clcl {
     cgl `git rev-parse HEAD`
 }
 
+function filerange() {
+    local file=$1
+    local start=$2
+    local end=$3
+    local line_count=$(cat "$file" | wc -l)
+    local file_output=$(cat "$file")
+
+    if [ $line_count -ge $end ]; then
+        file_output=$(echo $file_output | head -n $end)
+    fi
+
+    if [ $start -ge 1 ]; then
+        diff_range=$(($end-$start+1))
+        file_output=$(echo $file_output | tail -n $diff_range)
+    fi
+
+    echo $file_output
+}
+
+function filediff() {
+    local file=$1
+    local start_a=$2
+    local end_a=$3
+    local start_b=$4
+    local end_b=$5
+
+    dsf <(filerange $file $start_a $end_a) <(filerange $file $start_b $end_b)
+}
+
 bindkey '\ev' edit-command-line
 
 source /usr/share/fzf/key-bindings.zsh
