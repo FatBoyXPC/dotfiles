@@ -96,6 +96,11 @@ if [[ -n "$SSH_CONNECTION" ]]; then
     PROMPT='%m ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 fi
 
+function alf() {
+    local foo=$(alias | fzf | sed "s/.*='\(.*\)'/\1/")
+    eval $foo
+}
+
 function de {
     CMD="docker exec -it --detach-keys='ctrl-^,q' $1 env TERM=xterm bash"
     echo $CMD
