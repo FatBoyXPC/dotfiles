@@ -61,8 +61,8 @@ let g:deoplete#enable_at_startup = 1
 let g:vdebug_options = {"break_on_open": 0}
 let g:phpactorPhpBin = '/usr/bin/php'
 let g:gist_post_private = 1
-let test#strategy = "fat_runner"
-let g:test#custom_strategies = {'fat_runner': function('FatRunnerStrategy')}
+let test#strategy = "shtuff"
+let g:test#custom_strategies = {'shtuff': function('ShtuffStrategy')}
 
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"

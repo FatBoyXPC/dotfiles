@@ -8,25 +8,10 @@ function! StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 
-function! FatRunnerStrategy(cmd)
-  call system("fat-runner run " . shellescape("clear;" . a:cmd))
+function! ShtuffStrategy(cmd)
+  call system("shtuff into " . shellescape(g:shtuff_receiver) . " " . shellescape("clear;" . a:cmd))
 endfunction
 
 function! ExpandSnippet(snippet)
     execute 'normal! a'.a:snippet."\<c-r>=UltiSnips#ExpandSnippet()\<cr>"
 endfunction
-
-"function! Shtuff(...)
-    "if exists(a:1)
-        "echo a:1
-        "let g:shtuff = a:1
-        "return
-    "endif
-
-    "if !exists('g:shtuff')
-        "echo 'shtuff command not defined'
-        "return
-    "endif
-
-    "call system("fat-runner run '" . g:shtuff . "'")
-"endfunction

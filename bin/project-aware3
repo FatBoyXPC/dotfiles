@@ -6,7 +6,7 @@ cd ~/aware3/source
 
 terminalOn "git status" dev
 
-terminalOn "fat-runner become
+terminalOn "shtuff as devrunner
 docker exec -it source_webhost_1 bash
 cd tests" dev
 

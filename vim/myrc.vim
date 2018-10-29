@@ -18,6 +18,7 @@ runtime! mappings.vim
     set undoreload=10000
     "set ttimeout
     "set ttimeoutlen=50
+    let g:shtuff_receiver = 'devrunner'
 
     " maybe?
     "set iskeyword-=.                    " '.' is an end of word designator
@@ -89,8 +90,6 @@ runtime! mappings.vim
 " Encoding: {
     scriptencoding utf-8
 " }
-
-"command! -nargs=* Shtuff call Shtuff(split(<q-args>))
 
 " Files: {
     "autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS

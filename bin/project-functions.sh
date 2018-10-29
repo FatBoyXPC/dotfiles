@@ -9,7 +9,7 @@ function terminalOn() {
   CMD="$1"
   WORKSPACE="$2-window"
 
-  unsudo termite -r $WORKSPACE -e "shell-and-stuff \"$CMD\"" &
+  unsudo termite -r $WORKSPACE -e "shtuff new \"$CMD\"" &
   sleep 0.1 # force windows to be created in order
 }
 
@@ -23,7 +23,7 @@ function unsudo() {
 
 function setupDevWorkspace() {
   terminalOn "artisan tinker" dev
-  terminalOn "fat-runner become" dev
+  terminalOn "shtuff as devrunner" dev
   terminalOn vim dev
 }
 
