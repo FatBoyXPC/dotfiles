@@ -16,8 +16,6 @@ function! ExpandSnippet(snippet)
     execute 'normal! a'.a:snippet."\<c-r>=UltiSnips#ExpandSnippet()\<cr>"
 endfunction
 
-command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(agriculture#smart_quote_input(<q-args>), <bang>0)
-
 "function! Shtuff(...)
     "if exists(a:1)
         "echo a:1

@@ -73,6 +73,7 @@ nnoremap <Leader>fr :w<CR>:call system("fat-rerunner " . shellescape(g:shtuffee_
 
 " Search: {
     nmap <silent> <leader>/ :set invhlsearch<CR>
+    nnoremap <Leader>ag :AgRaw<Space>
 " }
 
 " UI: {
