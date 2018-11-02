@@ -7,6 +7,7 @@ runtime! mappings.vim
     filetype plugin indent on
     set hidden
     set history=1000
+    set nrformats="alpha,bin,hex" " Let ^A^X work with binary, hex or single letters
     set wildmenu
     set wildmode=list:longest,full
     set backspace=indent,eol,start
