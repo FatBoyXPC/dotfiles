@@ -28,11 +28,9 @@ nnoremap <Leader>fr :w<CR>:call system("fat-rerunner " . shellescape(g:shtuff_re
     vnoremap < <gv
     vnoremap > >gv
 
-    " This might be better with <C-_> as apparently sometimes terminal or vim
-    " sends that instead of <C-/>, but for now I'm keeping it like this since
-    " it's what I am actually pressing.
-    nmap <C-/> <Plug>NERDCommenterToggle
-    xmap <C-/> <Plug>NERDCommenterToggle
+    " I had this as <C-/> but my terminal/vim combo seems to not like that.
+    nmap <C-_> <Plug>NERDCommenterToggle
+    xmap <C-_> <Plug>NERDCommenterToggle
 
     " Allow using the repeat operator with a visual selection (!)
     " http://stackoverflow.com/a/8064607/127816
