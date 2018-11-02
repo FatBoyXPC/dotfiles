@@ -57,6 +57,8 @@ let g:ale_fix_on_save = 1
 let g:ale_php_phpcs_standard = 'phpcs_ruleset.xml'
 let g:php_cs_fixer_config_file = '.php_cs'
 
+let g:NERDCreateDefaultMappings = 0
+
 let g:deoplete#enable_at_startup = 1
 let g:vdebug_options = {"break_on_open": 0}
 let g:phpactorPhpBin = '/usr/bin/php'
