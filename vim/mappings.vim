@@ -4,6 +4,8 @@ nnoremap <leader>deh O<esc>:call ExpandSnippet('deh')<cr>==
 nnoremap <leader>weh O<esc>:call ExpandSnippet('weh')<cr>==
 nnoremap <Leader>fr :w<CR>:call system("fat-rerunner " . shellescape(g:shtuff_receiver))<CR>
 
+nnoremap <Leader>c :w\|bd<CR>
+
 " Files: {
     nnoremap <Leader>sp :e ~/scratchpad<CR>
 
