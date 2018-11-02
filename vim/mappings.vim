@@ -2,11 +2,12 @@ let mapleader = ','
 
 nnoremap <leader>deh O<esc>:call ExpandSnippet('deh')<cr>==
 nnoremap <leader>weh O<esc>:call ExpandSnippet('weh')<cr>==
-nnoremap <Leader>cf :let @+ = expand("%")<CR> " copy file path
 nnoremap <Leader>fr :w<CR>:call system("fat-rerunner " . shellescape(g:shtuff_receiver))<CR>
 
 " Files: {
     nnoremap <Leader>sp :e ~/scratchpad<CR>
+
+    nnoremap <Leader>cf :let @+ = expand("%")<CR> " copy file path
 
     nnoremap <Leader>vf :e ~/.vim/functions.vim<CR>
     nnoremap <Leader>vm :e ~/.vim/mappings.vim<CR>
