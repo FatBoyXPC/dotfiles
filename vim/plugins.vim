@@ -28,6 +28,7 @@ Plug 'machakann/vim-sandwich'
 Plug 'SirVer/ultisnips'
 Plug 'w0rp/ale'
 Plug 'jesseleite/vim-agriculture'
+Plug 'JamshedVesuna/vim-markdown-preview'
 
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -69,3 +70,9 @@ let g:test#custom_strategies = {'shtuff': function('ShtuffStrategy')}
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+let vim_markdown_preview_use_xdg_open=1
+let vim_markdown_preview_browser='chromium'
+"let vim_markdown_preview_temp_file=1
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<Leader>m'
