@@ -11,6 +11,10 @@
         force: true
         create: true
         path: dunst/
+    ~/.config/mimeapps.list:
+        create: true
+        force: true
+        path: mimeapps.list
     ~/.config/nvim:
         force: true
         create: true
@@ -39,10 +43,6 @@
         force: true
         path: floorc.json
     ~/.git_templates: git_templates/
-    ~/.local/share/applications/mimeapps.list:
-        create: true
-        force: true
-        path: mimeapps.list
     ~/.ssh/config:
         create: true
         force: true
