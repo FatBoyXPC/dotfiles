@@ -7,6 +7,7 @@ x-scheme-handler/unknown=google-chrome.desktop
 x-scheme-handler/mailto=thunderbird.desktop
 message/rfc822=thunderbird.desktop
 image/x-apple-ios-png=eog.desktop
+application/pdf=chromium.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=thunderbird.desktop;
