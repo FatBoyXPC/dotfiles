@@ -107,6 +107,4 @@ runtime! mappings.vim
         autocmd!
         autocmd autosource_vimrc BufWritePost $MYVIMRC,{myrc,plugins,functions,mappings}.vim nested source $MYVIMRC | AirlineRefresh
     augroup END
-
-    "autocmd BufWritePost * execute Shtuff()
 " }

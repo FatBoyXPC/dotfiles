@@ -8,10 +8,11 @@ nnoremap <Leader>c :update\|bd<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
-" Files: {
-    nnoremap <Leader>sp :e ~/scratchpad<CR>
 
+" Files: {
     nnoremap <Leader>pc :let @+ = expand("%")<CR> " copy file path
+
+    nnoremap <Leader>sp :e ~/scratchpad<CR>
 
     nnoremap <Leader>vf :e ~/.vim/functions.vim<CR>
     nnoremap <Leader>vm :e ~/.vim/mappings.vim<CR>
