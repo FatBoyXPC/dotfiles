@@ -16,6 +16,14 @@ function! ExpandSnippet(snippet)
     execute 'normal! a'.a:snippet."\<c-r>=UltiSnips#ExpandSnippet()\<cr>"
 endfunction
 
+function! DuplicateCurrentFile(path)
+    let path = "%:h/" . a:path
+    execute "saveas " . path
+    execute "edit " . path
+endfunction
+
+command! -bar -nargs=1 Duplicate call DuplicateCurrentFile(<q-args>)
+
 function! GetLinkForPlugin()
     normal ^f/"ayi'
     return "https://www.github.com/" . @a
