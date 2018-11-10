@@ -106,5 +106,6 @@ runtime! mappings.vim
     augroup autosource_vimrc
         autocmd!
         autocmd autosource_vimrc BufWritePost $MYVIMRC,{myrc,plugins,functions,mappings}.vim nested source $MYVIMRC | AirlineRefresh
+        autocmd BufReadPost plugins.vim call VimrcOnlyMappings()
     augroup END
 " }

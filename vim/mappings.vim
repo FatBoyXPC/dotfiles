@@ -108,3 +108,10 @@ nnoremap <Leader>q :q<CR>
     "nnoremap <Leader>cc :call phpactor#ClassNew()<CR>
     "nnoremap <Leader>fr :call phpactor#FindReferences()<CR>
 " }
+
+function! VimrcOnlyMappings()
+    nnoremap <buffer> <Leader>pa :call AddPluginFromClipboard()<CR>
+    nnoremap <buffer> <Leader>pc :let @+ = GetLinkForPlugin()<CR>
+    nnoremap <buffer> <Leader>po :call system("xdg-open " . GetLinkForPlugin())<CR>
+    nnoremap <buffer> <Leader>pr :call RemovePlugin()<CR>
+endfunction

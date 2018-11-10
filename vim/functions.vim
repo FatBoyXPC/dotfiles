@@ -15,3 +15,24 @@ endfunction
 function! ExpandSnippet(snippet)
     execute 'normal! a'.a:snippet."\<c-r>=UltiSnips#ExpandSnippet()\<cr>"
 endfunction
+
+function! GetLinkForPlugin()
+    normal ^f/"ayi'
+    return "https://www.github.com/" . @a
+endfunction
+
+function! AddPluginFromClipboard()
+    let plugin = "Plug '" . substitute(@+, "https://github.com/", "", "") . "'"
+    normal gg
+    call search("nvim")
+    call search("Plug ", 'b')
+    execute "normal o" . plugin
+    w
+    PlugInstall
+endfunction
+
+function! RemovePlugin()
+    normal dd
+    w
+    PlugClean
+endfunction
