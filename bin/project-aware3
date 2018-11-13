@@ -7,7 +7,7 @@ cd ~/aware3/source
 terminalOn "git status" dev
 
 terminalOn "shtuff as devrunner
-docker exec -it source_webhost_1 bash
+docker exec -it --detach-keys='ctrl-^,q' source_webhost_1 bash
 cd tests" dev
 
 terminalOn vim dev
