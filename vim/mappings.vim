@@ -33,7 +33,7 @@ nnoremap <Leader>q :q<CR>
     vnoremap < <gv
     vnoremap > >gv
 
-	nnoremap <Leader>tw :set wrap!<CR>
+    nnoremap <Leader>tw :set wrap!<CR>
 
     " I had this as <C-/> but my terminal/vim combo seems to not like that.
     nmap <C-_> <Plug>NERDCommenterToggle
