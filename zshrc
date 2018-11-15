@@ -148,6 +148,11 @@ function filediff() {
     dsf <(filerange $file $start_a $end_a) <(filerange $file $start_b $end_b)
 }
 
+function copyimage() {
+    local imagetype=$(xdg-mime query filetype "$1")
+    xclip -selection clipboard -t "$imagetype" -i < "$1"
+}
+
 bindkey '\ev' edit-command-line
 
 source /usr/share/fzf/key-bindings.zsh
