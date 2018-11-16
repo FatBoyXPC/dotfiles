@@ -7,6 +7,7 @@ alias artisan="php artisan"
 alias fixdocker='echo N | sudo tee /sys/module/overlay/parameters/metacopy'
 alias gaws="git add -A && git diff --cached -w | git apply --cached -R"
 alias gbdf="git branch --merged | ag feature | xargs git branch -d"
+alias lwtr="wttr 34638"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias o="xdg-open"
 alias phps="php -S localhost:8080"
