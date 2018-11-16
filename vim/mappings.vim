@@ -85,9 +85,9 @@ nnoremap <Leader>q :q<CR>
 
 " Search: {
     nnoremap <silent><leader>t/ :set invhlsearch<CR>
-    nnoremap <Leader>/ :AgRaw<Space>
-    vnoremap <Leader>/ "ay:AgRaw <C-r>a<Space>
-    nnoremap <Leader>* :AgRaw<Space>'<C-R><C-W>'
+    nmap <Leader>/ <Plug>AgRawSearch
+    vmap <Leader>/ <Plug>AgRawVisualSelection
+    nmap <Leader>* <Plug>AgRawWordUnderCursor
 " }
 
 " UI: {
