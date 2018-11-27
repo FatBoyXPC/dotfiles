@@ -9,7 +9,7 @@ function terminalOn() {
   CMD="$1"
   WORKSPACE="$2-window"
 
-  unsudo termite -r $WORKSPACE -e "shtuff new \"$CMD\"" &
+  unsudo termite -r "$WORKSPACE" -e "shtuff new \"$CMD\"" &
   sleep 0.1 # force windows to be created in order
 }
 
@@ -17,7 +17,7 @@ function unsudo() {
     if [ $EUID != 0 ]; then
         "$@"
     else
-        sudo -u $SUDO_USER "$@"
+        sudo -u "$SUDO_USER" "$@"
     fi
 }
 

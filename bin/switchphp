@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/env bash
 
 BIN=""
 BIN_PATH="/usr/bin/"
@@ -17,5 +17,5 @@ if [[ -z $BIN ]]; then
   exit 1
 fi
 
-sudo ln -s --force $BIN_PATH$BIN $LOCAL_BIN
-echo `php --version`
+sudo ln -s --force "$BIN_PATH$BIN $LOCAL_BIN"
+php --version

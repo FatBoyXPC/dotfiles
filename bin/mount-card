@@ -10,4 +10,4 @@
 sudo mount -o uid=1000,gid=1000 -L "NIKON D3300" "/media/james/NIKON D3300"
 
 # Edit mtab to not be FUSE (fuseblk) and trick libgphoto2
-sudo sed -i "s/\(NIKON.*\) fuseblk/\1 fusblk/" /etc/mtab
+sudo sed -i "s/\\(NIKON.*\\) fuseblk/\\1 fusblk/" /etc/mtab

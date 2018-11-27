@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+# shellcheck source=./project-functions.sh
 source "$(dirname "$0")/project-functions.sh"
+
+# shellcheck disable=SC2119
 needSudo
 
-cd ~/dev/dm20
+cd ~/dev/dm20 || exit 1
 
 switchphp 5
 

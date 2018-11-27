@@ -4,13 +4,13 @@ function main() {
     termite -r emoji-picker -e "bash -c 'echo -n \"$EMOJIS\" | fzf -m > ~/tmp/emoji'"
     sleep 0.1
 
-    SELECTED_EMOJI=$(sed "s/.*  \([^ ].*\)/\1/" ~/tmp/emoji)
+    SELECTED_EMOJI=$(sed "s/.*  \\([^ ].*\\)/\\1/" ~/tmp/emoji)
 
     if [ -z "$SELECTED_EMOJI" ]; then
         return 0
     fi
 
-    echo -n $SELECTED_EMOJI | clipit
+    echo -n "$SELECTED_EMOJI" | clipit
     xdotool key --clearmodifiers ctrl+shift+v
 }
 

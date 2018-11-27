@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ "`hostname`" == "jamespc" ]; then
+if [ "$(hostname)" == "jamespc" ]; then
 	DISTANCE=385
 fi
 
-if [ "`hostname`" == "fatboyxpc" ]; then
+if [ "$(hostname)" == "fatboyxpc" ]; then
 	DISTANCE=740
 fi
 
