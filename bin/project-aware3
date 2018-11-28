@@ -3,6 +3,11 @@
 # shellcheck source=./project-functions.sh
 source "$(dirname "$0")/project-functions.sh"
 
+# shellcheck disable=SC2119
+needSudo
+
+sudo ifconfig lo:0 10.254.254.254
+
 cd ~/aware3/source || exit 1
 
 terminalOn "git status" dev
