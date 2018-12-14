@@ -12,11 +12,16 @@ def _pamixer(args):
     return output.decode('utf-8')
 
 def _pamixer_with_sink(args):
-    return _pamixer(['--sink', _sink()] + args)
+    return _pamixer(args)
+
+    # With this fresh install of Arch on breq (x1 carbon gen5), I'm only
+    # seeing 1 sink at a time, and you select the output via profiles instead.
+    # This makes this code simpler =)
+    #<<<return _pamixer(['--sink', _sink()] + args)
 
 def _sink():
     sinks_precedence = [
-        # This is for kaladin 'alsa_output.usb-C-Media_Electronics_Inc._ThinkPad_OneLink_Pro_Dock_Audio-00.analog-stereo',
+        'alsa_output.pci-0000_00_1f.3.hdmi-stereo',
         'alsa_output.pci-0000_00_1f.3.analog-stereo',
     ]
     sinks_list = _pamixer(['--list-sinks'])

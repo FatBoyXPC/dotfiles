@@ -66,7 +66,8 @@ windowPlacement = composeAll [
 -- https://github.com/hcchu/dotfiles/blob/master/.xmonad/xmonad.hs
 muteAndShowVolume = "set_volume.py toggle-mute; show-volume.sh"
 changeVolume s = "set_volume.py " ++ s ++ "; show-volume.sh"
-toggleMicMute = "pactl set-source-mute 1 toggle"
+-- https://obsproject.com/forum/threads/hotkey-to-mute-mic-input.22852/
+toggleMicMute = "pactl set-source-mute $(pacmd list-sources|awk '/\\* index:/{ print $3 }') toggle; show-mic-mute.sh"
 changeBrightness s = "xbacklight " ++ s ++ "; show-brightness.sh; xbacklight > ~/.brightness"
 
 myKeys =
