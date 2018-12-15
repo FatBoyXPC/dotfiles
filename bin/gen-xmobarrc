@@ -21,6 +21,7 @@ Config { font = "xft:Ubuntu Mono Regular:size=8:bold:antialias=true"
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
                         , Run Date "%a %b %_d %Y %H:%M" "date" 10
                         , Run Com "get-volume.py" [] "myvolume" 10
+                        , Run Com "trayer-padding-icon.sh" [] "trayerpad" 100
                         , Run StdinReader
 
                         <?php if ($laptop) : ?>
@@ -45,5 +46,5 @@ Config { font = "xft:Ubuntu Mono Regular:size=8:bold:antialias=true"
 
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "%StdinReader% }{ Vol: %myvolume% | %cpu% | %memory%<?php echo $laptopTemplateInfo; ?><fc=#ee9a00>%date%</fc> "
+        , template = "%StdinReader% }{ Vol: %myvolume% | %cpu% | %memory%<?php echo $laptopTemplateInfo; ?><fc=#ee9a00>%date%</fc> %trayerpad%"
         }
