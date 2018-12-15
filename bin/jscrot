@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# Change into script directory.
+cd "$(dirname "$0")"
+
+PID_FILE=jscrot.pid
+
+if [ -e $PID_FILE ]; then
+    kill `cat $PID_FILE`
+    echo "I see an ongoing jscrot, I'm going to kill it and exit"
+    exit 1
+fi
+
+# Sound notification to let one know when recording is about to start (and ends)
+beep() {
+    paplay /usr/share/sounds/freedesktop/stereo/bell.oga &
+}
+
+SCREENSHOTS_DIR=$HOME/screenshots
+mkdir -p $SCREENSHOTS_DIR
+
+file_noext=$SCREENSHOTS_DIR/"`date +"%Y-%m-%d_%H:%M:%S"`_$HOSTNAME"
+
+ask_user_for_region() {
+   #<<< slop=$(slop -f "%w %h %x %y %i") || exit 1
+   #<<< read -r W H X Y ID < <(echo $slop)
+   # Playing around with flameshot. See https://github.com/jfly/flameshot/tree/add-gui-selection-option.
+   flameshot=$(flameshot gui --selection) || exit 1
+   read -r W H X Y < <(echo $flameshot)
+   G="${W}x${H}+${X}+${Y}"
+}
+
+if [ "$1" == "--video" ]; then
+    file=${file_noext}.gif
+    ask_user_for_region
+    byzanz-record --verbose --cursor --exec="savepid $PID_FILE bash -c 'while true; do sleep 1; done'" --delay=0 --x=$X --y=$Y --width=$W --height=$H $file
+    beep
+    # TODO - copying this file doesn't work. see https://bugs.chromium.org/p/chromium/issues/detail?id=356210
+elif [ "$1" == "--select" ]; then
+    file=${file_noext}.png
+    ask_user_for_region
+    maim -g $G --hidecursor $file
+else
+    file=${file_noext}.png
+    maim --hidecursor $file
+fi
+
+# TODO - cleanup? see https://unix.stackexchange.com/a/247846
+# For gif, maybe generate html and data uri?
+# Copy that file to the clipboard.
+xclip -selection clipboard -t "image/${file##*.}" $file
