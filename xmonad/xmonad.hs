@@ -56,6 +56,9 @@ windowPlacement = composeAll [
             className =? "Slack" --> doShift "3",
             className =? "Thunderbird" --> doShift "7",
 
+            -- Float flameshot's imgur window
+            className =? "flameshot" <&&> fmap (isInfixOf "Upload to Imgur") title --> doFloat,
+
             -- Fix for GIMP windows
             className =? "Gimp" --> doFloat,
 
