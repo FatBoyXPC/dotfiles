@@ -5,4 +5,4 @@
 sleep 1
 
 killall trayer
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --height 23 --transparent true --alpha 0 --tint 0 --widthtype request &
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --height 24 --transparent true --alpha 0 --tint 0 --widthtype request &
