@@ -8,6 +8,14 @@ nnoremap <Leader>c :update\|bd<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
+"cnoremap <C-a> <Home>
+"cnoremap <C-e> <End>
+"cnoremap <C-p> <Up>
+"cnoremap <C-n> <Down>
+"cnoremap <C-b> <Left>
+"cnoremap <C-f> <Right>
+"cnoremap <M-b> <S-Left>
+"cnoremap <M-f> <S-Right>
 
 " Files: {
     nnoremap <Leader>pc :let @+ = expand("%")<CR> " copy file path
