@@ -16,3 +16,6 @@
     gpgsign = true
 [interactive]
     diffFilter = /usr/share/git/diff-highlight/diff-highlight | less
+[tig "bind"]
+    main = ! !git revert %(commit)
+    status = N !@git add -N %(file)
