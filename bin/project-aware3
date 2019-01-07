@@ -18,5 +18,6 @@ cd tests" dev
 
 terminalOn vim dev
 
-terminalOn "ngrok start --all" server
+terminalOn "docker exec -it --detach-keys='ctrl-^,q' webhost bash
+tail -f /var/log/aware3/a3-system.log" server
 terminalOn "mycli -u airealmo_201206 -p Hvhxpkf95BMVGS2ukbT4wCbha4wJQ7MKQGuv82T6 -P 3000 -D airealmo_ampdev" server
