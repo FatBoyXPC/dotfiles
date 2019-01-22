@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HDMI="HDMI2"
+HDMI="HDMI1"
 
 if (xrandr | grep "$HDMI connected"); then
     xrandr --output $HDMI --auto
