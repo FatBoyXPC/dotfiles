@@ -19,3 +19,17 @@
 [tig "bind"]
     main = ! !git revert %(commit)
     status = N !@git add -N %(file)
+[color]
+    ui = true
+[color "diff-highlight"]
+    oldNormal = 196 bold
+    oldHighlight = 196 bold 52
+    newNormal = 34 bold
+    newHighlight = 34 bold 22
+[color "diff"]
+    meta = 130
+    frag = 33 bold dim
+    commit = 172 bold
+    old = 196 bold
+    new = 34 bold
+    whitespace = red reverse
