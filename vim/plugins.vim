@@ -18,7 +18,7 @@ Plug 'vim-scripts/HTML-AutoCloseTag'
 Plug 'mattn/emmet-vim'
 Plug 'vim-vdebug/vdebug', { 'for': 'php' }
 Plug 'janko-m/vim-test'
-Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install' }
+Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install', 'branch': 'develop' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
@@ -64,6 +64,7 @@ let g:NERDCreateDefaultMappings = 0
 let g:deoplete#enable_at_startup = 1
 let g:vdebug_options = {"break_on_open": 0}
 let g:phpactorPhpBin = '/usr/bin/php'
+let g:phpactorBranch = 'develop'
 let g:gist_post_private = 1
 let test#strategy = "shtuff"
 let g:test#custom_strategies = {'shtuff': function('ShtuffStrategy')}
