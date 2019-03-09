@@ -28,7 +28,7 @@ Plug 'machakann/vim-sandwich'
 Plug 'SirVer/ultisnips'
 Plug 'w0rp/ale'
 Plug 'jesseleite/vim-agriculture'
-Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -73,7 +73,4 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-let vim_markdown_preview_use_xdg_open=1
-let vim_markdown_preview_browser='chromium'
-let vim_markdown_preview_github=1
-let vim_markdown_preview_hotkey='<Leader>m'
+let g:mkdp_auto_close = 0

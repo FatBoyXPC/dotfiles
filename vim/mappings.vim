@@ -8,6 +8,8 @@ nnoremap <Leader>c :update\|bd<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
+nnoremap <Leader>mp :MarkdownPreview<CR>
+nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
 
 " Files: {
     nnoremap <Leader>pc :let @+ = expand("%")<CR> " copy file path
