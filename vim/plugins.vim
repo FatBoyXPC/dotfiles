@@ -28,6 +28,8 @@ Plug 'machakann/vim-sandwich'
 Plug 'SirVer/ultisnips'
 Plug 'w0rp/ale'
 Plug 'jesseleite/vim-agriculture'
+Plug 'noahfrederick/vim-laravel'
+Plug 'tpope/vim-projectionist'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 if has('nvim')
