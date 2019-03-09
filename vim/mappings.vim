@@ -1,4 +1,4 @@
-let mapleader = ','
+let mapleader = ' '
 
 nnoremap <leader>sdeh O<esc>:call ExpandSnippet('deh')<cr>==
 nnoremap <leader>sweh O<esc>:call ExpandSnippet('weh')<cr>==
