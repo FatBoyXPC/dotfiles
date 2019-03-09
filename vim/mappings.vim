@@ -1,7 +1,5 @@
 let mapleader = ' '
 
-nnoremap <leader>sdeh O<esc>:call ExpandSnippet('deh')<cr>==
-nnoremap <leader>sweh O<esc>:call ExpandSnippet('weh')<cr>==
 nnoremap <Leader>fr :w<CR>:call system("fat-rerunner " . shellescape(g:shtuff_receiver))<CR>
 
 nnoremap <Leader>c :update\|bd<CR>
