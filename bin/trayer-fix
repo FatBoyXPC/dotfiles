@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# We need to wait on xmobar to spawn before we spawn trayer, that way trayer
-# spawns on top
-sleep 1
-
-killall trayer
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --height 24 --transparent true --alpha 0 --tint 0 --widthtype request &

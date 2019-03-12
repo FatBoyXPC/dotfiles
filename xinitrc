@@ -1,3 +1,5 @@
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --height 24 --transparent true --alpha 0 --tint 0 --widthtype request &
+
 # Load X resources (fixes some font issues)
 xrdb -merge .Xresources
 
