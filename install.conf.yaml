@@ -10,12 +10,12 @@
     - ./bin/gen-xmobarrc > ~/.xmobarrc
 
 - link:
-    ~/.config/dunst: dunst
-    ~/.config/mimeapps.list: mimeapps.list
     ~/.bash_aliases: aliases
+    ~/.config/dunst: config/dunst
+    ~/.config/mimeapps.list: config/mimeapps.list
     ~/.config/nvim: vim
-    ~/.config/termite: termite
-    ~/.config/fontconfig/conf.d/75-noto-color-emoji.conf: 75-noto-color-emoji.conf
+    ~/.config/termite: config/termite
+    ~/.config/fontconfig: config/fontconfig
     ~/.dircolors: dircolors
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
@@ -31,12 +31,12 @@
     ~/.weechat: weechat
     ~/bin: bin
     ~/.zshrc: zshrc
-    /etc/modprobe.d/nobeep.conf: nobeep.conf
-    /etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf: no-suspend-on-lidswitch.conf
-    /etc/systemd/logind.conf.d/suspend-on-powerbutton.conf: suspend-on-powerbutton.conf
-    /etc/vconsole.conf: vconsole.conf
-    /etc/X11/xorg.conf.d/20-intel.conf: 20-intel.conf
-    /etc/X11/xorg.conf.d/20-trackpoint.conf: 20-trackpoint.conf
+    /etc/modprobe.d/nobeep.conf: etc/modprobe.d/nobeep.conf
+    /etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf: etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf
+    /etc/systemd/logind.conf.d/suspend-on-powerbutton.conf: etc/systemd/logind.conf.d/suspend-on-powerbutton.conf
+    /etc/vconsole.conf: etc/vconsole.conf
+    /etc/X11/xorg.conf.d/20-intel.conf: etc/X11/xorg.conf.d/20-intel.conf
+    /etc/X11/xorg.conf.d/20-trackpoint.conf: etc/X11/xorg.conf.d/20-trackpoint.conf
 
 #- shell:
 #  -
