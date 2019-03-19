@@ -12,10 +12,11 @@
 - link:
     ~/.bash_aliases: aliases
     ~/.config/dunst: config/dunst
+    ~/.config/fontconfig: config/fontconfig
+    ~/.config/gtk-3.0: config/gtk-3.0
     ~/.config/mimeapps.list: config/mimeapps.list
     ~/.config/nvim: vim
     ~/.config/termite: config/termite
-    ~/.config/fontconfig: config/fontconfig
     ~/.dircolors: dircolors
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
