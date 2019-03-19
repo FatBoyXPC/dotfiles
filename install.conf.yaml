@@ -1,95 +1,42 @@
 - clean: ['~']
 
+- default:
+    link:
+        create: true
+        relink: true
+        force: true
+
 - shell:
     - ./bin/gen-xmobarrc > ~/.xmobarrc
 
 - link:
-    ~/.bash_aliases:
-        force: true
-        path: aliases
-    ~/.config/dunst:
-        force: true
-        create: true
-        path: dunst/
-    ~/.config/mimeapps.list:
-        create: true
-        force: true
-        path: mimeapps.list
-    ~/.config/nvim:
-        force: true
-        create: true
-        path: vim
-    ~/.config/termite:
-        create: true
-        force: true
-        path: termite
-    ~/.config/fontconfig/conf.d/75-noto-color-emoji.conf:
-        create: true
-        force: true
-        path: 75-noto-color-emoji.conf
-    ~/.dircolors:
-        force: true
-        path: dircolors
-    ~/.gitconfig:
-        create: true
-        force: true
-        path: gitconfig
-    ~/.gitignore_global:
-        create: true
-        force: true
-        path: gitignore_global
-    ~/.floorc.json:
-        create: true
-        force: true
-        path: floorc.json
-    ~/.git_templates: git_templates/
-    ~/.ssh/config:
-        create: true
-        force: true
-        path: ssh_config
-    ~/.tmux.conf:
-        force: true
-        path: tmux.conf
-    ~/.vim:
-        force: true
-        path: vim
+    ~/.config/dunst: dunst
+    ~/.config/mimeapps.list: mimeapps.list
+    ~/.bash_aliases: aliases
+    ~/.config/nvim: vim
+    ~/.config/termite: termite
+    ~/.config/fontconfig/conf.d/75-noto-color-emoji.conf: 75-noto-color-emoji.conf
+    ~/.dircolors: dircolors
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/.floorc.json: floorc.json
+    ~/.git_templates: git_templates
+    ~/.ssh/config: ssh_config
+    ~/.tmux.conf: tmux.conf
+    ~/.vim: vim
     ~/.Xresources: Xresources
     ~/.xinitrc: xinitrc
-    ~/.Xmodmap:
-        force: true
-        path: Xmodmap
-    ~/.xmonad: xmonad/
-    ~/.weechat:
-        create: true
-        force: true
-        path: weechat/
-    ~/bin: bin/
-    ~/.zshrc:
-        force: true
-        path: zshrc
-    /etc/modprobe.d/nobeep.conf:
-        force: true
-        path: nobeep.conf
-    /etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf:
-        create: true
-        force: true
-        path: no-suspend-on-lidswitch.conf
-    /etc/systemd/logind.conf.d/suspend-on-powerbutton.conf:
-        create: true
-        force: true
-        path: suspend-on-powerbutton.conf
-    /etc/vconsole.conf:
-        create: true
-        force: true
-        path: vconsole.conf
-    /etc/X11/xorg.conf.d/20-intel.conf:
-        create: true
-        force: true
-        path: 20-intel.conf
-    /etc/X11/xorg.conf.d/20-trackpoint.conf:
-        create: true
-        force: true
-        path: 20-trackpoint.conf
+    ~/.Xmodmap: Xmodmap
+    ~/.xmonad: xmonad
+    ~/.weechat: weechat
+    ~/bin: bin
+    ~/.zshrc: zshrc
+    /etc/modprobe.d/nobeep.conf: nobeep.conf
+    /etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf: no-suspend-on-lidswitch.conf
+    /etc/systemd/logind.conf.d/suspend-on-powerbutton.conf: suspend-on-powerbutton.conf
+    /etc/vconsole.conf: vconsole.conf
+    /etc/X11/xorg.conf.d/20-intel.conf: 20-intel.conf
+    /etc/X11/xorg.conf.d/20-trackpoint.conf: 20-trackpoint.conf
 
 #- shell:
 #  -
