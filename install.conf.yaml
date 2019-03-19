@@ -27,6 +27,10 @@
         create: true
         force: true
         path: termite
+    ~/.config/fontconfig/conf.d/75-noto-color-emoji.conf:
+        create: true
+        force: true
+        path: 75-noto-color-emoji.conf
     ~/.dircolors:
         force: true
         path: dircolors
