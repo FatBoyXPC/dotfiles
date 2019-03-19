@@ -19,10 +19,6 @@
         force: true
         create: true
         path: vim
-    ~/.config/synapse/config.json:
-        create: true
-        force: true
-        path: synapse-config.json
     ~/.config/termite:
         create: true
         force: true
