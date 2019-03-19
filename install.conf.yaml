@@ -18,20 +18,20 @@
     ~/.config/nvim: vim
     ~/.config/termite: config/termite
     ~/.dircolors: dircolors
+    ~/.floorc.json: floorc.json
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
-    ~/.floorc.json: floorc.json
     ~/.git_templates: git_templates
     ~/.ssh/config: ssh_config
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
-    ~/.Xresources: Xresources
     ~/.xinitrc: xinitrc
     ~/.Xmodmap: Xmodmap
     ~/.xmonad: xmonad
+    ~/.Xresources: Xresources
     ~/.weechat: weechat
-    ~/bin: bin
     ~/.zshrc: zshrc
+    ~/bin: bin
     /etc/modprobe.d/nobeep.conf: etc/modprobe.d/nobeep.conf
     /etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf: etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf
     /etc/systemd/logind.conf.d/suspend-on-powerbutton.conf: etc/systemd/logind.conf.d/suspend-on-powerbutton.conf
