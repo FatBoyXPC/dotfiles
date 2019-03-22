@@ -62,8 +62,7 @@ runtime! mappings.vim
     set nofoldenable
 
     let g:airline_theme = 'solarized'
-    let g:airline_left_sep='›'  " Slightly fancier than '>'
-    let g:airline_right_sep='‹' " Slightly fancier than '<'
+    let g:airline_powerline_fonts = 1
 
     let g:indent_guides_start_level = 2
     let g:indent_guides_guide_size = 1
