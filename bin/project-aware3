@@ -8,7 +8,7 @@ needSudo
 
 sudo ifconfig lo:0 10.254.254.254
 
-cd ~/aware3/source || exit 1
+cd ~/dev/aware3/web || exit 1
 
 terminalOn "git status" dev
 
@@ -18,6 +18,7 @@ cd tests" dev
 
 terminalOn vim dev
 
+terminalOn "ngrok start --all" server
 terminalOn "docker exec -it --detach-keys='ctrl-^,q' webhost bash
 tail -f /var/log/aware3/a3-system.log" server
 terminalOn "mycli -u airealmo_201206 -p Hvhxpkf95BMVGS2ukbT4wCbha4wJQ7MKQGuv82T6 -P 3000 -D airealmo_ampdev" server
