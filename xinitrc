@@ -17,11 +17,30 @@ fi
 # volume & brightness notification daemon
 volnoti -t 1
 
+# Enable numlock on boot (thanks me!)
+numlockx on
+
+# Restore brightness to previous level
+xbacklight -set `cat ~/.brightness`
+
 # seems like /etc/default/keyboard is getting ignored, so let's set this here
 setxkbmap -option compose:rctrl
 
 xmodmap ~/.Xmodmap
 xcape
+
+if [ -x /usr/bin/nm-applet ]; then
+    nm-applet &
+fi
+
+if [ -x /usr/bin/dunst ]; then
+    dunst -force_xinerama &
+fi
+
+if [ -x /usr/bin/xsettingsd ]; then
+    touch ~/.xsettingsd
+    /usr/bin/xsettingsd &
+fi
 
 # From https://wiki.archlinux.org/index.php/GNOME/Keyring#xinitrc_method
 if [ -x /usr/bin/gnome-keyring-daemon ]; then

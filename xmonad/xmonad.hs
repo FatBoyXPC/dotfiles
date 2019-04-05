@@ -151,11 +151,4 @@ main = do
         XMonad.borderWidth = myBorderWidth,
         startupHook = do
             setWMName "LG3D"
-            spawn "pgrep screencloud || screencloud"
-            spawn "pgrep insync || insync start"
-            spawn "pgrep nm-applet || nm-applet"
-            spawn "pgrep compton || compton"
-            spawn "pgrep dunst || dunst -force_xinerama"
-            spawn "numlockx on"
-            spawn "xbacklight -set `cat ~/.brightness`"
     } `additionalKeys` myKeys
