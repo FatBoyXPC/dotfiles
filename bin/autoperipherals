@@ -1,0 +1,81 @@
+#!/bin/bash
+
+function main() {
+    DP1_STATUS=$(</sys/class/drm/card0/card0-DP-1/status)
+
+    if [ "$DP1_STATUS" == "connected" ]; then
+        LAYOUT_NAME=docked
+        TRAYER_HEIGHT=19
+        XMOBAR_FONT_SIZE=6
+        XFT_DPI=$((1024*96))
+
+        xrandr --output DP1 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP1 --mode 1920x1080 --output DP2 --off --output HDMI1 --off --output VIRTUAL1 --off
+
+        # Switch to HDMI audio.
+        # TODO - for some reason, only one of these profiles is available, but it seems to change randomly.
+        #pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
+        #pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:stereo-fallback
+
+        # Disable wifi and connect to ethernet.
+        # TODO - only do this at honor, not at SF desk...
+        # sudo nmcli device disconnect wlp4s0
+        # sudo nmcli device connect eth0
+    else
+        LAYOUT_NAME=mobile
+        TRAYER_HEIGHT=25
+        XMOBAR_FONT_SIZE=9
+        XFT_DPI=$((1024*133)) # I think I have 144 (so does jfly in Xresources)
+
+        xrandr --output eDP1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output VIRTUAL1 --off
+
+        # Switch to laptop speakers.
+        #pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
+
+        # Disable ethernet and connect to wifi.
+        # TODO - unclear why we need the sudo here. Without it, I get "Error:
+        # Device activation failed: Not authorized to control networking."
+        # sudo nmcli device disconnect eth0
+        # sudo nmcli device connect wlp4s0
+    fi
+
+    size_tray $TRAYER_HEIGHT $XMOBAR_FONT_SIZE
+
+    # Change DPI and notify everyone via XSETTINGS.
+    # See https://utcc.utoronto.ca/~cks/space/blog/linux/XSettingsNotes?showcomments
+    # and https://github.com/GNOME/gtk/blob/1a1373779f87ce928a45a9371512d207445f615f/gdk/x11/xsettings-client.c#L399
+    echo "Xft/DPI $XFT_DPI" > ~/.xsettingsd
+    killall -HUP xsettingsd
+
+    # notify-send blocks until something receives the message. When booting,
+    # we haven't started dunst yet, so we need to run notify-send in the background.
+    notify-send "Detected environment $LAYOUT_NAME" &
+
+    # Note, we intentionally run fixinputs last, because xmodmap blocks if you're holding any keys down.
+    # See: https://forums.fedoraforum.org/showthread.php?296298-xmodmap-please-release-the-following-keys-within-2-seconds
+    fixinputs
+}
+
+function size_tray() {
+    trayer_height=$1
+    xmobar_font_size=$2
+
+    # Kill existing trayer and start it back up to resize it.
+    # Note that we lower trayer on start. This is good, we want it below all our regular windows.
+    # We do want it below xmobar as well, which will happen for free when we
+    # restart xmobar (it lowers itself to the bottom on startup).
+    killall -q trayer
+    trayer -l --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype request --height $trayer_height --transparent true --alpha 0 --tint 0 &
+    sleep 0.1  # Give trayer a moment to start up and lower itself before we start up xmobar.
+
+    # To resize our xmobar, we must edit our xmobarrc and then restart xmonad.
+    # We also must restart xmobar to get it below trayer (xmobar lowers itself to the bottom when it starts up).
+    sed -i "s/size=[^:]*:/size=${xmobar_font_size}:/" ~/.xmobarrc
+    xmonad --restart
+}
+
+# There's no way it's good to be running this command simultaneously.
+if pgrep autoperipherals | grep -v $$; then
+    echo "I see an autoperipherals command already running, let's not step on its toes."
+    exit 1
+fi
+main
