@@ -1,7 +1,6 @@
 call plug#begin(g:configPath . '/plugged')
 
 Plug 'altercation/vim-colors-solarized'
-Plug 'rhysd/conflict-marker.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
