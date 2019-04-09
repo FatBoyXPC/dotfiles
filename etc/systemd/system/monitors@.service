@@ -1,0 +1,12 @@
+[Unit]
+Description=Refresh monitors for user %i
+
+[Service]
+Type=simple
+# Don't kill child processes started by autoperipherals
+KillMode=none
+
+ExecStart=/home/%i/bin/x11-run-as %i autoperipherals
+
+[Install]
+WantedBy=multi-user.target

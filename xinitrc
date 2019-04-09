@@ -23,12 +23,6 @@ numlockx on
 # Restore brightness to previous level
 xbacklight -set `cat ~/.brightness`
 
-# seems like /etc/default/keyboard is getting ignored, so let's set this here
-setxkbmap -option compose:rctrl
-
-xmodmap ~/.Xmodmap
-xcape
-
 if [ -x /usr/bin/nm-applet ]; then
     nm-applet &
 fi

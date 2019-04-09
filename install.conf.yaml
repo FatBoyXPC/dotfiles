@@ -22,6 +22,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.git_templates: git_templates
+    ~/.pathrc: pathrc
     ~/.ssh/config: ssh_config
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
@@ -35,6 +36,8 @@
     /etc/modprobe.d/nobeep.conf: etc/modprobe.d/nobeep.conf
     /etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf: etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf
     /etc/systemd/logind.conf.d/suspend-on-powerbutton.conf: etc/systemd/logind.conf.d/suspend-on-powerbutton.conf
+    /etc/udev/rules.d/10-local.rules: etc/udev/rules.d/10-local.rules
+    /etc/systemd/system/monitors@.service: etc/systemd/system/monitors@.service
     /etc/vconsole.conf: etc/vconsole.conf
     /etc/X11/xorg.conf.d/20-intel.conf: etc/X11/xorg.conf.d/20-intel.conf
     /etc/X11/xorg.conf.d/20-trackpoint.conf: etc/X11/xorg.conf.d/20-trackpoint.conf

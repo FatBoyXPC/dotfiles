@@ -15,6 +15,10 @@ capslockx off
 # Speed up keyrepeat
 xset r rate 200 30
 
-# First reset keys before running xmodmap.
-setxkbmap
+# First reset keys before running xmodmap. It seems like /etc/default/keyboard
+# is getting ignored, so let's set the compose key here.
+setxkbmap -option compose:rctrl
 xmodmap ~/.Xmodmap
+
+killall -q xcape
+xcape
