@@ -18,7 +18,7 @@ xset r rate 200 30
 # First reset keys before running xmodmap. It seems like /etc/default/keyboard
 # is getting ignored, so let's set the compose key here.
 setxkbmap -option compose:rctrl
-xmodmap ~/.Xmodmap
+xmodmap ~/.Xmodmap || true # <<< this exits 1, but still does what I need it to do???
 
-killall -q xcape
+killall -q xcape || true
 xcape
