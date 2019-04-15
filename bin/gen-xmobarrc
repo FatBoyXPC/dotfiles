@@ -36,7 +36,7 @@ Config { font = "xft:Ubuntu Mono Regular:size=9:bold:antialias=true"
                                -- discharging status
                                , "-o"   , "<left>% (<timeleft>)"
                                -- AC "on" status
-                               , "-O"   , "<fc=#dAA520>Charging</fc>"
+                               , "-O"   , "<fc=#dAA520>Charging (<left>%)</fc>"
                                -- charged status
                                , "-i"   , "<fc=#006000>Charged</fc>"
                              ] 50
