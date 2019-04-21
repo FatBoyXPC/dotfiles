@@ -15,11 +15,6 @@ function main() {
         # TODO - for some reason, only one of these profiles is available, but it seems to change randomly.
         #pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
         #pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:stereo-fallback
-
-        # Disable wifi and connect to ethernet.
-        # TODO - only do this at honor, not at SF desk...
-        # sudo nmcli device disconnect wlp4s0
-        # sudo nmcli device connect eth0
     else
         LAYOUT_NAME=mobile
         TRAYER_HEIGHT=25
@@ -30,12 +25,6 @@ function main() {
 
         # Switch to laptop speakers.
         #pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
-
-        # Disable ethernet and connect to wifi.
-        # TODO - unclear why we need the sudo here. Without it, I get "Error:
-        # Device activation failed: Not authorized to control networking."
-        # sudo nmcli device disconnect eth0
-        # sudo nmcli device connect wlp4s0
     fi
 
     size_tray $TRAYER_HEIGHT $XMOBAR_FONT_SIZE
