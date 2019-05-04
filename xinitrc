@@ -12,6 +12,10 @@ numlockx on
 # Restore brightness to previous level
 xbacklight -set `cat ~/.brightness`
 
+if [ -x /usr/bin/pasystray ]; then
+    pasystray &
+fi
+
 if [ -x /usr/bin/nm-applet ]; then
     nm-applet &
 fi
