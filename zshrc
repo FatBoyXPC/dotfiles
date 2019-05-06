@@ -108,7 +108,7 @@ function de {
 }
 
 function dsf {
-    git diff --no-index "$@" | diff-so-fancy | less "$LESS"
+    diff -u --color=always "$@" | diff-so-fancy | less "$LESS"
 }
 
 function cgl {
