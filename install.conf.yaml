@@ -22,6 +22,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.git_templates: git_templates
+    ~/.myclirc: myclirc
     ~/.pathrc: pathrc
     ~/.ssh/config: ssh_config
     ~/.tmux.conf: tmux.conf
