@@ -23,6 +23,10 @@ Host csnades
     HostName csnades.com
     user james
 
+Host cubecomps-wca
+    HostName 52.43.124.237
+    User ubuntu
+
 Host cusa
     HostName cubingusa.com
     user ubuntu
