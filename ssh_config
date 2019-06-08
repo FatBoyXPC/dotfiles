@@ -1,6 +1,11 @@
 AddKeysToAgent yes
 ServerAliveInterval 120
 
+
+Host andreg
+    HostName 35.243.205.141
+    user andreg
+
 Host directmail
     HostName qa.directmail2.com
     user directmail
