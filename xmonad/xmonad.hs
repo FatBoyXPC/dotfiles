@@ -4,6 +4,7 @@ import System.IO
 import XMonad hiding ( (|||) ) -- don't use the normal ||| operator
 import XMonad.Actions.PhysicalScreens
 import XMonad.Actions.UpdatePointer
+import XMonad.Actions.CycleWS
 import XMonad.Config.Desktop
 import XMonad.Layout.LayoutCombinators
 import XMonad.Hooks.DynamicLog
@@ -101,6 +102,9 @@ myKeys =
 
         -- Force window back to tiling mode
         ((myModMask .|. shiftMask, xK_t), withFocused $ windows . W.sink),
+
+        -- Toggle last workspace
+        ((myModMask, xK_z), toggleWS),
 
         -- Run dmenu2 with custom font
         ((myModMask, xK_p), spawn "dmenu_run -fn 'Ubuntu Mono Regular:size=8:bold:antialias=true'"),
