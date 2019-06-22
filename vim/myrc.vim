@@ -55,6 +55,7 @@ runtime! mappings.vim
 
     let g:airline_theme = 'solarized'
     let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
 
     let g:indent_guides_start_level = 2
     let g:indent_guides_guide_size = 1
