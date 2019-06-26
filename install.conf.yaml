@@ -47,3 +47,4 @@
 #  -
 #    - git update-submodules
 #    - Install/update submodules
+#    - sudo cp etc/systemd/system/systemd-logind.service.d/override.conf /etc/systemd/system/systemd-logind.service.d/override.conf
