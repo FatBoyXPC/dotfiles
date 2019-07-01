@@ -13,7 +13,6 @@ Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/HTML-AutoCloseTag'
 Plug 'mattn/emmet-vim'
 Plug 'vim-vdebug/vdebug', { 'for': 'php' }
 Plug 'janko-m/vim-test'
@@ -31,15 +30,20 @@ Plug 'noahfrederick/vim-laravel'
 Plug 'tpope/vim-projectionist'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
+if !has('nvim')
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-Plug 'kristijanhusak/deoplete-phpactor'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-html-subscope'
+Plug 'ncm2/ncm2-markdown-subscope', {'for': 'markdown'}
+Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-cssomni'
+Plug 'fgrsnau/ncm2-otherbuf'
 
 call plug#end()
 
@@ -62,7 +66,6 @@ let g:php_cs_fixer_config_file = '.php_cs'
 
 let g:NERDCreateDefaultMappings = 0
 
-let g:deoplete#enable_at_startup = 1
 let g:vdebug_options = {"break_on_open": 0}
 let g:phpactorPhpBin = '/usr/bin/php'
 let g:phpactorBranch = 'develop'
@@ -75,3 +78,10 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:mkdp_auto_close = 0
+
+" NCM2: {
+    autocmd BufEnter * call ncm2#enable_for_buffer()
+
+    set completeopt=noinsert,menuone,noselect ",preview
+    inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<c-y>", 'n') : "\<CR>")
+" }
