@@ -81,6 +81,6 @@ let g:mkdp_auto_close = 0
 " NCM2: {
     autocmd BufEnter * call ncm2#enable_for_buffer()
 
-    set completeopt=noinsert,menuone,noselect ",preview
+    set completeopt=noinsert,menuone,noselect
     inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<c-y>", 'n') : "\<CR>")
 " }
