@@ -34,6 +34,7 @@
     ~/.weechat: weechat
     ~/.zshrc: zshrc
     ~/bin: bin
+    ~/dev/aware3/web/project.vim: vim/a3.vim
     /etc/modprobe.d/nobeep.conf: etc/modprobe.d/nobeep.conf
     /etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf: etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf
     /etc/systemd/logind.conf.d/suspend-on-powerbutton.conf: etc/systemd/logind.conf.d/suspend-on-powerbutton.conf
