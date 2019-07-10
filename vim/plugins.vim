@@ -66,6 +66,7 @@ let g:php_cs_fixer_config_file = '.php_cs'
 let g:NERDCreateDefaultMappings = 0
 
 let g:vdebug_options = {"break_on_open": 0}
+let g:vdebug_features = {'max_children': 1024}
 let g:phpactorPhpBin = '/usr/bin/php'
 let g:phpactorBranch = 'develop'
 let g:gist_post_private = 1
