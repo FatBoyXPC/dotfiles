@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# dev vim open
+vim --servername dev --remote "$*"

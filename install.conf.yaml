@@ -49,3 +49,4 @@
 #    - git update-submodules
 #    - Install/update submodules
 #    - sudo cp etc/systemd/system/systemd-logind.service.d/override.conf /etc/systemd/system/systemd-logind.service.d/override.conf
+#    - git clone https://github.com/jessarcher/zsh-artisan.git ~/.oh-my-zsh/custom/plugins/artisan
