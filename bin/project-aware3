@@ -16,7 +16,7 @@ terminalOn "shtuff as devrunner
 docker exec -it --detach-keys='ctrl-^,q' webhost bash
 cd tests" dev
 
-terminalOn vim dev
+terminalOn "vim --servername dev" dev
 
 terminalOn "ngrok start --all" server
 terminalOn "docker exec -it --detach-keys='ctrl-^,q' webhost bash

@@ -4,6 +4,7 @@ alias arlg="arl | ag "
 alias arlp="arl --path"
 alias art="artisan tinker"
 alias artisan="php artisan"
+alias dvo="vim --servername dev --remote"
 alias fixdocker='echo N | sudo tee /sys/module/overlay/parameters/metacopy'
 alias gaws="git add -A && git diff --cached -w | git apply --cached -R"
 alias gbdf="git branch --merged | ag feature | xargs git branch -d"
