@@ -64,7 +64,7 @@ windowPlacement = composeAll [
             className =? "Gimp" --> doFloat,
 
             -- Emoji picker!
-            role =? "emoji-picker" --> doFloat
+            role =? "picker" --> doFloat
         ] where role = stringProperty "WM_WINDOW_ROLE"
 
 -- https://github.com/hcchu/dotfiles/blob/master/.xmonad/xmonad.hs
