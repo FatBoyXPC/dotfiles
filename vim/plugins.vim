@@ -8,8 +8,7 @@ Plug 'mbbill/undotree'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
+Plug 'lambdalisue/vim-gista'
 Plug 'scrooloose/nerdcommenter'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
@@ -70,7 +69,7 @@ let g:vdebug_options = {"break_on_open": 0}
 let g:vdebug_features = {'max_children': 1024}
 let g:phpactorPhpBin = '/usr/bin/php'
 let g:phpactorBranch = 'develop'
-let g:gist_post_private = 1
+let g:gista#command#post#default_public = 0
 let test#strategy = "shtuff"
 let g:test#custom_strategies = {'shtuff': function('ShtuffStrategy')}
 
