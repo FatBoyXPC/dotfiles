@@ -97,8 +97,10 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
 
 " Refactoring: {
     nnoremap <Leader>ua :call phpactor#UseAdd()<CR>
-    nnoremap <Leader>e :call phpactor#ClassExpand()<CR>
+    nnoremap <Leader>ec :call phpactor#ClassExpand()<CR>
     vnoremap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
+    vmap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
+    nmap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
     "nnoremap <Leader>pp :call phpactor#ContextMenu()<CR>
     nnoremap <Leader>o :call phpactor#GotoDefinition()<CR>
     "nnoremap <Leader>pd :call phpactor#OffsetTypeInfo()<CR>
