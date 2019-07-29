@@ -82,14 +82,12 @@ myKeys =
         -- Launch a terminal (changed from return to semicolon)
         ((myModMask .|. shiftMask, xK_semicolon), spawn myTerminal),
 
-        ((myModMask, xK_semicolon), windows W.swapMaster),
-
         ((myModMask .|. shiftMask, xK_Return), spawn "emoji"),
 
         -- Swap the focused window and the master window
         -- The default uses return, but semicolon is easier, and
         -- doesn't conflict with browers =)
-        --((myModMask, xK_semicolon), windows W.swapMaster),
+        ((myModMask, xK_semicolon), windows W.swapMaster),
 
         -- Jump directly to the Full layout
         ((myModMask, xK_m), sendMessage $ JumpToLayout "Full"),
