@@ -30,11 +30,11 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'kamykn/spelunker.vim'
 
 if !has('nvim')
-    Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-html-subscope'
 Plug 'ncm2/ncm2-markdown-subscope', {'for': 'markdown'}
 Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
@@ -69,6 +69,7 @@ let g:vdebug_options = {"break_on_open": 0}
 let g:vdebug_features = {'max_children': 1024}
 let g:phpactorPhpBin = '/usr/bin/php'
 let g:phpactorBranch = 'develop'
+let g:phpactorOmniAutoClassImport = 1
 let g:gista#command#post#default_public = 0
 let test#strategy = "shtuff"
 let g:test#custom_strategies = {'shtuff': function('ShtuffStrategy')}
