@@ -60,7 +60,7 @@ export EDITOR="vim"
 export VISUAL=$EDITOR
 export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
 export ARTISAN_OPEN_ON_MAKE_EDITOR=dvo
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='ag -U --hidden --ignore .git -g ""'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 # # Preferred editor for local and remote sessions
