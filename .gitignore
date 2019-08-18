@@ -3,3 +3,4 @@ weechat/script/plugins.xml.gz
 weechat/aspell.conf
 bin/php
 bin/uhk
+vim/spell
