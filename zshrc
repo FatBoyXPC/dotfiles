@@ -59,7 +59,8 @@ export TERM="xterm-256color"
 export EDITOR="vim"
 export VISUAL=$EDITOR
 export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
-export ARTISAN_OPEN_ON_MAKE_EDITOR=dvo
+export OPEN_ON_MAKE_EDITOR=dvo
+export ARTISAN_OPEN_ON_MAKE_EDITOR=$OPEN_ON_MAKE_EDITOR
 export FZF_DEFAULT_COMMAND='ag -U --hidden --ignore .git -g ""'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
@@ -154,6 +155,34 @@ function filediff() {
 function copyimage() {
     local imagetype=$(xdg-mime query filetype "$1")
     xclip -selection clipboard -t "$imagetype" -i < "$1"
+}
+
+function a3() {
+    _a3cli_start_time=`date +%s`
+    docker exec webhost php acli.php --ansi $*
+    _a3cli_exit_status=$? # Store the exit status so we can return it later
+
+    if [[ $1 = "make:"* && $ARTISAN_OPEN_ON_MAKE_EDITOR != "" ]]; then
+        # Find and open files created by artisan
+        _a3cli_path=`dirname acli.php`
+        find \
+            "$_a3cli_path/system/db/sql/migrations" \
+            -type f \
+            -newermt "-$((`date +%s` - $_a3cli_start_time + 1)) seconds" \
+            -exec $OPEN_ON_MAKE_EDITOR {} \; 2>/dev/null
+    fi
+
+    return $_artisan_exit_status
+}
+
+compdef _a3_add_completion a3
+
+function _a3_add_completion() {
+    compadd `_a3_get_command_list`
+}
+
+function _a3_get_command_list() {
+    docker exec webhost php acli.php --raw --no-ansi list | sed "s/[[:space:]].*//g"
 }
 
 bindkey '\ev' edit-command-line
