@@ -16,6 +16,7 @@ function main() {
 
 EMOJIS=$(echo '
 disapproval                                     ಠ_ಠ
+flippin nuts                                    (╯°□°)╯︵🍆🥜
 fliptable                                       (╯°□°)╯︵ ┻━┻
 flipbigtable                                    (╯°□°)╯︵ ┻━━━┻
 fliptableharder                                 (ノಠ益ಠ)ノ彡 ┻━┻
