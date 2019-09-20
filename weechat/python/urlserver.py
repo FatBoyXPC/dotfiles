@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2011-2015 Sébastien Helleu <flashcode@flashtux.org>
+# Copyright (C) 2011-2018 Sébastien Helleu <flashcode@flashtux.org>
 # Copyright (C) 2011 xt <xt@bash.no>
 # Copyright (C) 2012 Filip H.F. "FiXato" Slagter
 #                    <fixato+weechat+urlserver@gmail.com>
@@ -44,6 +44,10 @@
 #
 # History:
 #
+# 2018-09-30, Sébastien Helleu <flashcode@flashtux.org>:
+#     v2.3: fix regex in help of option "http_allowed_ips"
+# 2017-07-26, Sébastien Helleu <flashcode@flashtux.org>:
+#     v2.2: fix write on socket with python 3.x
 # 2016-11-01, Sébastien Helleu <flashcode@flashtux.org>:
 #     v2.1: add option "msg_filtered"
 # 2016-01-20, Yves Stadler <yves.stadler@gmail.com>:
@@ -110,7 +114,7 @@
 
 SCRIPT_NAME = 'urlserver'
 SCRIPT_AUTHOR = 'Sébastien Helleu <flashcode@flashtux.org>'
-SCRIPT_VERSION = '2.1'
+SCRIPT_VERSION = '2.3'
 SCRIPT_LICENSE = 'GPL3'
 SCRIPT_DESC = 'Shorten URLs with own HTTP server'
 
@@ -183,7 +187,7 @@ urlserver_settings_default = {
     'http_allowed_ips': (
         '',
         'regex for IPs allowed to use server '
-        '(example: "^(123.45.67.89|192.160.*)$")'),
+        '(example: "^(123\.45\.67\.89|192\.160\..*)$")'),
     'http_auth': (
         '',
         'login and password (format: "login:password") required to access to '
@@ -645,9 +649,11 @@ def urlserver_server_fd_cb(data, fd):
                                     '<meta http-equiv="refresh" content="0; '
                                     'url=%s">' % urlserver['urls'][number][3])
                             else:
-                                conn.sendall('HTTP/1.1 302\r\n'
-                                             'Location: %s\r\n\r\n' %
-                                             urlserver['urls'][number][3])
+                                conn.sendall(
+                                    'HTTP/1.1 302\r\n'
+                                    'Location: {}\r\n\r\n'
+                                    .format(urlserver['urls'][number][3])
+                                    .encode('utf-8'))
                         else:
                             urlserver_server_reply_auth_required(conn)
                         replysent = True
