@@ -1,4 +1,5 @@
 - link:
+    ~/.vim: vim
     /etc/modprobe.d/nobeep.conf: etc/modprobe.d/nobeep.conf
     /etc/subuid: etc/subuid
     /etc/subgid: etc/subgid
