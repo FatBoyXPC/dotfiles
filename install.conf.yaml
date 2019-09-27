@@ -5,8 +5,12 @@
         create: true
         relink: true
         force: true
+    shell:
+      stdout: true
+      stderr: true
 
 - shell:
+    - sudo ./install-sudo
     - ./bin/gen-xmobarrc > ~/.xmobarrc
     - "[ -d ~/.oh-my-zsh ] || sh -c \"$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
     - "[ -d ~/.oh-my-zsh/custom/plugins/artisan ] || git clone https://github.com/jessarcher/zsh-artisan.git ~/.oh-my-zsh/custom/plugins/artisan"
@@ -37,17 +41,6 @@
     ~/.zshrc: zshrc
     ~/bin: bin
     ~/dev/aware3/web/project.vim: vim/a3.vim
-    /etc/modprobe.d/nobeep.conf: etc/modprobe.d/nobeep.conf
-    /etc/subuid: etc/subuid
-    /etc/subgid: etc/subgid
-    /etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf: etc/systemd/logind.conf.d/no-suspend-on-lidswitch.conf
-    /etc/systemd/logind.conf.d/suspend-on-powerbutton.conf: etc/systemd/logind.conf.d/suspend-on-powerbutton.conf
-    /etc/systemd/system/docker.service.d/override.conf: etc/systemd/system/docker.service.d/override.conf
-    /etc/udev/rules.d/10-local.rules: etc/udev/rules.d/10-local.rules
-    /etc/systemd/system/monitors@.service: etc/systemd/system/monitors@.service
-    /etc/vconsole.conf: etc/vconsole.conf
-    /etc/X11/xorg.conf.d/20-intel.conf: etc/X11/xorg.conf.d/20-intel.conf
-    /etc/X11/xorg.conf.d/20-trackpoint.conf: etc/X11/xorg.conf.d/20-trackpoint.conf
 
 #- shell:
 #  -
