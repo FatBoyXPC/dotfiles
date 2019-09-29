@@ -1,0 +1,6 @@
+#!/bin/env bash
+
+cd ~/dotfiles || exit 1
+
+pacaur -S --needed $(cat packages)
+pacaur -Rsu $(comm -23 <(pacman -Qeq | sort) packages)

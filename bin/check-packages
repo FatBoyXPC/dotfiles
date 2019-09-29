@@ -1,0 +1,6 @@
+#!/bin/env bash
+
+cd ~/dotfiles || exit 1
+
+pacman -Qeq | sort > packages
+git --no-pager diff packages
