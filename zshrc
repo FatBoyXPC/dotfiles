@@ -106,33 +106,7 @@ function de {
     $CMD
 }
 
-function a3() {
-    _a3cli_start_time=`date +%s`
-    docker exec webhost php acli.php --ansi $*
-    _a3cli_exit_status=$? # Store the exit status so we can return it later
-
-    if [[ $1 = "make:"* && $ARTISAN_OPEN_ON_MAKE_EDITOR != "" ]]; then
-        # Find and open files created by artisan
-        _a3cli_path=`dirname acli.php`
-        find \
-            "$_a3cli_path/system/db/sql/migrations" \
-            -type f \
-            -newermt "-$((`date +%s` - $_a3cli_start_time + 1)) seconds" \
-            -exec $OPEN_ON_MAKE_EDITOR {} \; 2>/dev/null
-    fi
-
-    return $_artisan_exit_status
-}
-
-compdef _a3_add_completion a3
-
-function _a3_add_completion() {
-    compadd `_a3_get_command_list`
-}
-
-function _a3_get_command_list() {
-    docker exec webhost php acli.php --raw --no-ansi list | sed "s/[[:space:]].*//g"
-}
+source ~/dev/aware3/web/a3.plugin.zsh
 
 bindkey '\ev' edit-command-line
 
