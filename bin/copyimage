@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+imagetype=$(xdg-mime query filetype "$1")
+xclip -selection clipboard -t "$imagetype" -i < "$1"

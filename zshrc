@@ -100,61 +100,10 @@ if [[ -n "$SSH_CONNECTION" ]]; then
     PROMPT="%m $PROMPT"
 fi
 
-function alf() {
-    local foo=$(alias | fzf | sed "s/.*='\(.*\)'/\1/")
-    eval $foo
-}
-
 function de {
     CMD="docker exec -it --detach-keys='ctrl-^,q' $1 env TERM=xterm bash"
     echo $CMD
     $CMD
-}
-
-function dsf {
-    diff -u --color=always "$@" | diff-so-fancy | less "$LESS"
-}
-
-function cgl {
-    ~/bin/git-commit-link.py $1 | clipit
-}
-
-function clcl {
-    cgl `git rev-parse HEAD`
-}
-
-function filerange() {
-    local file=$1
-    local start=$2
-    local end=$3
-    local line_count=$(cat "$file" | wc -l)
-    local file_output=$(cat "$file")
-
-    if [ $line_count -ge $end ]; then
-        file_output=$(echo $file_output | head -n $end)
-    fi
-
-    if [ $start -ge 1 ]; then
-        diff_range=$(($end-$start+1))
-        file_output=$(echo $file_output | tail -n $diff_range)
-    fi
-
-    echo $file_output
-}
-
-function filediff() {
-    local file=$1
-    local start_a=$2
-    local end_a=$3
-    local start_b=$4
-    local end_b=$5
-
-    dsf <(filerange $file $start_a $end_a) <(filerange $file $start_b $end_b)
-}
-
-function copyimage() {
-    local imagetype=$(xdg-mime query filetype "$1")
-    xclip -selection clipboard -t "$imagetype" -i < "$1"
 }
 
 function a3() {

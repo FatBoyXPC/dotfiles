@@ -1,0 +1,18 @@
+#!/bin/env bash
+
+file=$1
+start=$2
+end=$3
+line_count=$(wc -l < "$file")
+file_output=$(cat "$file")
+
+if [ "$line_count" -ge "$end" ]; then
+    file_output=$(echo $file_output | head -n $end)
+fi
+
+if [ "$start" -ge 1 ]; then
+    diff_range=$(($end-$start+1))
+    file_output=$(echo $file_output | tail -n $diff_range)
+fi
+
+echo "$file_output"

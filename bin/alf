@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+foo=$(alias | fzf | sed "s/.*='\(.*\)'/\1/")
+eval "$foo"

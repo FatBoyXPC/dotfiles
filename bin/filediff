@@ -1,0 +1,9 @@
+#!/bin/env bash
+
+file="$1"
+start_a="$2"
+end_a="$3"
+start_b="$4"
+end_b="$5"
+
+dsf <(filerange $file $start_a $end_a) <(filerange $file $start_b $end_b)
