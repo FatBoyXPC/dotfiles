@@ -72,7 +72,6 @@ let g:phpactorBranch = 'develop'
 let g:phpactorOmniAutoClassImport = 1
 let g:gista#command#post#default_public = 0
 let test#strategy = "shtuff"
-let g:test#custom_strategies = {'shtuff': function('ShtuffStrategy')}
 
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"

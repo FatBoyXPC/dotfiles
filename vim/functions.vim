@@ -8,10 +8,6 @@ function! StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 
-function! ShtuffStrategy(cmd)
-  call system("shtuff into " . shellescape(g:shtuff_receiver) . " " . shellescape("clear;" . a:cmd))
-endfunction
-
 function! ExpandSnippet(snippet)
     execute 'normal! a'.a:snippet."\<c-r>=UltiSnips#ExpandSnippet()\<cr>"
 endfunction
