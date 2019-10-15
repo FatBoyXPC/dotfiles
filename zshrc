@@ -106,7 +106,7 @@ function de {
     $CMD
 }
 
-source ~/dev/aware3/web/a3.plugin.zsh
+source ~/dev/aware3/web/.system/dev_env/zsh/a3.plugin.zsh
 
 bindkey '\ev' edit-command-line
 
