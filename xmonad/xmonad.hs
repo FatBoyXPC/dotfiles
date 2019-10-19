@@ -1,9 +1,6 @@
 import Data.List
-import Graphics.X11.ExtraTypes.XF86
 import System.IO
 import XMonad hiding ( (|||) ) -- don't use the normal ||| operator
-import XMonad.Actions.PhysicalScreens
-import XMonad.Actions.UpdatePointer
 import XMonad.Config.Desktop
 import XMonad.Layout.LayoutCombinators
 import XMonad.Hooks.DynamicLog
