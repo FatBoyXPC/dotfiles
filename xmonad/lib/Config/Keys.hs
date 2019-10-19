@@ -1,4 +1,4 @@
-module Config.Keys where
+module Config.Keys (myModMask, myKeys) where
 
 import Config.Terminal
 
