@@ -12,11 +12,11 @@ cd ~/dev/aware3/web || exit 1
 
 terminalOn "git status" dev
 
-terminalOn "shtuff as devrunner
+terminalOn "shtuff as $PWD
 docker exec -it --detach-keys='ctrl-^,q' webhost bash
 cd tests" dev
 
-terminalOn "vim --servername dev" dev
+terminalOn "vim --servername $PWD" dev
 
 terminalOn "ngrok start --all" server
 terminalOn "docker exec -it --detach-keys='ctrl-^,q' webhost bash

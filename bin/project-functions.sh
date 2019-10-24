@@ -23,8 +23,8 @@ function unsudo() {
 
 function setupDevWorkspace() {
   terminalOn "artisan tinker" dev
-  terminalOn "shtuff as devrunner" dev
-  terminalOn "vim --servername dev" dev
+  terminalOn "shtuff as $PWD" dev
+  terminalOn "vim --servername $PWD" dev
 }
 
 function setupServerWorkspace() {

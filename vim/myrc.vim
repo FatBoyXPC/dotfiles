@@ -19,7 +19,7 @@ runtime! mappings.vim
     set undoreload=10000
     "set ttimeout
     "set ttimeoutlen=50
-    let g:shtuff_receiver = 'devrunner'
+    let g:shtuff_receiver = getcwd()
 
     " maybe?
     "set iskeyword-=.                    " '.' is an end of word designator
