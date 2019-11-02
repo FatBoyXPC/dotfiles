@@ -41,6 +41,8 @@ windowPlacement = composeAll [
             -- Fix for GIMP windows
             className =? "Gimp" --> doFloat,
 
+            className =? "Slack" --> doShift "3",
+
             -- Emoji picker!
             role =? "picker" --> doFloat
         ] where role = stringProperty "WM_WINDOW_ROLE"
