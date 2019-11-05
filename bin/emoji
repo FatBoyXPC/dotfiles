@@ -4,7 +4,7 @@ function main() {
     termite -r picker -e "bash -c 'echo -n \"$EMOJIS\" | fzf -m > ~/tmp/emoji'"
     sleep 0.1
 
-    SELECTED_EMOJI=$(sed "s/.*  \\([^ ].*\\)/\\1/" ~/tmp/emoji)
+    SELECTED_EMOJI=$(sed "s/.*  \\([^ ].*\\)/\\1/" ~/tmp/emoji | tr -d '\n')
 
     if [ -z "$SELECTED_EMOJI" ]; then
         return 0
