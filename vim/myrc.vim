@@ -20,6 +20,7 @@ runtime! mappings.vim
     "set ttimeout
     "set ttimeoutlen=50
     let g:shtuff_receiver = getcwd()
+    set tags^=./.git/tags
 
     " maybe?
     "set iskeyword-=.                    " '.' is an end of word designator
