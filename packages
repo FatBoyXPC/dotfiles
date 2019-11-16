@@ -6,6 +6,7 @@ aspell-en
 autoconf
 automake
 aws-cli
+base
 bash
 bc
 bind-tools
