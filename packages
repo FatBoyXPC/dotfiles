@@ -71,6 +71,7 @@ keybase-gui
 laptop-mode-tools
 lastpass-cli
 less
+libmicrodns
 libreoffice-fresh
 libtool
 licenses
@@ -236,5 +237,4 @@ xvkbd
 yarn
 youtube-dl
 zip
-zoom
 zsh
