@@ -181,6 +181,7 @@ util-linux
 vagrant
 virtualbox
 virtualbox-ext-oracle
+virtualbox-guest-utils
 vlc
 weechat
 wget
@@ -194,6 +195,7 @@ xclip
 xdebug
 xdotool
 xf86-video-intel
+xf86-video-vmware
 xmobar
 xmonad
 xmonad-contrib
