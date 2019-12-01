@@ -43,6 +43,8 @@ windowPlacement = composeAll [
 
             className =? "Slack" --> doShift "3",
 
+            className =? "kittypicker" --> doFloat,
+
             -- Emoji picker!
             role =? "picker" --> doFloat
         ] where role = stringProperty "WM_WINDOW_ROLE"

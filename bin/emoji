@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function main() {
-    termite -r picker -e "bash -c 'echo -n \"$EMOJIS\" | fzf -m > ~/tmp/emoji'"
+    kitty --class kittypicker bash -c "echo -n \"$EMOJIS\" | fzf -m > ~/tmp/emoji"
     sleep 0.1
 
     SELECTED_EMOJI=$(sed "s/.*  \\([^ ].*\\)/\\1/" ~/tmp/emoji | tr -d '\n')
