@@ -92,6 +92,7 @@ DISABLE_UPDATE_PROMPT=true
 eval `dircolors ~/.dircolors`
 
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+zstyle ':completion:*:*:make:*' tag-order 'targets'
 autoload -Uz compinit
 compinit
 
