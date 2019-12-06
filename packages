@@ -144,10 +144,12 @@ refind-efi
 ruby-bundler
 ruby-sass
 samsung-unified-driver
+screenkey
 sed
 shellcheck
 slack-desktop
 slock
+slop
 sshuttle
 strace
 sudo
