@@ -32,7 +32,6 @@ docker-compose
 driconf
 dunst
 ethtool
-evdi-git
 exfat-utils
 expect
 fakeroot
