@@ -127,4 +127,6 @@ Token.Toolbar.System = noinherit bold
 Token.Toolbar.Arg = noinherit bold
 Token.Toolbar.Arg.Text = nobold
 [favorite_queries]
+end_user_from_sns_arn_gcm_prod = select * from end_users where id = (select end_user_id from end_user_identifiers where identifier_id = (select identifier from tokens where sns_arn_gcm_prod = "$1"))
+tokens_from_app_id_and_email = select * from tokens where identifier in (select identifier_id from end_user_identifiers where end_user_id in (select id from end_users where app_id = $1 and email = "$2"))
 [alias_dsn]
