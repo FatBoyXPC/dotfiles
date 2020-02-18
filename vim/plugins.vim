@@ -27,6 +27,7 @@ Plug 'jesseleite/vim-agriculture'
 Plug 'noahfrederick/vim-laravel'
 Plug 'tpope/vim-projectionist'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'metakirby5/codi.vim'
 Plug 'kamykn/spelunker.vim'
 
 if !has('nvim')
