@@ -55,6 +55,7 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
 
 " Navigation: {
     nnoremap <leader>b :Buffers<CR>
+    nnoremap <leader><leader> <C-^>
     nnoremap <C-P> :GFiles<CR>
     nnoremap <Leader>af :Files<CR>
     nnoremap <Leader>fu :BTags<CR>
