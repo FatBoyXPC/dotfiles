@@ -61,8 +61,15 @@ let g:ale_linters = {
 \ }
 
 let g:ale_fix_on_save = 1
-let g:ale_php_phpcs_standard = 'phpcs_ruleset.xml'
-let g:php_cs_fixer_config_file = '.php_cs'
+let g:ale_php_phpcs_standard = getcwd() . '/phpcs_ruleset.xml'
+
+if filereadable(".php_cs.dist")
+    let g:php_cs_fixer_config_file = '.php_cs.dist'
+endif
+
+if filereadable(".php_cs")
+    let g:php_cs_fixer_config_file = '.php_cs'
+endif
 
 let g:ale_haskell_ghc_options = '-fno-code -v0 -dynamic'
 
