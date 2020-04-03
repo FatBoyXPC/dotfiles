@@ -68,7 +68,7 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
 
 " Git: {
     " Find merge conflict markers
-    map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
+    nnoremap <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 
     nnoremap <leader>dg2 :diffget //2<CR>:diffupdate<CR>
     nnoremap <leader>dg3 :diffget //3<CR>:diffupdate<CR>
