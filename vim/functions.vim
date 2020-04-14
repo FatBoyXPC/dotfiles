@@ -18,7 +18,7 @@ function! DuplicateCurrentFile(path)
     execute "edit " . path
 endfunction
 
-command! -bar -nargs=1 Duplicate call DuplicateCurrentFile(<q-args>)
+command! -nargs=1 Duplicate call DuplicateCurrentFile(<q-args>)
 command! MFiles call fzf#run(fzf#wrap({
     \ 'source': 'git ls-files --exclude-standard --others --modified',
     \ 'options': ['--multi', '--bind', 'alt-a:select-all,alt-d:deselect-all'] }))
