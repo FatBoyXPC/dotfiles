@@ -1,5 +1,7 @@
 let mapleader = ' '
 
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 nnoremap <Leader>fr :w<CR>:call system("fat-rerunner " . shellescape(g:shtuff_receiver))<CR>
 
 nnoremap <Leader>c :update\|bd<CR>

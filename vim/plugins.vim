@@ -29,21 +29,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'metakirby5/codi.vim'
 Plug 'kamykn/spelunker.vim'
-
-if !has('nvim')
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-html-subscope'
-Plug 'ncm2/ncm2-markdown-subscope', {'for': 'markdown'}
-Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-cssomni'
-Plug 'fgrsnau/ncm2-otherbuf', {'branch': 'master'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -89,9 +75,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:mkdp_auto_close = 0
 
-" NCM2: {
-    autocmd BufEnter * call ncm2#enable_for_buffer()
+autocmd FileType php set iskeyword+=$
 
-    set completeopt=noinsert,menuone,noselect
-    inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<c-y>", 'n') : "\<CR>")
-" }
+autocmd FileType php setlocal omnifunc=phpactor#Complete
