@@ -50,3 +50,11 @@ function! RemovePlugin()
     w
     PlugClean
 endfunction
+
+function! ShowDocumentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction

@@ -1,7 +1,5 @@
 let mapleader = ' '
 
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
 nnoremap <Leader>fr :w<CR>:call system("fat-rerunner " . shellescape(g:shtuff_receiver))<CR>
 
 nnoremap <Leader>c :update\|bd<CR>
@@ -98,20 +96,33 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
     nnoremap 2<Backspace> :set background=light<CR>
 " }
 
+" Coc: {
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> <Leader>gt <Plug>(coc-type-definition)
+    nmap <silent> <Leader>gi <Plug>(coc-implementation)
+    nmap <silent> <Leader>gr <Plug>(coc-references)
+
+    nnoremap <silent> K :call ShowDocumentation()<CR>
+
+    inoremap <silent><expr> <Leader><Leader> coc#refresh()
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" }
+
 " Refactoring: {
-    nnoremap <Leader>ua :call phpactor#UseAdd()<CR>
-    nnoremap <Leader>ec :call phpactor#ClassExpand()<CR>
-    vnoremap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
-    vmap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
-    nmap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
-    "nnoremap <Leader>pp :call phpactor#ContextMenu()<CR>
-    nnoremap <Leader>o :call phpactor#GotoDefinition()<CR>
-    "nnoremap <Leader>pd :call phpactor#OffsetTypeInfo()<CR>
-    "nnoremap <Leader>pfm :call phpactor#MoveFile()<CR>
-    "nnoremap <Leader>pfc :call phpactor#CopyFile()<CR>
-    "nnoremap <Leader>tt :call phpactor#Transform()<CR>
-    "nnoremap <Leader>cc :call phpactor#ClassNew()<CR>
-    "nnoremap <Leader>fr :call phpactor#FindReferences()<CR>
+    augroup PhpactorMappings
+        au!
+        au FileType php nmap <buffer> <Leader>ua :PhpactorImportClass<CR>
+        au FileType php nmap <buffer> <Leader>ec :PhpactorClassExpand<CR>
+        au FileType php nmap <buffer> <Leader>ua :PhpactorImportMissingClasses<CR>
+        au FileType php nmap <buffer> <Leader>mm :PhpactorContextMenu<CR>
+        au FileType php nmap <buffer> <Leader>tt :PhpactorTransform<CR>
+        au FileType php nmap <buffer> <silent> <Leader>ee
+                    \ :PhpactorExtractExpression<CR>
+        au FileType php vmap <buffer> <silent> <Leader>ee
+                    \ :<C-u>PhpactorExtractExpression<CR>
+        au FileType php vmap <buffer> <silent> <Leader>em
+                    \ :<C-u>PhpactorExtractMethod<CR>
+    augroup END
 " }
 
 function! VimrcOnlyMappings()

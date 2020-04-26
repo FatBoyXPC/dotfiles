@@ -75,6 +75,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:mkdp_auto_close = 0
 
-autocmd FileType php set iskeyword+=$
+let g:coc_snippet_next = '<tab>'
 
+autocmd FileType php set iskeyword+=$
 autocmd FileType php setlocal omnifunc=phpactor#Complete
