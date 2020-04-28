@@ -105,7 +105,7 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
 
     nnoremap <silent> K :call ShowDocumentation()<CR>
 
-    inoremap <silent><expr> <Leader><Leader> coc#refresh()
+    inoremap <silent><expr> <C-I> coc#refresh()
     inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " }
 
