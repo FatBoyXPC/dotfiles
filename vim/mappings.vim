@@ -58,7 +58,7 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
     nnoremap <leader><leader> <C-^>
     nnoremap <C-P> :GFiles<CR>
     nnoremap <Leader>af :Files<CR>
-    nnoremap <Leader>mf :MFiles<CR>
+    nnoremap <Leader>mf :GFiles?<CR>
     nnoremap <Leader>fu :BTags<CR>
     nnoremap <silent> <leader>tt :TagbarToggle<CR>
     nnoremap <Leader>ut :UndotreeToggle<CR>
