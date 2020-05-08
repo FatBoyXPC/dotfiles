@@ -23,6 +23,7 @@
     ~/.config/gtk-3.0: config/gtk-3.0
     ~/.config/mimeapps.list: config/mimeapps.list
     ~/.config/nvim: vim
+    ~/.config/phpactor: config/phpactor
     ~/.config/termite: config/termite
     ~/.dircolors: dircolors
     ~/.floorc.json: floorc.json

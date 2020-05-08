@@ -1,0 +1,5 @@
+rpc.store_replay: true
+#logging.enabled: true
+#logging.level: DEBUG
+#logging.path: '%cache%/phpactor.log'
+

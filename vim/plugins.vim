@@ -77,4 +77,3 @@ let g:mkdp_auto_close = 0
 
 let g:coc_snippet_next = '<tab>'
 
-autocmd FileType php set iskeyword+=$
