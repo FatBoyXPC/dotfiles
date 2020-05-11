@@ -62,6 +62,7 @@ runtime! mappings.vim
     let g:indent_guides_guide_size = 1
 
     highlight SpelunkerSpellBad ctermfg=190
+    highlight! link SignColumn LineNr
 " }
 
 " Formatting: {
