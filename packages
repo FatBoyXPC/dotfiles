@@ -57,6 +57,7 @@ gzip
 htop
 httpie
 imagemagick
+inotify-tools
 intel-ucode
 jdk8-openjdk
 jq
