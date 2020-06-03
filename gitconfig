@@ -33,3 +33,5 @@
     old = 196 bold
     new = 34 bold
     whitespace = red reverse
+[pull]
+	rebase = false
