@@ -9,7 +9,7 @@ aws-cli
 base
 bat
 bc
-bind-tools
+bind
 bison
 bluez
 bluez-utils
