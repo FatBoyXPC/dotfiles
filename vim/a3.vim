@@ -1,5 +1,6 @@
 set noexpandtab
 let g:vdebug_options.path_maps = {"/var/www/html": "/home/james/dev/aware3/web"}
+let test#php#codeception#executable = 'codecept'
 
 function! s:xdebug(toggle)
 	let xdebug_config = shellescape("XDEBUG_CONFIG=remote_enable=" . a:toggle)
