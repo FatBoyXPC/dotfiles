@@ -34,4 +34,6 @@
     new = 34 bold
     whitespace = red reverse
 [pull]
-	rebase = false
+    rebase = false
+[rerere]
+    enabled = true
