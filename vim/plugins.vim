@@ -36,6 +36,7 @@ call plug#end()
 runtime! macros/matchit.vim
 
 set rtp+=/usr/bin/fzf
+let g:fzf_layout = { 'down': '~40%' }
 
 let g:ale_fixers = {
 \   'php': [ 'php_cs_fixer' ],
