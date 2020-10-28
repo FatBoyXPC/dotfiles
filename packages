@@ -18,6 +18,7 @@ bzip2
 calibre
 chromium
 chromium-widevine
+cmake
 composer
 coreutils
 cowsay
