@@ -25,7 +25,7 @@ mkdir -p $SCREENSHOTS_DIR
 file_noext=$SCREENSHOTS_DIR/"`date +"%Y-%m-%d_%H-%M-%S"`_$HOSTNAME"
 
 ask_user_for_region() {
-    flameshot=$(flameshot gui --selection) || exit 1
+    flameshot=$(flameshot gui --print-geometry) || exit 1
     read -r W H X Y < <(echo $flameshot)
     G="${W}x${H}+${X}+${Y}"
 }
