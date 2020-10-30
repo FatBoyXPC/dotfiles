@@ -70,6 +70,8 @@ less
 libmicrodns
 libreoffice-fresh
 libtool
+libva-intel-driver
+libva-utils
 licenses
 linux
 linux-headers
