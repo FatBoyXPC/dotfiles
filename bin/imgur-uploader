@@ -1,0 +1,68 @@
+#!/usr/bin/python
+
+import json
+import hashlib
+import subprocess
+import configparser
+from imgur_python import Imgur
+
+def main():
+    screenshot_path = '/tmp/latest_screenshot.png'
+    imgur_link = maybe_upload_screenshot(screenshot_path)
+
+    subprocess.check_call(['clipit', imgur_link])
+    subprocess.check_call(['notify-send', '-i', screenshot_path, imgur_link])
+
+def maybe_upload_screenshot(screenshot_path):
+    screenshot_hash = hash_file(screenshot_path)
+    screenshot_metadata_path = '/tmp/latest_screenshot.json'
+    screenshot_metadata = parse_metadata(screenshot_metadata_path)
+
+    if screenshot_metadata['hash'] == screenshot_hash:
+        return screenshot_metadata['link'];
+
+    imgur_link = upload_screenshot(screenshot_path)
+
+    with open(screenshot_metadata_path, 'w') as f:
+        f.write(json.dumps({
+            'hash': screenshot_hash,
+            'link': imgur_link,
+        }))
+
+    return imgur_link
+
+def hash_file(filepath):
+    with open(filepath, 'rb') as f:
+        return hashlib.md5(f.read()).hexdigest()
+
+def parse_metadata(filepath):
+    with open(filepath, 'r') as f:
+        return json.loads(f.read())
+
+def upload_screenshot(screenshot):
+    title = 'Screenshot'
+    description = 'screenshot'
+    album = None
+    disable_audio = 0
+    imgur_client = get_imgur_client()
+    response = imgur_client.image_upload(screenshot, title, description, album, disable_audio)
+    return response['response']['data']['link']
+
+def get_imgur_client():
+    config = configparser.ConfigParser()
+    config.read('/home/james/.config/Dharkael/imgur.ini')
+    token_section = config['Token']
+    api_section = config['Api']
+
+    return Imgur({
+        'client_id': api_section['client_id'],
+        'client_secret': api_section['client_secret'],
+        'access_token': token_section['access_token'],
+        'expires_in': token_section['expires_in'],
+        'token_type': token_section['token_type'],
+        'refresh_token': token_section['refresh_token'],
+        'account_username': token_section['account_username'],
+        'account_id': token_section['account_id'],
+    })
+
+main()

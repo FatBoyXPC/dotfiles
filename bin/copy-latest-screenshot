@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+file=/tmp/latest_screenshot.png
+xclip -selection clipboard -t "image/png" $file
+notify-send -i $file " "

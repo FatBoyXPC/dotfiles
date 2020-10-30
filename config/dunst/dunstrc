@@ -9,7 +9,7 @@
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
-    geometry = "200x5-30+20"
+    geometry = "400x5-30+20"
     transparency = 0
     idle_threshold = 120
     monitor = 0
@@ -23,6 +23,8 @@
     startup_notification = false
     frame_width = 1
     frame_color = "#464B50"
+    icon_position = left
+    max_icon_size = 200
 
 [shortcuts]
     close = ctrl+space
@@ -38,7 +40,7 @@
 [urgency_normal]
     background = "#323537"
     foreground = "#AFC4DB"
-    timeout = 45
+    timeout = 5
 
 [urgency_critical]
     background = "#323537"

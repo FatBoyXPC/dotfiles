@@ -8,6 +8,9 @@ PID_FILE=jscrot.pid
 if [ -e $PID_FILE ]; then
     kill `cat $PID_FILE`
     echo "I see an ongoing jscrot, I'm going to kill it and exit"
+    # Just in case that process doesn't exist, or never got to clean up after
+    # itself, nuke that file so we at least can run next time.
+    rm -f "$PID_FILE"
     exit 1
 fi
 
@@ -19,15 +22,12 @@ beep() {
 SCREENSHOTS_DIR=$HOME/screenshots
 mkdir -p $SCREENSHOTS_DIR
 
-file_noext=$SCREENSHOTS_DIR/"`date +"%Y-%m-%d_%H:%M:%S"`_$HOSTNAME"
+file_noext=$SCREENSHOTS_DIR/"`date +"%Y-%m-%d_%H-%M-%S"`_$HOSTNAME"
 
 ask_user_for_region() {
-   #<<< slop=$(slop -f "%w %h %x %y %i") || exit 1
-   #<<< read -r W H X Y ID < <(echo $slop)
-   # Playing around with flameshot. See https://github.com/jfly/flameshot/tree/add-gui-selection-option.
-   flameshot=$(flameshot gui --selection) || exit 1
-   read -r W H X Y < <(echo $flameshot)
-   G="${W}x${H}+${X}+${Y}"
+    flameshot=$(flameshot gui --selection) || exit 1
+    read -r W H X Y < <(echo $flameshot)
+    G="${W}x${H}+${X}+${Y}"
 }
 
 if [ "$1" == "--video" ]; then
@@ -37,9 +37,13 @@ if [ "$1" == "--video" ]; then
     beep
     # TODO - copying this file doesn't work. see https://bugs.chromium.org/p/chromium/issues/detail?id=356210
 elif [ "$1" == "--select" ]; then
-    file=${file_noext}.png
-    ask_user_for_region
-    maim -g $G --hidecursor $file
+    file=/tmp/latest_screenshot.png
+    tmp_file=/tmp/latest_screenshot.wip
+    flameshot gui --raw > $tmp_file
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+    mv $tmp_file $file
 else
     file=${file_noext}.png
     maim --hidecursor $file
