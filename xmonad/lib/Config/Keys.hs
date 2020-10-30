@@ -78,5 +78,6 @@ myKeys =
         ((controlMask .|. altMask, xK_Down), spawn "xrandr -o normal"),
         ((controlMask .|. altMask, xK_Up), spawn "xrandr -o inverted"),
 
-        ((altMask, xK_v), spawn "middle-paste")
+        ((myModMask, xK_v), spawn "middle-paste"),
+        ((myModMask .|. shiftMask, xK_v), spawn "clipboard-preview")
     ]
