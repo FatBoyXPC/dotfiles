@@ -36,17 +36,6 @@ if [ "$1" == "--video" ]; then
     byzanz-record --verbose --cursor --exec="savepid $PID_FILE bash -c 'while true; do sleep 1; done'" --delay=0 --x=$X --y=$Y --width=$W --height=$H $file
     beep
     # TODO - copying this file doesn't work. see https://bugs.chromium.org/p/chromium/issues/detail?id=356210
-elif [ "$1" == "--select" ]; then
-    file=/tmp/latest_screenshot.png
-    tmp_file=/tmp/latest_screenshot.wip
-    flameshot gui --raw > $tmp_file
-    if [ $? -ne 0 ]; then
-        exit 1
-    fi
-    mv $tmp_file $file
-else
-    file=${file_noext}.png
-    maim --hidecursor $file
 fi
 
 # TODO - cleanup? see https://unix.stackexchange.com/a/247846

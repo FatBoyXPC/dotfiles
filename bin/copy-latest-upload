@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-file=/tmp/latest_screenshot.png
+file=/tmp/latest_upload.png
 xclip -selection clipboard -t "image/png" $file
 notify-send -i $file "Copied"

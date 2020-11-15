@@ -67,9 +67,9 @@ myKeys =
         ((controlMask, xF86XK_MonBrightnessUp), spawn "xbacklight -set 100"),
         ((controlMask, xF86XK_MonBrightnessDown), spawn "xbacklight -set `cat ~/.brightness`"),
 
-        ((myModMask, xK_i), spawn "imgur-uploader"),
-        ((myModMask .|. shiftMask, xK_i), spawn "copy-latest-screenshot"),
-        ((controlMask .|. altMask, xK_2), spawn "jscrot --select"),
+        ((myModMask, xK_i), spawn "clipboard-imgur"),
+        ((myModMask .|. shiftMask, xK_i), spawn "copy-latest-upload"),
+        ((controlMask .|. altMask, xK_2), spawn "flameshot gui"),
         ((controlMask .|. altMask, xK_4), spawn "jscrot --video"),
 
         ((0, xF86XK_Display), spawn $ "toggle-display"),

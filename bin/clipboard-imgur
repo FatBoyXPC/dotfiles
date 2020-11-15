@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+clipboard_is_image=$(xclip -o -selection clipboard -t TARGETS | grep image/png)
+
+if [[ -n $clipboard_is_image ]]; then
+    xclip -o -selection clipboard -t image/png > /tmp/latest_upload.png
+fi
+
+imgur-uploader

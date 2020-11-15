@@ -8,7 +8,7 @@ import configparser
 from imgur_python import Imgur
 
 def main():
-    screenshot_path = '/tmp/latest_screenshot.png'
+    screenshot_path = '/tmp/latest_upload.png'
     imgur_link = maybe_upload_screenshot(screenshot_path)
 
     subprocess.check_call(['clipit', imgur_link])
@@ -16,7 +16,7 @@ def main():
 
 def maybe_upload_screenshot(screenshot_path):
     screenshot_hash = hash_file(screenshot_path)
-    screenshot_metadata_path = '/tmp/latest_screenshot.json'
+    screenshot_metadata_path = '/tmp/latest_upload.json'
     screenshot_metadata = parse_metadata(screenshot_metadata_path)
 
     if screenshot_metadata['hash'] == screenshot_hash:
