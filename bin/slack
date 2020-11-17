@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+BROWSER=chromium /usr/bin/slack
