@@ -114,7 +114,7 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
         au!
         au FileType php nmap <buffer> <Leader>ua :PhpactorImportClass<CR>
         au FileType php nmap <buffer> <Leader>ec :PhpactorClassExpand<CR>
-        au FileType php nmap <buffer> <Leader>am :PhpactorImportMissingClasses<CR>
+        au FileType php nmap <buffer> <Leader>mi :PhpactorImportMissingClasses<CR>
         au FileType php nmap <buffer> <Leader>mm :PhpactorContextMenu<CR>
         au FileType php nmap <buffer> <silent> <Leader>ee
                     \ :PhpactorExtractExpression<CR>
