@@ -1,0 +1,81 @@
+#!/usr/bin/python
+
+import sys
+import hmac
+import json
+import time
+import types
+import base64
+import argparse
+from os.path import exists, expanduser
+
+
+parser = argparse.ArgumentParser(description='Generate 2FA Code from 2FA json')
+parser.add_argument('account_id', help='id key found in json')
+args = parser.parse_args()
+
+twofa_json_path = expanduser('~/.2fa.json')
+
+if not exists(twofa_json_path):
+    print('2fa json does not exist.')
+    sys.exit(1)
+
+with open(twofa_json_path, 'r') as f:
+    accounts = json.loads(f.read())
+
+if len(accounts) == 0:
+    print('No accounts found in json file')
+    sys.exit(1)
+
+def find_account(account_id):
+    for x in accounts:
+        if x['id'] == account_id:
+            return x
+
+account = find_account(args.account_id)
+
+if not account:
+    print('Account for given id not found')
+    sys.exit(1)
+
+# I pulled this from Harvey's gist:
+# https://gist.github.com/sr105/17910113360bdfd877f9c5d6bbb7e915
+def hotp_gen(options, counter):
+    """Generate HOTP code for key and counter."""
+    # key is stored Base32 encoded
+    # counter is converted to a 64-bit unsigned integer (MSB)
+    digest = hmac.new(key=base64.b32decode(options.secret),
+                      msg=counter.to_bytes(8, 'big'),
+                      digestmod=options.algorithm) \
+                 .digest()
+    # Take the last 4 bits of the digest and use it as a byte offset.
+    offset = digest[-1] & 0xf
+    # Make an unsigned 32-bit integer (MSB) from the 4 bytes at offset,
+    # masking the top bit.
+    v = int.from_bytes(digest[offset:offset + 4], 'big') & 0x7fffffff
+    # Return the last N base-10 digits
+    return str(v)[-options.digits:]
+
+
+def totp_counter(options):
+    """Return current number of time periods since the epoch."""
+    return int(time.time()) // options.period
+
+def totp_gen(options):
+    """Returns HOTP code for key and current time period count."""
+    return hotp_gen(options, totp_counter(options))
+
+def get_options(account):
+    account.setdefault('period', 30)
+    account.setdefault('digits', 6)
+    account.setdefault('window', 6)
+    account.setdefault('algorithm', 'sha1')
+    # options.setdefault('algorithm', 'sha256')
+    # options.setdefault('algorithm', 'sha512')
+    account['period'] = int(account['period'])
+    account['digits'] = int(account['digits'])
+    return types.SimpleNamespace(**account)
+
+code = totp_gen(get_options(account))
+
+print(code)

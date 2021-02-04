@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+OPTIONS=$(jq -r '.[] | .id' ~/.2fa.json)
+SELECTED=$(picker-popup "$OPTIONS")
+
+if [ -z "$SELECTED" ]; then
+    exit 1
+fi
+
+CODE=$(2fa_code "$SELECTED")
+echo -n "$CODE" | clipit
+xdotool key --clearmodifiers ctrl+shift+v

@@ -1,0 +1,44 @@
+#!/usr/bin/python
+
+import json
+import argparse
+from os.path import expanduser
+from urllib.parse import parse_qs, urlparse, unquote
+from subprocess import check_output, DEVNULL
+
+parser = argparse.ArgumentParser(description='Parse Google Authenticator QR Code Export')
+parser.add_argument('image_path', help='path to the QR code image')
+args = parser.parse_args()
+
+twofa_json_path = expanduser('~/.2fa.json')
+migration_link = check_output(['zbarimg', args.image_path], stderr=DEVNULL).decode('utf-8').replace('QR-Code:', '').rstrip()
+
+otps_str = check_output([expanduser('~/go/bin/otpauth'), '-link', migration_link]).decode('utf-8').rstrip().split('\n')
+
+def otp_to_dict(otp):
+    parsed_url = urlparse(otp)
+    params = parse_qs(parsed_url.query)
+    service_name, account = unquote(parsed_url.path).lstrip('/').split(':')
+    issuer = params['issuer'][0]
+    id = [service_name, account]
+
+    if issuer != service_name and issuer != 'Slack':
+        id = [issuer] + id
+
+    return {
+        'id': ' '.join(id),
+        'algorithm': params['algorithm'][0],
+        'digits': int(params['digits'][0]),
+        'period': int(params['period'][0]),
+        'secret': params['secret'][0],
+    }
+
+
+otps = [otp_to_dict(x) for x in otps_str]
+
+ids = [x['id'] for x in otps]
+
+assert len(ids) == len(set(ids))
+
+with open(twofa_json_path, 'w') as f:
+    f.write(json.dumps(otps))
