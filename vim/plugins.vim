@@ -14,7 +14,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'vim-vdebug/vdebug', { 'for': 'php' }
 Plug 'janko-m/vim-test'
-Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install', 'branch': 'develop' }
+Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
