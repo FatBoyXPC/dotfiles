@@ -74,7 +74,7 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
     nnoremap <leader>dg2 :diffget //2<CR>:diffupdate<CR>
     nnoremap <leader>dg3 :diffget //3<CR>:diffupdate<CR>
     nnoremap <leader>gd :Gvdiffsplit!<CR>
-    nnoremap <silent> <leader>gb :Gblame<CR>
+    nnoremap <silent> <leader>gb :Git blame<CR>
 " }
 
 " Testing: {
