@@ -1,0 +1,1 @@
+sudo sysdig -p"*%evt.time %proc.pid %proc.ppid %evt.dir %proc.exeline"     "( evt.dir=< and evt.type=execve ) or evt.type=procexit"
