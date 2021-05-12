@@ -1,4 +1,3 @@
-set noexpandtab
 let g:vdebug_options.path_maps = {"/var/www/html": "/home/james/dev/aware3/web"}
 let test#php#codeception#executable = 'codecept'
 
