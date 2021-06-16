@@ -28,7 +28,7 @@
     newHighlight = 34 bold 22
 [color "diff"]
     meta = 130
-    frag = 33 bold dim
+    frag = 33 bold
     commit = 172 bold
     old = 196 bold
     new = 34 bold
