@@ -19,6 +19,3 @@ xset r rate 200 30
 # is getting ignored, so let's set the compose key here.
 setxkbmap -option compose:rctrl
 xmodmap ~/.Xmodmap || true # <<< this exits 1, but still does what I need it to do???
-
-killall -q xcape || true
-xcape

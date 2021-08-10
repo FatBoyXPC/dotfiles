@@ -24,6 +24,10 @@ if [ -x /usr/bin/dunst ]; then
     dunst -force_xinerama &
 fi
 
+if [ -x /usr/bin/xcape ]; then
+    xcape
+fi
+
 if [ -x /usr/bin/xsettingsd ]; then
     touch ~/.xsettingsd
     /usr/bin/xsettingsd &
