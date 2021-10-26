@@ -29,6 +29,10 @@ if [ -x /usr/bin/xsettingsd ]; then
     /usr/bin/xsettingsd &
 fi
 
+if [ -x /usr/bin/polybar ]; then
+    /usr/bin/polybar &
+fi
+
 # From https://wiki.archlinux.org/index.php/GNOME/Keyring#xinitrc_method
 if [ -x /usr/bin/gnome-keyring-daemon ]; then
     dbus-update-activation-environment --systemd DISPLAY

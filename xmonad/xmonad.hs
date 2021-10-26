@@ -50,14 +50,9 @@ windowPlacement = composeAll [
         ] where role = stringProperty "WM_WINDOW_ROLE"
 
 main = do
-    xmproc <- spawnPipe "xmobar"
     xmonad $ desktopConfig {
         manageHook = manageDocks <+> manageHook desktopConfig <+> windowPlacement,
         layoutHook = myLayout,
-        logHook = logHook desktopConfig <+> dynamicLogWithPP xmobarPP {
-            ppOutput = hPutStrLn xmproc,
-            ppTitle = xmobarColor "green" "" . shorten 100
-        },
 
         modMask = myModMask,
         XMonad.terminal = myTerminal,
