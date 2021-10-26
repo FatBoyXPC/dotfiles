@@ -102,6 +102,7 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
     nmap <silent> <Leader>gt <Plug>(coc-type-definition)
     nmap <silent> <Leader>gi <Plug>(coc-implementation)
     nmap <silent> <Leader>gr <Plug>(coc-references)
+    nmap <silent> <Leader>ac <Plug>(coc-codeaction)<CR>
 
     nnoremap <silent> K :call ShowDocumentation()<CR>
 
@@ -112,9 +113,10 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
 " Refactoring: {
     augroup PhpactorMappings
         au!
-        au FileType php nmap <buffer> <Leader>ua :PhpactorImportClass<CR>
+        au FileType php nmap <buffer> <Leader>ic :PhpactorImportClass<CR>
         au FileType php nmap <buffer> <Leader>ec :PhpactorClassExpand<CR>
         au FileType php nmap <buffer> <Leader>mi :PhpactorImportMissingClasses<CR>
+        au FileType php nmap <buffer> <Leader>im :PhpactorImportMissingClasses<CR>
         au FileType php nmap <buffer> <Leader>mm :PhpactorContextMenu<CR>
         au FileType php nmap <buffer> <silent> <Leader>ee
                     \ :PhpactorExtractExpression<CR>
