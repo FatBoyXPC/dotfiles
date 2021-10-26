@@ -35,6 +35,10 @@ function main() {
     echo "Xft/DPI $XFT_DPI" > ~/.xsettingsd
     killall -HUP xsettingsd
 
+    # I like dunst apearing at the right place
+    killall dunst
+    dunst -force_xinerama &
+
     # notify-send blocks until something receives the message. When booting,
     # we haven't started dunst yet, so we need to run notify-send in the background.
     notify-send "Detected environment $LAYOUT_NAME" &

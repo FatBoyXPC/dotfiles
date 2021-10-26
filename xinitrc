@@ -20,10 +20,6 @@ if [ -x /usr/bin/nm-applet ]; then
     nm-applet &
 fi
 
-if [ -x /usr/bin/dunst ]; then
-    dunst -force_xinerama &
-fi
-
 if [ -x /usr/bin/xcape ]; then
     xcape
 fi
