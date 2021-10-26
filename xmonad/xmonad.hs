@@ -7,6 +7,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Layout.PerWorkspace
 
@@ -50,7 +51,7 @@ windowPlacement = composeAll [
         ] where role = stringProperty "WM_WINDOW_ROLE"
 
 main = do
-    xmonad $ desktopConfig {
+    xmonad $ ewmh desktopConfig {
         manageHook = manageDocks <+> manageHook desktopConfig <+> windowPlacement,
         layoutHook = myLayout,
 
