@@ -26,12 +26,6 @@
     icon_position = left
     max_icon_size = 200
 
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
-
 [urgency_low]
     background = "#323537"
     foreground = "#8F9D6A"
