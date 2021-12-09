@@ -1,7 +1,3 @@
 let g:configPath=$HOME.'/.vim'
 
 runtime! myrc.vim
-
-if filereadable("project.vim")
-    source project.vim
-endif

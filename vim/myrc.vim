@@ -97,3 +97,7 @@ runtime! mappings.vim
         autocmd BufReadPost plugins.vim call VimrcOnlyMappings()
     augroup END
 " }
+
+if filereadable("project.vim")
+    source project.vim
+endif
