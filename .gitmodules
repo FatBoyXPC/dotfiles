@@ -1,3 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "aconfmgr"]
+	path = aconfmgr
+	url = git@github.com:CyberShadow/aconfmgr.git
