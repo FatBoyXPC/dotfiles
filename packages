@@ -76,6 +76,7 @@ libva-utils
 licenses
 linux
 linux-headers
+lsof
 m4
 make
 man-db
@@ -85,6 +86,7 @@ mono
 mons
 mtr
 neovim
+neovim-remote
 nerd-fonts-ubuntu-mono
 networkmanager
 network-manager-applet
@@ -133,6 +135,7 @@ php-msgpack
 php-pgsql
 php-phpdbg
 pkgconf
+polybar-git
 postgresql
 potrace
 psmisc
