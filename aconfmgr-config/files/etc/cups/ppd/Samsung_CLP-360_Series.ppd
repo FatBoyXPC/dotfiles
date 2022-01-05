@@ -1,0 +1,575 @@
+*PPD-Adobe: "4.3"
+*% ===============================================
+*% PPD for Samsung CLP-360 Series
+*% For Linux Only
+*% ===============================================
+*FormatVersion: "4.3"
+*FileVersion: "1.0"
+*LanguageVersion: English
+*LanguageEncoding: ISOLatin1
+*PCFileName:  "CLP360.ppd"
+*Manufacturer: "SAMSUNG"
+*Product: "(ColorLaserPrinter)"
+*cupsVersion: 1.0
+*cupsManualCopies: False
+*% *cupsModelNumber is used as the indicator of variable bandwidth and QPDL version number field.
+*% MSB 1st bit is index of variable bandwidth.
+*% LSB 4bits - 1 is used as QPDL version number.
+*% 10000011 : variable bandwidth = True, QPDL version number = 3 - 1 = 2.
+*cupsModelNumber:  134
+*cupsFilter:  "application/vnd.cups-raster 0 rastertospl"
+*% Emulators: Number Of Packet Size in KB + "_" + Compression Type + "_" + Emulation Name
+*% FBB do not need this field. Newly introduced from CLP-600.
+*Emulators: "Banded_JBIG_SPL-C_scms"
+*ModelName:     "Samsung CLP-360 Series"
+*ShortNickName: "CLP-360"
+*1284DeviceID: "MFG:Samsung;CMD:SPLC;MDL:CLP-360 Series"
+*linuxLanguage: "SPL-C"
+*linuxPriority: "1"
+*linuxURL:    "http://www.samsungprinter.com/"
+*linuxIdentify: "CLP-360"
+*NickName:      "Samsung CLP-360 Series"
+*PSVersion: "(3010.000) 550"
+*LanguageLevel: "3"
+*ColorDevice: True
+*DefaultColorSpace: RGB
+*FileSystem:  False
+*Throughput:  "4"
+
+*% =========================================================
+*%  Color & Gray Option
+*% =========================================================
+*OpenUI *ColorModel/Color Mode: PickOne
+*OrderDependency: 10 AnySetup *ColorModel
+*DefaultColorModel: RGB
+*ColorModel RGB/Color:      "<</cupsColorSpace 1 /cupsBitsPerColor 8>>setpagedevice"
+*ColorModel Gray/Grayscale: "<</cupsColorSpace 0 /cupsBitsPerColor 8>>setpagedevice"
+*CloseUI: *ColorModel
+
+*secPJLColorModel RGB/Color: "@PJL SET COLORMODE = COLOR<0A>"
+*secPJLColorModel Gray/Grayscale: "@PJL SET COLORMODE = MONO<0A>"
+
+*% =========================================================
+*%  Black Optimization
+*% =========================================================
+*OpenUI *BlackOptimization/Black Optimization:  Boolean
+*OrderDependency: 70 AnySetup *BlackOptimization
+*DefaultBlackOptimization: True
+*BlackOptimization True/On :   ""
+*BlackOptimization False/Off : ""
+*CloseUI: *BlackOptimization
+
+*% =========================================================
+*%  Toner Save Mode
+*% =========================================================
+*OpenUI *TonerSaveMode/Toner Save: PickOne
+*OrderDependency: 15 AnySetup *TonerSaveMode
+*DefaultTonerSaveMode: Standard
+*TonerSaveMode Save/On: ""
+*TonerSaveMode Standard/Off: ""
+*CloseUI: *TonerSaveMode
+
+*%========================================================
+*% Screen
+*%========================================================
+*OpenUI *Screen/Screen Matching: PickOne
+*DefaultScreen: Enhanced
+*OrderDependency: 10 AnySetup *Screen
+*Screen PrinterDefault/PrinterDefault : ""
+*Screen Normal/Normal:     ""
+*Screen Enhanced/Enhanced: ""
+*Screen Detailed/Detailed: ""
+*CloseUI: *Screen
+
+*%========================================================
+*% JCLRGB
+*%========================================================
+*JCLOpenUI *JCLRGB/RGB Color: PickOne
+*DefaultJCLRGB: Standard
+*OrderDependency: 10 JCLSetup *JCLRGB
+*JCLRGB Standard/Standard:""
+*JCLRGB Vivid/Vivid: ""
+*JCLRGB Device/Device: ""
+*JCLRGB 3/Corporate Imaging: ""
+*JCLCloseUI: *JCLRGB
+
+*% =========================================================
+*%  Quality Information
+*% =========================================================
+*OpenUI *Quality/Quality: PickOne
+*OrderDependency: 15 AnySetup *Quality
+*DefaultQuality: 600x600_2
+*Quality 600x600_2/Best: "<</HWResolution[600 600]>>setpagedevice"
+*Quality 600x600_1/Normal: "<</HWResolution[600 600]>>setpagedevice"
+*CloseUI: *Quality
+
+*DefaultResolution: 600dpi
+
+*% =========================================================
+*%  JCLSkipBlankPages
+*% =========================================================
+*JCLOpenUI *JCLSkipBlankPages/Skip Blank Pages: Boolean
+*OrderDependency: 10 JCLSetup *JCLSkipBlankPages
+*DefaultJCLSkipBlankPages: False
+*JCLSkipBlankPages False/Off:                   "@PJL SET XIGNOREFF=OFF<0D0A>"
+*JCLSkipBlankPages True/On:                     "@PJL SET XIGNOREFF=ON<0D0A>"
+*JCLCloseUI: *JCLSkipBlankPages
+
+*% =========================================================
+*%  Trapping
+*% =========================================================
+*JCLOpenUI *JCLTrapping/Trapping: PickOne
+*OrderDependency: 10 JCLSetup *JCLTrapping
+*DefaultJCLTrapping: Medium
+*JCLTrapping Off/Off:                  "@PJL SET TRAPPING=OFF<0D0A>"
+*JCLTrapping Medium/Normal:            "@PJL SET TRAPPING=NORMAL<0D0A>"
+*JCLTrapping Maximum/Maximum:          "@PJL SET TRAPPING=MAXIMUM<0D0A>"
+*JCLCloseUI: *JCLTrapping
+
+*% =========================================================
+*%  EdgeEnhance
+*% =========================================================
+*JCLOpenUI *JCLEdgeEnhance/Edge Enhance: PickOne
+*OrderDependency: 10 JCLSetup *JCLEdgeEnhance
+*DefaultJCLEdgeEnhance: Normal
+*JCLEdgeEnhance Off/Off:                   "@PJL SET EDGEENHANCE=OFF<0D0A>"
+*JCLEdgeEnhance Normal/Normal:             "@PJL SET EDGEENHANCE=NORMAL<0D0A>"
+*JCLEdgeEnhance Maximum/Maximum:           "@PJL SET EDGEENHANCE=MAXIMUM<0D0A>"
+*JCLCloseUI: *JCLEdgeEnhance
+
+*%========================================================
+*% Document Type
+*%========================================================
+*OpenUI *DocumentType/Document Type: PickOne
+*DefaultDocumentType: Standard
+*OrderDependency: 10 AnySetup *DocumentType
+*DocumentType Standard/Standard : ""
+*DocumentType Photo/Photo:     ""
+*DocumentType Business/Business Graphic: ""
+*DocumentType CAD/CAD: ""
+*DocumentType Browser/Browser: ""
+*CloseUI: *DocumentType
+
+*% =========================================================
+*%  Paper Source
+*% =========================================================
+*OpenUI *InputSlot/Paper Source: PickOne
+*OrderDependency: 25 AnySetup *InputSlot
+*DefaultInputSlot: Auto
+*InputSlot Auto/Auto Selection: ""
+*InputSlot Manual/Manual Feeder: ""
+*CloseUI: *InputSlot
+
+*% =========================================================
+*%  Paper Handling
+*% =========================================================
+*OpenUI *PageSize/Paper Size: PickOne
+*OrderDependency: 5 AnySetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter/Letter: "<</Policies <</PageSize 7>> /PageSize [612 792] /ImagingBBox null>>setpagedevice"
+*PageSize Legal/Legal: "<< /Policies <</PageSize 7>> /PageSize [612 1008] /ImagingBBox null>>setpagedevice"
+*PageSize A4/A4: "<< /Policies <</PageSize 7>> /PageSize[595 842] /ImagingBBox null>>setpagedevice"
+*PageSize Executive/Executive: "<</Policies <</PageSize 7>> /PageSize [522 756] /ImagingBBox null>> setpagedevice"
+*PageSize Folio/US Folio: "<</Policies <</PageSize 7>> /PageSize [612 936] /ImagingBBox null>> setpagedevice"
+*PageSize JB5/JIS B5: "<</Policies <</PageSize 7>> /PageSize [516 729] /ImagingBBox null>> setpagedevice"
+*PageSize B5/ISO B5: "<</Policies <</PageSize 7>> /PageSize [499 709] /ImagingBBox null>> setpagedevice"
+*PageSize A5/A5: "<</Policies <</PageSize 7>> /PageSize [420 595] /ImagingBBox null>> setpagedevice"
+*PageSize A6/A6: "<</Policies <</PageSize 7>> /PageSize [297 420] /ImagingBBox null>> setpagedevice"
+*PageSize Oficio/Oficio: "<</Policies <</PageSize 7>> /PageSize [612 972] /ImagingBBox null>> setpagedevice"
+*PageSize PCard4x6/Post Card 4x6: "<</Policies <</PageSize 7>> /PageSize [288 432] /ImagingBBox null>> setpagedevice"
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 40 AnySetup *PageRegion
+*DefaultPageRegion: Letter
+*PageRegion Letter/Letter: "<</Policies <</PageSize 7>> /PageSize [612 792] /ImagingBBox null>> setpagedevice"
+*PageRegion Legal/Legal: "<</Policies <</PageSize 7>> /PageSize [612 1008] /ImagingBBox null>> setpagedevice"
+*PageRegion A4/A4: "<</Policies <</PageSize 7>> /PageSize [595 842] /ImagingBBox null>> setpagedevice"
+*PageRegion Executive/Executive: "<</Policies <</PageSize 7>> /PageSize [522 756] /ImagingBBox null>> setpagedevice"
+*PageRegion Folio/US Folio: "<</Policies <</PageSize 7>> /PageSize [612 936] /ImagingBBox null>> setpagedevice"
+*PageRegion JB5/JIS B5: "<</Policies <</PageSize 7>> /PageSize [516 729] /ImagingBBox null>> setpagedevice"
+*PageRegion B5/ISO B5: "<</Policies <</PageSize 7>> /PageSize [499 709] /ImagingBBox null>> setpagedevice"
+*PageRegion A5/A5: "<</Policies <</PageSize 7>> /PageSize [420 595] /ImagingBBox null>> setpagedevice"
+*PageRegion A6/A6: "<</Policies <</PageSize 7>> /PageSize [297 420] /ImagingBBox null>> setpagedevice"
+*PageRegion Oficio/Oficio: "<</Policies <</PageSize 7>> /PageSize [612 972] /ImagingBBox null>> setpagedevice"
+*PageRegion PCard4x6/Post Card 4x6: 	"<</Policies <</PageSize 7>> /PageSize [288 432] /ImagingBBox null>> setpagedevice"
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: Letter
+*ImageableArea Letter/Letter: "12.5 12.5 599.5 779.5"
+*ImageableArea Legal/Legal: "12.5 12.5 599.5 995.5"
+*%ImageableArea A4/A4: "12.5 12.5 582.5 829.5"
+*ImageableArea A4/A4: "100 100 577 824"
+*ImageableArea Executive/Executive: "12.5 12.5 509.5 743.5"
+*ImageableArea Folio/US Folio: "12.5 12.5 599.5 923.5"
+*ImageableArea JB5/JIS B5: "12.5 12.5 503.5 716.5"
+*ImageableArea B5/ISO B5: "12.5 12.5 486.5 696.5"
+*ImageableArea A5/A5: "12.5 12.5 407.5 582.5"
+*ImageableArea A6/A6: "12.5 12.5 284.5 407.5"
+*ImageableArea Oficio/Oficio: "12.5 12.5 599.5 959.5"
+*ImageableArea PCard4x6/Post Card 4x6: 	"12.50 12.50 275.50 419.50"
+
+*DefaultPaperDimension: Letter
+*PaperDimension Letter: "612 792"
+*PaperDimension Legal:  "612 1008"
+*PaperDimension A4: "595 842"
+*PaperDimension Executive/Executive: "522 756"
+*PaperDimension Folio/US Folio: "612 936"
+*PaperDimension JB5/JIS B5: "516 729"
+*PaperDimension B5/ISO B5: "499 709"
+*PaperDimension A5/A5: "420 595"
+*PaperDimension A6/A6: "297 420"
+*PaperDimension Oficio/Oficio: "612 972"
+*PaperDimension PCard4x6/Post Card 4x6: "288 432"
+
+*% =========================================================
+*%  Media Type
+*% =========================================================
+*JCLOpenUI *MediaType/Paper Type: PickOne
+*OrderDependency: 30 JCLSetup *MediaType
+*DefaultMediaType: None
+*MediaType None/Printer Default: "@PJL SET PAPERTYPE = OFF<0A>"
+*MediaType Plain/Plain Paper: "@PJL SET PAPERTYPE = NORMAL<0A>"
+*MediaType Thick/Thick Paper: "@PJL SET PAPERTYPE = THICK<0A>"
+*MediaType Thin/Thin Paper: "@PJL SET PAPERTYPE = THIN<0A>"
+*MediaType Bond/Bond Paper: "@PJL SET PAPERTYPE = BOND<0A>"
+*MediaType Card/CardStock: "@PJL SET PAPERTYPE = CARD<0A>"
+*MediaType Labels/Labels: "@PJL SET PAPERTYPE = LABEL<0A>"
+*MediaType Preprinted/Preprinted: "@PJL SET PAPERTYPE = USED<0A>"
+*MediaType Color/Color Paper: "@PJL SET PAPERTYPE = COLOR<0A>"
+*MediaType Cotton/Cotton: "@PJL SET PAPERTYPE = COTTON<0A>"
+*MediaType Recycled/Recycled Paper: "@PJL SET PAPERTYPE = RECYCLED<0A>"
+*MediaType Archive/Archive: "@PJL SET PAPERTYPE = ARCHIVE<0A>"
+*MediaType 67/Glossy Photo 111-130 g/m2 (Laser):    "@PJL SET PAPERTYPE = PHOTO111-130<0A>"
+*MediaType 68/Glossy Photo 131-175 g/m2 (Laser):    "@PJL SET PAPERTYPE = PHOTO131-175<0A>"
+*MediaType 69/Glossy Photo 176-220 g/m2 (Laser):    "@PJL SET PAPERTYPE = PHOTO176-220<0A>"
+*MediaType 70/Matte Photo 111-130 g/m2 (Laser):     "@PJL SET PAPERTYPE = MATTEPHOTO111-130<0A>"
+*MediaType 71/Matte Photo 131-175 g/m2 (Laser):     "@PJL SET PAPERTYPE = MATTEPHOTO131-175<0A>"
+*MediaType 72/Matte Photo 176-220 g/m2 (Laser):     "@PJL SET PAPERTYPE = MATTEPHOTO176-220<0A>"
+*JCLCloseUI: *MediaType
+
+*RequiresPageRegion All: True
+
+*% =========================================================
+*%  User Interface Constraints
+*% =========================================================
+
+*% =========================================================
+*% Color Mode - Black Optimization
+*% =========================================================
+*UIConstraints: *ColorModel Gray         *BlackOptimization True
+*UIConstraints: *BlackOptimization True  *ColorModel Gray
+
+*% =========================================================
+*%  PageSize PostCard 4x6 - Media Type
+*% =========================================================
+
+*% PostCard 4x6
+*UIConstraints: *PageSize PCard4x6            *MediaType None
+*UIConstraints: *PageSize PCard4x6            *MediaType Plain
+*UIConstraints: *PageSize PCard4x6            *MediaType Thick
+*UIConstraints: *PageSize PCard4x6            *MediaType Thin
+*UIConstraints: *PageSize PCard4x6            *MediaType Bond
+*UIConstraints: *PageSize PCard4x6            *MediaType Color
+*UIConstraints: *PageSize PCard4x6            *MediaType Labels
+*UIConstraints: *PageSize PCard4x6            *MediaType Preprinted
+*UIConstraints: *PageSize PCard4x6            *MediaType Recycled
+*UIConstraints: *PageSize PCard4x6            *MediaType Cotton
+*UIConstraints: *PageSize PCard4x6            *MediaType Archive
+
+*UIConstraints: *MediaType None             *PageSize PCard4x6
+*UIConstraints: *MediaType Plain            *PageSize PCard4x6
+*UIConstraints: *MediaType Thick            *PageSize PCard4x6
+*UIConstraints: *MediaType Thin             *PageSize PCard4x6
+*UIConstraints: *MediaType Bond             *PageSize PCard4x6
+*UIConstraints: *MediaType Color            *PageSize PCard4x6
+*UIConstraints: *MediaType Labels           *PageSize PCard4x6
+*UIConstraints: *MediaType Preprinted       *PageSize PCard4x6
+*UIConstraints: *MediaType Recycled         *PageSize PCard4x6
+*UIConstraints: *MediaType Cotton           *PageSize PCard4x6
+*UIConstraints: *MediaType Archive          *PageSize PCard4x6
+
+*% =========================================================
+*%  PageRegion PostCard 4x6 - Media Type
+*% =========================================================
+*% PostCard 4x6
+*UIConstraints: *PageRegion PCard4x6            *MediaType None
+*UIConstraints: *PageRegion PCard4x6            *MediaType Plain
+*UIConstraints: *PageRegion PCard4x6            *MediaType Thick
+*UIConstraints: *PageRegion PCard4x6            *MediaType Thin
+*UIConstraints: *PageRegion PCard4x6            *MediaType Bond
+*UIConstraints: *PageRegion PCard4x6            *MediaType Color
+*UIConstraints: *PageRegion PCard4x6            *MediaType Labels
+*UIConstraints: *PageRegion PCard4x6            *MediaType Preprinted
+*UIConstraints: *PageRegion PCard4x6            *MediaType Recycled
+*UIConstraints: *PageRegion PCard4x6            *MediaType Cotton
+*UIConstraints: *PageRegion PCard4x6            *MediaType Archive
+
+*UIConstraints: *MediaType None             *PageRegion PCard4x6
+*UIConstraints: *MediaType Plain            *PageRegion PCard4x6
+*UIConstraints: *MediaType Thick            *PageRegion PCard4x6
+*UIConstraints: *MediaType Thin             *PageRegion PCard4x6
+*UIConstraints: *MediaType Bond             *PageRegion PCard4x6
+*UIConstraints: *MediaType Color            *PageRegion PCard4x6
+*UIConstraints: *MediaType Labels           *PageRegion PCard4x6
+*UIConstraints: *MediaType Preprinted       *PageRegion PCard4x6
+*UIConstraints: *MediaType Recycled         *PageRegion PCard4x6
+*UIConstraints: *MediaType Cotton           *PageRegion PCard4x6
+*UIConstraints: *MediaType Archive          *PageRegion PCard4x6
+
+
+*% =========================================================
+*%  PageSize - Photo111-130(MediaType)
+*% =========================================================
+*UIConstraints: *PageSize Legal             *MediaType 67
+*UIConstraints: *PageSize Oficio            *MediaType 67
+*UIConstraints: *PageSize Folio             *MediaType 67
+*UIConstraints: *PageSize B5                *MediaType 67
+*UIConstraints: *PageSize JB5               *MediaType 67
+*UIConstraints: *PageSize Executive         *MediaType 67
+*UIConstraints: *PageSize A5                *MediaType 67
+*UIConstraints: *PageSize A6                *MediaType 67
+
+*UIConstraints: *MediaType 67               *PageSize Legal
+*UIConstraints: *MediaType 67               *PageSize Oficio
+*UIConstraints: *MediaType 67               *PageSize Folio
+*UIConstraints: *MediaType 67               *PageSize B5
+*UIConstraints: *MediaType 67               *PageSize JB5
+*UIConstraints: *MediaType 67               *PageSize Executive
+*UIConstraints: *MediaType 67               *PageSize A5
+*UIConstraints: *MediaType 67               *PageSize A6
+
+*% =========================================================
+*%  PageRegion - Photo111-130(MediaType)
+*% =========================================================
+*UIConstraints: *PageRegion Legal           *MediaType 67
+*UIConstraints: *PageRegion Oficio          *MediaType 67
+*UIConstraints: *PageRegion Folio           *MediaType 67
+*UIConstraints: *PageRegion B5              *MediaType 67
+*UIConstraints: *PageRegion JB5             *MediaType 67
+*UIConstraints: *PageRegion Executive       *MediaType 67
+*UIConstraints: *PageRegion A5              *MediaType 67
+*UIConstraints: *PageRegion A6              *MediaType 67
+
+*UIConstraints: *MediaType 67               *PageRegion Legal
+*UIConstraints: *MediaType 67               *PageRegion Oficio
+*UIConstraints: *MediaType 67               *PageRegion Folio
+*UIConstraints: *MediaType 67               *PageRegion B5
+*UIConstraints: *MediaType 67               *PageRegion JB5
+*UIConstraints: *MediaType 67               *PageRegion Executive
+*UIConstraints: *MediaType 67               *PageRegion A5
+*UIConstraints: *MediaType 67               *PageRegion A6
+
+*% =========================================================
+*%  PageSize - Photo131-175(MediaType)
+*% =========================================================
+*UIConstraints: *PageSize Legal             *MediaType 68
+*UIConstraints: *PageSize Oficio            *MediaType 68
+*UIConstraints: *PageSize Folio             *MediaType 68
+*UIConstraints: *PageSize B5                *MediaType 68
+*UIConstraints: *PageSize JB5               *MediaType 68
+*UIConstraints: *PageSize Executive         *MediaType 68
+*UIConstraints: *PageSize A5                *MediaType 68
+*UIConstraints: *PageSize A6                *MediaType 68
+
+*UIConstraints: *MediaType 68               *PageSize Legal
+*UIConstraints: *MediaType 68               *PageSize Oficio
+*UIConstraints: *MediaType 68               *PageSize Folio
+*UIConstraints: *MediaType 68               *PageSize B5
+*UIConstraints: *MediaType 68               *PageSize JB5
+*UIConstraints: *MediaType 68               *PageSize Executive
+*UIConstraints: *MediaType 68               *PageSize A5
+*UIConstraints: *MediaType 68               *PageSize A6
+
+*% =========================================================
+*%  PageRegion - Photo131-175(MediaType)
+*% =========================================================
+*UIConstraints: *PageRegion Legal           *MediaType 68
+*UIConstraints: *PageRegion Oficio          *MediaType 68
+*UIConstraints: *PageRegion Folio           *MediaType 68
+*UIConstraints: *PageRegion B5              *MediaType 68
+*UIConstraints: *PageRegion JB5             *MediaType 68
+*UIConstraints: *PageRegion Executive       *MediaType 68
+*UIConstraints: *PageRegion A5              *MediaType 68
+*UIConstraints: *PageRegion A6              *MediaType 68
+
+*UIConstraints: *MediaType 68               *PageRegion Legal
+*UIConstraints: *MediaType 68               *PageRegion Oficio
+*UIConstraints: *MediaType 68               *PageRegion Folio
+*UIConstraints: *MediaType 68               *PageRegion B5
+*UIConstraints: *MediaType 68               *PageRegion JB5
+*UIConstraints: *MediaType 68               *PageRegion Executive
+*UIConstraints: *MediaType 68               *PageRegion A5
+*UIConstraints: *MediaType 68               *PageRegion A6
+
+*% =========================================================
+*%  PageSize - Photo176-220(MediaType)
+*% =========================================================
+*UIConstraints: *PageSize Legal             *MediaType 69
+*UIConstraints: *PageSize Oficio            *MediaType 69
+*UIConstraints: *PageSize Folio             *MediaType 69
+*UIConstraints: *PageSize B5                *MediaType 69
+*UIConstraints: *PageSize JB5               *MediaType 69
+*UIConstraints: *PageSize Executive         *MediaType 69
+*UIConstraints: *PageSize A5                *MediaType 69
+*UIConstraints: *PageSize A6                *MediaType 69
+
+*UIConstraints: *MediaType 69               *PageSize Legal
+*UIConstraints: *MediaType 69               *PageSize Oficio
+*UIConstraints: *MediaType 69               *PageSize Folio
+*UIConstraints: *MediaType 69               *PageSize B5
+*UIConstraints: *MediaType 69               *PageSize JB5
+*UIConstraints: *MediaType 69               *PageSize Executive
+*UIConstraints: *MediaType 69               *PageSize A5
+*UIConstraints: *MediaType 69               *PageSize A6
+
+*% =========================================================
+*%  PageRegion - Photo176-220(MediaType)
+*% =========================================================
+*UIConstraints: *PageRegion Legal           *MediaType 69
+*UIConstraints: *PageRegion Oficio          *MediaType 69
+*UIConstraints: *PageRegion Folio           *MediaType 69
+*UIConstraints: *PageRegion B5              *MediaType 69
+*UIConstraints: *PageRegion JB5             *MediaType 69
+*UIConstraints: *PageRegion Executive       *MediaType 69
+*UIConstraints: *PageRegion A5              *MediaType 69
+*UIConstraints: *PageRegion A6              *MediaType 69
+
+*UIConstraints: *MediaType 69               *PageRegion Legal
+*UIConstraints: *MediaType 69               *PageRegion Oficio
+*UIConstraints: *MediaType 69               *PageRegion Folio
+*UIConstraints: *MediaType 69               *PageRegion B5
+*UIConstraints: *MediaType 69               *PageRegion JB5
+*UIConstraints: *MediaType 69               *PageRegion Executive
+*UIConstraints: *MediaType 69               *PageRegion A5
+*UIConstraints: *MediaType 69               *PageRegion A6
+
+*% =========================================================
+*%  PageSize - MattePhoto111-130(MediaType)
+*% =========================================================
+*UIConstraints: *PageSize Legal             *MediaType 70
+*UIConstraints: *PageSize Oficio            *MediaType 70
+*UIConstraints: *PageSize Folio             *MediaType 70
+*UIConstraints: *PageSize B5                *MediaType 70
+*UIConstraints: *PageSize JB5               *MediaType 70
+*UIConstraints: *PageSize Executive         *MediaType 70
+*UIConstraints: *PageSize A5                *MediaType 70
+*UIConstraints: *PageSize A6                *MediaType 70
+
+*UIConstraints: *MediaType 70               *PageSize Legal
+*UIConstraints: *MediaType 70               *PageSize Oficio
+*UIConstraints: *MediaType 70               *PageSize Folio
+*UIConstraints: *MediaType 70               *PageSize B5
+*UIConstraints: *MediaType 70               *PageSize JB5
+*UIConstraints: *MediaType 70               *PageSize Executive
+*UIConstraints: *MediaType 70               *PageSize A5
+*UIConstraints: *MediaType 70               *PageSize A6
+
+*% =========================================================
+*%  PageRegion - MattePhoto111-130(MediaType)
+*% =========================================================
+*UIConstraints: *PageRegion Legal           *MediaType 70
+*UIConstraints: *PageRegion Oficio          *MediaType 70
+*UIConstraints: *PageRegion Folio           *MediaType 70
+*UIConstraints: *PageRegion B5              *MediaType 70
+*UIConstraints: *PageRegion JB5             *MediaType 70
+*UIConstraints: *PageRegion Executive       *MediaType 70
+*UIConstraints: *PageRegion A5              *MediaType 70
+*UIConstraints: *PageRegion A6              *MediaType 70
+
+*UIConstraints: *MediaType 70               *PageRegion Legal
+*UIConstraints: *MediaType 70               *PageRegion Oficio
+*UIConstraints: *MediaType 70               *PageRegion Folio
+*UIConstraints: *MediaType 70               *PageRegion B5
+*UIConstraints: *MediaType 70               *PageRegion JB5
+*UIConstraints: *MediaType 70               *PageRegion Executive
+
+*UIConstraints: *MediaType 70               *PageRegion A5
+*UIConstraints: *MediaType 70               *PageRegion A6
+
+*% =========================================================
+*%  PageSize - MattePhoto131-175(MediaType)
+*% =========================================================
+*UIConstraints: *PageSize Legal             *MediaType 71
+*UIConstraints: *PageSize Oficio            *MediaType 71
+*UIConstraints: *PageSize Folio             *MediaType 71
+*UIConstraints: *PageSize B5                *MediaType 71
+*UIConstraints: *PageSize JB5               *MediaType 71
+*UIConstraints: *PageSize Executive         *MediaType 71
+*UIConstraints: *PageSize A5                *MediaType 71
+*UIConstraints: *PageSize A6                *MediaType 71
+
+*UIConstraints: *MediaType 71               *PageSize Legal
+*UIConstraints: *MediaType 71               *PageSize Oficio
+*UIConstraints: *MediaType 71               *PageSize Folio
+*UIConstraints: *MediaType 71               *PageSize B5
+*UIConstraints: *MediaType 71               *PageSize JB5
+*UIConstraints: *MediaType 71               *PageSize Executive
+*UIConstraints: *MediaType 71               *PageSize A5
+*UIConstraints: *MediaType 71               *PageSize A6
+
+*% =========================================================
+*%  PageRegion - MattePhoto131-175(MediaType)
+*% =========================================================
+*UIConstraints: *PageRegion Legal           *MediaType 71
+*UIConstraints: *PageRegion Oficio          *MediaType 71
+*UIConstraints: *PageRegion Folio           *MediaType 71
+*UIConstraints: *PageRegion B5              *MediaType 71
+*UIConstraints: *PageRegion JB5             *MediaType 71
+*UIConstraints: *PageRegion Executive       *MediaType 71
+*UIConstraints: *PageRegion A5              *MediaType 71
+*UIConstraints: *PageRegion A6              *MediaType 71
+
+*UIConstraints: *MediaType 71               *PageRegion Legal
+*UIConstraints: *MediaType 71               *PageRegion Oficio
+*UIConstraints: *MediaType 71               *PageRegion Folio
+*UIConstraints: *MediaType 71               *PageRegion B5
+*UIConstraints: *MediaType 71               *PageRegion JB5
+*UIConstraints: *MediaType 71               *PageRegion Executive
+*UIConstraints: *MediaType 71               *PageRegion A5
+*UIConstraints: *MediaType 71               *PageRegion A6
+
+*% =========================================================
+*%  PageSize - MattePhoto176-220(MediaType)
+*% =========================================================
+*UIConstraints: *PageSize Legal             *MediaType 72
+*UIConstraints: *PageSize Oficio            *MediaType 72
+*UIConstraints: *PageSize Folio             *MediaType 72
+*UIConstraints: *PageSize B5                *MediaType 72
+*UIConstraints: *PageSize JB5               *MediaType 72
+*UIConstraints: *PageSize Executive         *MediaType 72
+*UIConstraints: *PageSize A5                *MediaType 72
+*UIConstraints: *PageSize A6                *MediaType 72
+
+*UIConstraints: *MediaType 72               *PageSize Legal
+*UIConstraints: *MediaType 72               *PageSize Oficio
+*UIConstraints: *MediaType 72               *PageSize Folio
+*UIConstraints: *MediaType 72               *PageSize B5
+*UIConstraints: *MediaType 72               *PageSize JB5
+*UIConstraints: *MediaType 72               *PageSize Executive
+*UIConstraints: *MediaType 72               *PageSize A5
+*UIConstraints: *MediaType 72               *PageSize A6
+
+*% =========================================================
+*%  PageRegion - MattePhoto176-220(MediaType)
+*% =========================================================
+*UIConstraints: *PageRegion Legal           *MediaType 72
+*UIConstraints: *PageRegion Oficio          *MediaType 72
+*UIConstraints: *PageRegion Folio           *MediaType 72
+*UIConstraints: *PageRegion B5              *MediaType 72
+*UIConstraints: *PageRegion JB5             *MediaType 72
+*UIConstraints: *PageRegion Executive       *MediaType 72
+*UIConstraints: *PageRegion A5              *MediaType 72
+*UIConstraints: *PageRegion A6              *MediaType 72
+
+*UIConstraints: *MediaType 72               *PageRegion Legal
+*UIConstraints: *MediaType 72               *PageRegion Oficio
+*UIConstraints: *MediaType 72               *PageRegion Folio
+*UIConstraints: *MediaType 72               *PageRegion B5
+*UIConstraints: *MediaType 72               *PageRegion JB5
+*UIConstraints: *MediaType 72               *PageRegion Executive
+*UIConstraints: *MediaType 72               *PageRegion A5
+*UIConstraints: *MediaType 72               *PageRegion A6
+
+*DefaultFont: Courier
+

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "$HOME/dotfiles/aconfmgr"
+./aconfmgr -c ../aconfmgr-config "$@"

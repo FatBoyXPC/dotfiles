@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<VirtualBoxExtensionPack xmlns="http://www.virtualbox.org/VirtualBoxExtensionPack" version="1.0">
+    <Name>Oracle VM VirtualBox Extension Pack</Name>
+    <Description>Oracle Cloud Infrastructure integration, USB 2.0 and USB 3.0 Host Controller, Host Webcam, VirtualBox RDP, PXE ROM, Disk Encryption, NVMe.</Description>
+    <Version revision="144080">6.1.22</Version>
+    <MainModule>VBoxPuelMain</MainModule>
+    <MainVMModule>VBoxPuelMainVM</MainVMModule>
+    <VRDEModule>VBoxVRDP</VRDEModule>
+    <ShowLicense/>
+</VirtualBoxExtensionPack>
+

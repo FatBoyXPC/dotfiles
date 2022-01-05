@@ -1,0 +1,26 @@
+#
+# /etc/hosts: static lookup table for host names
+#
+
+#<ip-address>	<hostname.domain.org>	<hostname>
+127.0.0.1	localhost.localdomain	localhost james.directmail2.com
+::1		localhost.localdomain	localhost
+127.0.1.1       fatboyxpc.localdomain   fatboyxpc
+142.93.54.178   home.fatboyxpc.com
+#198.50.192.145  fatboyxpc.com
+
+
+127.0.0.1  james-local-dev.aware3.com
+127.0.0.1  www.james-local-dev.aware3.com
+127.0.0.1  james-local-dev.aware3.net
+127.0.0.1  www.james-local-dev.aware3.net
+127.0.0.1  functional.james-local-dev.aware3.net
+127.0.0.1  testapp.james-local-dev.aware3.net
+127.0.0.1  apitest.james-local-dev.aware3.net
+127.0.0.1  my-local-dev.aware3.com
+127.0.0.1  my-local-dev.aware3.net
+127.0.0.1  testapp.my-local-dev.aware3.net
+127.0.0.1  functional.my-local-dev.aware3.net
+127.0.0.1  backstop.my-local-dev.aware3.net
+
+# End of file
