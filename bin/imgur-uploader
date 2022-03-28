@@ -44,8 +44,8 @@ def parse_metadata(filepath):
     return {'hash': '', 'link': ''}
 
 def upload_screenshot(screenshot):
-    title = 'Screenshot'
-    description = 'screenshot'
+    title = ''
+    description = ''
     album = None
     disable_audio = 0
     imgur_client = get_imgur_client()
