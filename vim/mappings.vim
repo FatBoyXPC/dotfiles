@@ -55,7 +55,9 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
 
 " Formatting: {
     nnoremap <Leader>fj :%!python -m json.tool<CR>
+    xnoremap <Leader>fj :!python -m json.tool<CR>
     nnoremap <Leader>fx :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"<CR>
+    xnoremap <Leader>fx :!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"<CR>
 " }
 
 " Navigation: {
