@@ -30,8 +30,8 @@ function main() {
     killall -HUP xsettingsd
 
     # I like dunst apearing at the right place
-    killall dunst
-    dunst -force_xinerama &
+    dunst-pause
+    dunst-resume
 
     # notify-send blocks until something receives the message. When booting,
     # we haven't started dunst yet, so we need to run notify-send in the background.
