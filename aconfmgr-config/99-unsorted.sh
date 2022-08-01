@@ -542,3 +542,22 @@ SetFileProperty /var/lib/colord owner colord
 
 
 #CreateLink /usr/lib/libphp5.so libphp56.so
+
+
+# Mon Aug  1 04:11:29 AM EDT 2022 - Unknown packages
+
+
+# Mon Aug  1 04:11:30 AM EDT 2022 - New / changed files
+
+
+CreateLink /etc/fonts/conf.d/11-lcdfilter-default.conf /usr/share/fontconfig/conf.default/11-lcdfilter-default.conf
+CreateLink /etc/fonts/conf.d/48-spacing.conf /usr/share/fontconfig/conf.default/48-spacing.conf
+CreateLink /etc/systemd/user/sockets.target.wants/gnome-keyring-daemon.socket /usr/lib/systemd/user/gnome-keyring-daemon.socket
+
+
+# Mon Aug  1 04:11:39 AM EDT 2022 - New file properties
+
+
+# See jfly's comment https://github.com/jfly/snow/blob/bf1551bb2d1c93a63eebacd02d2a2701975b59ab/dotfiles/aconfmgr-config/06-shell.sh#L19-L22
+SetFileProperty /usr/lib/utempter/utempter group utmp
+SetFileProperty /usr/lib/utempter/utempter mode 2755
