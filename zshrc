@@ -107,8 +107,6 @@ function de {
     $CMD
 }
 
-source ~/dev/aware3/web/.system/dev_env/zsh/a3.plugin.zsh
-
 bindkey '\ev' edit-command-line
 
 source /usr/share/fzf/key-bindings.zsh
