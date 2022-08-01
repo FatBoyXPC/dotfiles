@@ -34,6 +34,7 @@
     ~/.git_templates: git_templates
     ~/.myclirc: myclirc
     ~/.pathrc: pathrc
+    ~/.p10k.zsh: p10k.zsh
     ~/.ssh/config: ssh_config
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
