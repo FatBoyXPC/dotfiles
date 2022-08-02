@@ -1,9 +1,8 @@
 call plug#begin(g:configPath . '/plugged')
 
-Plug 'altercation/vim-colors-solarized'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mbbill/undotree'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-fugitive'
@@ -29,6 +28,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'metakirby5/codi.vim'
 Plug 'kamykn/spelunker.vim'
+Plug 'jeffkreeftmeijer/vim-dim', {'branch': 'main'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()

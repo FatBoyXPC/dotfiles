@@ -37,8 +37,8 @@ runtime! mappings.vim
 " }
 
 " UI: {
-    set background=dark
-    colorscheme solarized
+    set background=light
+    colorscheme dim
     set number
     set relativenumber
     set showmatch
@@ -48,15 +48,24 @@ runtime! mappings.vim
     set t_Co=256
     set showcmd                 " Show partial commands in status line and
     set tabpagemax=15               " Only show 15 tabs
-    set showmode                    " Display the current mode
+    set noshowmode
     set colorcolumn=80,120
     set splitbelow
     set splitright
     set nofoldenable
+    set showtabline=2
 
-    let g:airline_theme = 'solarized'
-    let g:airline_powerline_fonts = 1
-    let g:airline#extensions#tabline#enabled = 1
+    let g:lightline = {'colorscheme': '16color'}
+    let g:lightline.tabline = {
+                \ 'left': [ [ 'buffers' ] ],
+                \ 'right': [ [ 'close'] ] }
+    let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
+    let g:lightline.component_type = { 'buffers': 'tabsel' }
+    let g:lightline.separator = { 'left': '', 'right': '' }
+    let g:lightline.subseparator = {'left': '', 'right': '' }
+    " Only show the buffers if there's more than 1 open.
+    " From https://github.com/mengelbrecht/lightline-bufferline/issues/99
+    let g:lightline#bufferline#min_buffer_count = 1
 
     let g:indent_guides_start_level = 2
     let g:indent_guides_guide_size = 1
@@ -82,6 +91,7 @@ runtime! mappings.vim
     set hlsearch
     set ignorecase
     set smartcase
+    "set shortmess-=S
 " }
 
 " Encoding: {

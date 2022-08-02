@@ -62,8 +62,8 @@ myKeys =
 
         ((0, xF86XK_MonBrightnessUp), spawn $ changeBrightness "+5%"),
         ((0, xF86XK_MonBrightnessDown), spawn $ changeBrightness "-5%"),
-        ((shiftMask, xF86XK_MonBrightnessUp), spawn "colorscheme light"),
-        ((shiftMask, xF86XK_MonBrightnessDown), spawn "colorscheme dark"),
+        ((shiftMask, xF86XK_MonBrightnessUp), spawn "colorscheme current set light"),
+        ((shiftMask, xF86XK_MonBrightnessDown), spawn "colorscheme current set dark"),
         ((controlMask, xF86XK_MonBrightnessUp), spawn "xbacklight -set 100"),
         ((controlMask, xF86XK_MonBrightnessDown), spawn "xbacklight -set `cat ~/.brightness`"),
 

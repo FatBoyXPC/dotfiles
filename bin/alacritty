@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+export ALACRITTY_TWEAKER_ALACRITTY_BIN=/usr/bin/alacritty
+
+exec with-alacritty alacritty "$@"

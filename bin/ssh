@@ -7,6 +7,11 @@ if [ -n "$IS_GIT_MY_ANCESTOR" ]; then
     exit
 fi
 
-colorscheme light &> /dev/null
+colorscheme set current light
+
+function finish {
+    colorscheme clear current
+}
+trap finish EXIT
+
 /usr/sbin/ssh "$@"
-colorscheme dark &> /dev/null
