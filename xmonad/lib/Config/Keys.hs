@@ -28,7 +28,7 @@ myKeys =
         --((myModMask, xK_b), sendMessage ToggleStruts),
 
         -- Launch a terminal (changed from return to semicolon)
-        ((myModMask .|. shiftMask, xK_semicolon), spawn myTerminal),
+        ((myModMask .|. shiftMask, xK_semicolon), spawn $ "cd $(xcwd); exec " ++ myTerminal),
 
         ((myModMask .|. shiftMask, xK_Return), spawn "emoji"),
 
