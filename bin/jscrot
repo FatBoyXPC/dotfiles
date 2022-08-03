@@ -26,7 +26,7 @@ file_noext=$SCREENSHOTS_DIR/"`date +"%Y-%m-%d_%H-%M-%S"`_$HOSTNAME"
 
 ask_user_for_region() {
     flameshot=$(flameshot gui --print-geometry) || exit 1
-    read -r W H X Y < <(echo $flameshot)
+    read -r W H X Y < <(echo $flameshot| python -c 'import sys, re; print(" ".join(re.split(r"[x+]", sys.stdin.read())), end="")')
     G="${W}x${H}+${X}+${Y}"
 }
 
