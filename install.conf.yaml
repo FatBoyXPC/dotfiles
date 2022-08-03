@@ -14,6 +14,7 @@
     - ./bin/gen-xmobarrc > ~/.xmobarrc
     - "[ -d ~/.oh-my-zsh ] || sh -c \"$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\""
     - "[ -d ~/.oh-my-zsh/custom/plugins/artisan ] || git clone https://github.com/jessarcher/zsh-artisan.git ~/.oh-my-zsh/custom/plugins/artisan"
+    - "[ -d ~/.oh-my-zsh/custom/themes/powerlevel10k ] || git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
 - link:
     ~/.bash_aliases: aliases
