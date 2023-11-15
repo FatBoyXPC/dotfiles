@@ -72,6 +72,7 @@ export OPEN_ON_MAKE_EDITOR=dvo
 export ARTISAN_OPEN_ON_MAKE_EDITOR=$OPEN_ON_MAKE_EDITOR
 export FZF_DEFAULT_COMMAND='ag -U --hidden --ignore .git -g ""'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+export LESS=-RF
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
