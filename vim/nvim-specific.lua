@@ -36,8 +36,8 @@ telescope.setup {
     pickers = {
         find_files = {
             prompt_title = 'All Files',
-            --find_command = {'rg', '--files', '--no-ignore', '--hidden'},
-            find_command = {'ag', '-l', '--nogroup', '--column', '-u', '--hidden'},
+            no_ignore = true,
+            hidden = true,
         },
         current_buffer_fuzzy_find = {
             prompt_title = 'Current Buffer Lines',
@@ -75,9 +75,20 @@ builtin.lsp_document_methods = function ()
     builtin.lsp_document_symbols({
             prompt_title = 'LSP Document Methods',
             symbols = { 'method' },
-            symbol_width = 40,
+            symbol_width = 25,
+            symbol_type_width = 0,
             show_line = true,
         })
+
+end
+
+builtin.laravel_picker = function ()
+  builtin.find_files({
+    prompt_title = 'Laravel Vendor Files',
+    no_ignore = true,
+    hidden = true,
+    search_dirs = { 'vendor/laravel' },
+  })
 end
 
 require('nvim-autopairs').setup({

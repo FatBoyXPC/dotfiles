@@ -69,6 +69,9 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
     nnoremap <Leader>mf :Telescope git_status<CR>
     nnoremap <Leader>fu :Telescope lsp_document_methods<CR>
     nnoremap <Leader>ut :UndotreeToggle<CR>
+    nnoremap <Leader>T :Telescope<CR>
+    nnoremap <Leader>R :Telescope resume<CR>
+    nnoremap <Leader>lf :Telescope laravel_picker<CR>
 
     " Display all lines with keyword under cursor " and ask which one to jump to
     nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
