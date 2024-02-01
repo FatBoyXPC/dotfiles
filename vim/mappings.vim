@@ -61,14 +61,13 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
     nnoremap <leader>x12 :%s/\n//g<cr>:%s/\~/\~\r/g<cr>gg:nohlsearch<cr>
 " }
 
-" Navigation: {
-    nnoremap <leader>b :Buffers<CR>
+" NavigationTelescope: {
+    nnoremap <leader>b :Telescope buffers sort_lastused=true<CR>
     nnoremap <leader><leader> <C-^>
-    nnoremap <C-P> :GFiles<CR>
-    nnoremap <Leader>af :Files<CR>
-    nnoremap <Leader>mf :GFiles?<CR>
-    nnoremap <Leader>fu :BTags<CR>
-    nnoremap <silent> <leader>tt :TagbarToggle<CR>
+    nnoremap <C-P> :Telescope git_files<CR>
+    nnoremap <Leader>af :Telescope find_files<CR>
+    nnoremap <Leader>mf :Telescope git_status<CR>
+    nnoremap <Leader>fu :Telescope lsp_document_methods<CR>
     nnoremap <Leader>ut :UndotreeToggle<CR>
 
     " Display all lines with keyword under cursor " and ask which one to jump to
@@ -105,17 +104,20 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
     nnoremap 2<Backspace> :set background=light<CR>
 " }
 
-" Coc: {
-    nmap <silent> gd <Plug>(coc-definition)
-    nmap <silent> <Leader>gt <Plug>(coc-type-definition)
-    nmap <silent> <Leader>gi <Plug>(coc-implementation)
-    nmap <silent> <Leader>gr <Plug>(coc-references)
-    nmap <silent> <Leader>ac <Plug>(coc-codeaction)<CR>
+" LSP: {
+    nmap <silent> gd :lua vim.lsp.buf.definition()<CR>
+    nmap <silent> <Leader>gt :lua vim.lsp.buf.type_definition()<CR>
+    nmap <silent> <Leader>gi :lua vim.lsp.buf.implementation()<CR>
+    nmap <silent> <Leader>gr :lua vim.lsp.buf.references()<CR>
+    nmap <silent> <Leader>ac :lua vim.lsp.buf.code_action()<CR>
 
     nnoremap <silent> K :call ShowDocumentation()<CR>
 
-    inoremap <silent><expr> <C-I> coc#refresh()
-    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    "inoremap <silent><expr> <C-I> coc#refresh()
+    "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    "inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
+    "This is the right now:
+    "inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 " }
 
 " Refactoring: {

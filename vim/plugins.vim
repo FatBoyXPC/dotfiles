@@ -1,6 +1,6 @@
 call plug#begin(g:configPath . '/plugged')
 
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mbbill/undotree'
@@ -29,7 +29,21 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'metakirby5/codi.vim'
 Plug 'kamykn/spelunker.vim'
 Plug 'jeffkreeftmeijer/vim-dim', {'branch': 'main'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Let's move this to neovim (init.vim or something after?) specifically sometime
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim',
+Plug 'nvim-telescope/telescope-live-grep-args.nvim',
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make', 'branch': 'main' }
+Plug 'nvim-telescope/telescope-ui-select.nvim',
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 
 call plug#end()
 
@@ -75,6 +89,3 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:mkdp_auto_close = 0
-
-let g:coc_snippet_next = '<tab>'
-
