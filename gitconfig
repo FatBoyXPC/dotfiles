@@ -7,7 +7,7 @@
     pager = diff-so-fancy | less $LESS
     excludesfile = ~/.gitignore_global
 [init]
-    templatedir = ~/.git_templates
+    ;templatedir = ~/.git_templates
 [alias]
     ctags = !.git/hooks/ctags
 [github]

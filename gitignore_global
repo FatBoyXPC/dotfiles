@@ -1,3 +1,4 @@
 project.vim
 .ignore
+.phpactor.json
 .phpactor.yml
