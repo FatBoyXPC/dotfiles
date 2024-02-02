@@ -18,6 +18,34 @@ require'lspconfig'.phpactor.setup{
 local telescope = require('telescope')
 local actions = require('telescope.actions')
 
+local builtin = require('telescope.builtin')
+
+builtin.lsp_document_methods = function ()
+    builtin.lsp_document_symbols({
+            prompt_title = 'LSP Document Methods',
+            symbols = { 'method' },
+            symbol_width = 25,
+            symbol_type_width = 0,
+            show_line = true,
+        })
+
+end
+
+builtin.laravel_picker = function ()
+  builtin.find_files({
+    prompt_title = 'Laravel Vendor Files',
+    no_ignore = true,
+    hidden = true,
+    search_dirs = { 'vendor/laravel' },
+  })
+end
+
+local custom_actions = {}
+custom_actions.select_file_and_accept_method = function (prompt_bufnr)
+  require('telescope.actions').select_default(prompt_bufnr)
+  builtin.lsp_document_methods()
+end
+
 telescope.setup {
     defaults = {
         prompt_prefix = '  ',
@@ -38,6 +66,13 @@ telescope.setup {
             prompt_title = 'All Files',
             no_ignore = true,
             hidden = true,
+        },
+        git_files = {
+            mappings = {
+                i = {
+                    ["@"] = custom_actions.select_file_and_accept_method,
+                }
+            }
         },
         current_buffer_fuzzy_find = {
             prompt_title = 'Current Buffer Lines',
@@ -68,28 +103,6 @@ telescope.setup {
 telescope.load_extension('fzf')
 telescope.load_extension('live_grep_args')
 telescope.load_extension('ui-select')
-
-local builtin = require('telescope.builtin')
-
-builtin.lsp_document_methods = function ()
-    builtin.lsp_document_symbols({
-            prompt_title = 'LSP Document Methods',
-            symbols = { 'method' },
-            symbol_width = 25,
-            symbol_type_width = 0,
-            show_line = true,
-        })
-
-end
-
-builtin.laravel_picker = function ()
-  builtin.find_files({
-    prompt_title = 'Laravel Vendor Files',
-    no_ignore = true,
-    hidden = true,
-    search_dirs = { 'vendor/laravel' },
-  })
-end
 
 require('nvim-autopairs').setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
