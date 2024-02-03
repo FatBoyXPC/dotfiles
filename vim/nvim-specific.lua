@@ -57,6 +57,8 @@ telescope.setup {
             i = {
                 ['<C-a>'] = actions.toggle_all,
                 ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
+                ["<C-j>"] = require('telescope.actions').move_selection_next,
+                ["<C-k>"] = require('telescope.actions').move_selection_previous,
             },
         },
         file_ignore_patterns = { 'node_modules', '.DS_Store', 'resources/dist', '.git', 'storage/framework' },
@@ -68,6 +70,7 @@ telescope.setup {
             hidden = true,
         },
         git_files = {
+            show_untracked = true,
             mappings = {
                 i = {
                     ["@"] = custom_actions.select_file_and_accept_method,
