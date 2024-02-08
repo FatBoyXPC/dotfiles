@@ -86,6 +86,7 @@ telescope.setup {
         buffers = {
             mappings = {
                 i = {
+                    ["@"] = custom_actions.select_file_and_accept_method,
                     ["<C-x>"] = "delete_buffer",
                 }
             }
