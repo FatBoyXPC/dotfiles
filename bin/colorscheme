@@ -38,16 +38,21 @@ function _get_location() {
 
 function _get_json_colorscheme() {
     local colorscheme=$1
-    local file
-    file=$(ls ~/dotfiles/colorschemes/**/"$colorscheme.yml" 2>/dev/null)
+
+    IFS=":"
+    for d in $COLORSCHEME_PATH; do
+        local file
+        file=$(ls "$d"/**/"$colorscheme.yml" 2>/dev/null)
+        if [ -n "$file" ]; then
+            break
+        fi
+    done
     if [ -z "$file" ]; then
-        echo "Could not find colorscheme: $colorscheme" >/dev/stderr
+        echo "Could not find colorscheme: $colorscheme in \$COLORSCHEME_PATH" >/dev/stderr
         exit 1
     fi
 
-    # We are legitimately trying to pass a dollarsign character to yq here.
-    # shellcheck disable=SC2016
-    yq --arg cs "$colorscheme" '.colors + {name: $cs}' "$file"
+    yq '.colors' "$file"
 }
 
 # Validate command line arguments
@@ -89,9 +94,12 @@ EOF
 }
 
 function _list() {
-    for f in ~/dotfiles/colorschemes/**/*.yml; do
-        f="$(basename "$f")"
-        echo "${f%.yml}"
+    IFS=":"
+    for d in $COLORSCHEME_PATH; do
+        for f in "$d"/**/*.yml; do
+            f="$(basename "$f")"
+            echo "${f%.yml}"
+        done
     done
 }
 function _ls() {
@@ -119,17 +127,19 @@ function _get() {
 
     local location=$1
 
-    with-alacritty get "$(_get_location "$location")" | jq --raw-output '.colors.name'
+    with-alacritty get "$(_get_location "$location")" | jq --raw-output '.colors'
 }
 
 function _index_of_in() {
-    local findme=$1
+    local find_colorscheme_json=$1
     shift
 
     local found_index=-1
     local i=0
-    for colorscheme in "$@"; do
-        if [ "$colorscheme" = "$findme" ]; then
+    for colorscheme_name in "$@"; do
+        colorscheme_json="$(_get_json_colorscheme "$colorscheme_name")"
+
+        if [ "$colorscheme_json" = "$find_colorscheme_json" ]; then
             found_index=$i
         fi
         i=$((i + 1))
