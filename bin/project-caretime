@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# shellcheck source=./project-functions.sh
+source "$(dirname "$0")/project-functions.sh"
+
+# shellcheck disable=SC2119
+#needSudo
+
+cd ~/dev/ct-api/ || exit 1
+
+terminalOn "git status" dev
+terminalOn "shtuff as $PWD" dev
+terminalOn "nvim --listen $PWD/nvim.pipe" dev

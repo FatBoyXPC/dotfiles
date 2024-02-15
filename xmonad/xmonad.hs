@@ -33,8 +33,8 @@ myBorderWidth = 2
 windowPlacement = composeAll [
             -- use `xprop` to get window information
 
-            role =? "dev-window" --> doShift "2",
-            role =? "server-window" --> doShift "5",
+            appName =? "dev-window" --> doShift "2",
+            appName =? "server-window" --> doShift "5",
 
             -- Float flameshot's imgur window
             className =? "flameshot" <&&> fmap (isInfixOf "Upload to Imgur") title --> doFloat,

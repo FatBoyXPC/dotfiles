@@ -9,7 +9,7 @@ function terminalOn() {
   CMD="$1"
   WORKSPACE="$2-window"
 
-  unsudo termite -r "$WORKSPACE" -e "shtuff new \"$CMD\"" &
+  unsudo alacritty --class "$WORKSPACE" -e shtuff new "$CMD" &
   sleep 0.1 # force windows to be created in order
 }
 

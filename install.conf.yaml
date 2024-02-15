@@ -47,6 +47,8 @@
     ~/.zshrc: zshrc
     ~/bin: bin
     ~/dev/aware3/web/project.vim: vim/a3.vim
+    ~/dev/ay-backend/project.vim: vim/ally.vim
+    ~/dev/ct-api/project.vim: vim/caretime.vim
 
 #- shell:
 #  -
