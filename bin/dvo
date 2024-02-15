@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 # dev vim open
-vim --servername "$PWD" --remote "$@"
+nvim --server "$PWD/nvim.pipe" --remote "$@"
