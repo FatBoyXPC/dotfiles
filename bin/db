@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+server=$(grep -Po '(?<=\[)[a-z0-9]+(?=\])' ~/.my.cnf | fzf)
+
+if [ -n "$server" ]; then
+    mycli --login-path "$server"
+fi
