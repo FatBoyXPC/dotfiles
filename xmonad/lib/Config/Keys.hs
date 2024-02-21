@@ -1,6 +1,7 @@
 module Config.Keys (myModMask, myKeys) where
 
 import Config.Terminal
+import Config.Workspaces
 
 import Graphics.X11.ExtraTypes.XF86
 import XMonad
@@ -44,7 +45,7 @@ myKeys =
         -- We stole this shortcut above (to emulate DWM's monocle shortcut)
         -- Lets add a shift modifier.
         -- Move focus to the master window
-        ((myModMask .|. shiftMask, xK_m), windows W.focusMaster),
+        ((myModMask, xK_n), windows W.focusMaster),
 
         -- Force window back to tiling mode
         ((myModMask .|. shiftMask, xK_t), withFocused $ windows . W.sink),
@@ -85,4 +86,9 @@ myKeys =
 
         ((myModMask, xK_v), spawn "middle-paste"),
         ((myModMask .|. shiftMask, xK_v), spawn "clipboard-preview")
-    ]
+    ] ++
+    -- mod-[1..9] %! Switch to workspace N
+    -- mod-shift-[1..9] %! Move client to workspace N
+    [((m .|. myModMask, k), windows $ f i)
+        | (i, k) <- zip myWorkspaces myWorkspaceKeys
+        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
