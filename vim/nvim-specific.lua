@@ -61,7 +61,7 @@ telescope.setup {
                 ["<C-k>"] = require('telescope.actions').move_selection_previous,
             },
         },
-        file_ignore_patterns = { 'node_modules', '.DS_Store', 'resources/dist', '.git', 'storage/framework' },
+        file_ignore_patterns = { 'node_modules', '.DS_Store', 'resources/dist', '.git/', 'storage/framework' },
     },
     pickers = {
         find_files = {
