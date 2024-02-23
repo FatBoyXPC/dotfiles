@@ -40,29 +40,9 @@ Host fatboyxpc
     HostName fatboyxpc.com
     user james
 
-Host fcadmin fcuadmin
-    HostName admin.freshfarmsusa.com
-
-Host fcexporter fcuexporter
-    HostName exporter.freshfarmstruck.com
-
-Host fcsms fcusms
-    HostName sms.freshfarmstruck.com
-
-Host fcu*
-    user ubuntu
-    IdentityFile fruitclub-aws-glennmackbook.pem
-
-Host fc*
-    user forge
-
 Host htpc
     HostName 192.168.2.90
     user james
-
-Host matchdevs
-    HostName dev.matchdevs.com
-    user matchdevs
 
 Host wcap
     HostName worldcubeassociation.org
