@@ -1,6 +1,19 @@
 AddKeysToAgent yes
 ServerAliveInterval 120
 
+Host allyjump
+    HostName 172.31.32.36
+    LocalForward 4106 app-allyms-cluster.cluster-clv3ofbjzjfp.us-east-1.rds.amazonaws.com:3306
+    LocalForward 4107 ally-demo.clv3ofbjzjfp.us-east-1.rds.amazonaws.com:3306
+    LocalForward 4108 ally-staging.cluster-clv3ofbjzjfp.us-east-1.rds.amazonaws.com:3306
+    user ubuntu
+    IdentityFile id_ed25519
+
+Host allytesting
+    Hostname 172.31.28.57
+    LocalForward 4206 ally-testing.cluster-clv3ofbjzjfp.us-east-1.rds.amazonaws.com:3306
+    user ubuntu
+    IdentityFile id_ed25519
 
 Host andreg
     HostName 35.243.205.141
@@ -27,6 +40,35 @@ host clark
 Host csnades
     HostName csnades.com
     user james
+
+Host ctdev
+    HostName 3.135.210.172
+    user ubuntu
+
+Host ctdevui
+    HostName 52.14.11.191
+    user ubuntu
+    IdentityFile id_ed25519
+
+Host ctdevlaravel
+    HostName 18.191.208.192
+    LocalForward 3206 172.31.27.80:3366
+    user ubuntu
+
+Host ctproddf
+    HostName 3.22.246.98
+    user ubuntu
+    IdentityFile ~/.ssh/id_ed25519
+
+Host ctprodlaravel
+    HostName 3.136.174.224
+    LocalForward 3106 caretime-prod-db2.cuqtbiodsbak.us-east-2.rds.amazonaws.com:3306
+    LocalForward 1234 sftp-gov.4tellus.com:22
+    user ubuntu
+
+Host ctprodrabbit
+    HostName 3.128.127.199
+    user ubuntu
 
 Host cubecomps-wca
     HostName 52.43.124.237
