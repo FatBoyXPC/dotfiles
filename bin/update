@@ -5,3 +5,7 @@ pacaur -Syuu
 sudo ghc-pkg recache
 xmonad --recompile
 check-packages
+
+# cd into my-nix
+# nix flake update
+# nix build

@@ -62,6 +62,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Create PATH env variable
 source ~/.pathrc
+
+# Let's not cause issues if nix isn't installed
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 export XDEBUG_CONFIG="idekey=sublime.xdebug"
 export TERM="xterm-256color"
