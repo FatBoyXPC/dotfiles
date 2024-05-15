@@ -1,1 +1,1 @@
-export PATH=$HOME/dotfiles/my-nix/result/bin:$HOME/bin:$HOME/.vim/plugged/phpactor/bin:$HOME/.local/bin:/usr/bin
+export PATH=$HOME/dotfiles/my-nix/result/bin:$HOME/bin:$HOME/.vim/plugged/phpactor/bin:/usr/bin
