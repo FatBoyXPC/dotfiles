@@ -10,5 +10,6 @@ symlinkJoin {
     tldr
     (pkgs.callPackage ./flameshot {})
     (wrap-nixgl with-alacritty )
+    xcwd
   ];
 }
