@@ -1,4 +1,1 @@
-export PATH=$HOME/dotfiles/my-nix/result/bin:$HOME/bin:$HOME/.vim/plugged/phpactor/bin:$HOME/.composer/vendor/bin:$HOME/.local/bin:$HOME/.gem/ruby/2.6.0/bin
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin
-export PATH=$PATH:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/sbin
-export PATH=$PATH:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=$HOME/dotfiles/my-nix/result/bin:$HOME/bin:$HOME/.vim/plugged/phpactor/bin:$HOME/.local/bin:/usr/bin
