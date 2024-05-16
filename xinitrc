@@ -33,6 +33,10 @@ if [ -x /usr/bin/polybar ]; then
     /usr/bin/polybar &
 fi
 
+if [ -x /home/james/dotfiles/my-nix/result/bin/flameshot ]; then
+    /home/james/dotfiles/my-nix/result/bin/flameshot &
+fi
+
 # From https://wiki.archlinux.org/index.php/GNOME/Keyring#xinitrc_method
 if [ -x /usr/bin/gnome-keyring-daemon ]; then
     dbus-update-activation-environment --systemd DISPLAY
