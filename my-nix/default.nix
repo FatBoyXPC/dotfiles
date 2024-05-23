@@ -1,8 +1,7 @@
 { symlinkJoin, pkgs, shtuff, with-alacritty }:
 
 let
-  wrap-nixgl = pkgs.callPackage ./wrap-nixgl.nix {};
-  chromiumAltered = (pkgs.symlinkJoin {
+  chromiumAlt = symlinkJoin {
     name = "chromium";
     paths = [ pkgs.chromium ];
     buildInputs = [ pkgs.makeWrapper ];
@@ -14,17 +13,21 @@ let
           --set GOOGLE_DEFAULT_CLIENT_ID 77185425430.apps.googleusercontent.com \
           --set GOOGLE_DEFAULT_CLIENT_SECRET OTJgUOQcT7lO7GsGZq2G4IlT
       '';
-    }); in
+    };
+  flameshotAlt = pkgs.callPackage ./flameshot {};
+  withAlacrittyAlt = wrap-nixgl with-alacritty;
+  wrap-nixgl = pkgs.callPackage ./wrap-nixgl.nix {};
+in
 
 symlinkJoin {
   name = "my-nix";
   paths = with pkgs; [
-    chromiumAltered
+    chromiumAlt
+    flameshotAlt
     mycli
     shtuff
     tldr
-    (pkgs.callPackage ./flameshot {})
-    (wrap-nixgl with-alacritty )
+    withAlacrittyAlt
     xcwd
   ];
 }
