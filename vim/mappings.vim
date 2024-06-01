@@ -36,8 +36,9 @@ nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
     nnoremap <Leader>tw :set wrap!<CR>
 
     " I had this as <C-/> but my terminal/vim combo seems to not like that.
-    nmap <C-_> <Plug>NERDCommenterToggle
-    xmap <C-_> <Plug>NERDCommenterToggle
+    " Apparently now I have to change it back ater changing to nix alacritty?
+    nmap <C-/> <Plug>NERDCommenterToggle
+    xmap <C-/> <Plug>NERDCommenterToggle
 
     " Allow using the repeat operator with a visual selection (!)
     " http://stackoverflow.com/a/8064607/127816
