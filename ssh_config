@@ -7,25 +7,13 @@ Host allyjump
     LocalForward 4107 ally-demo.clv3ofbjzjfp.us-east-1.rds.amazonaws.com:3306
     LocalForward 4108 ally-staging.cluster-clv3ofbjzjfp.us-east-1.rds.amazonaws.com:3306
     user ubuntu
-    IdentityFile id_ed25519
+    IdentityFile ~/.ssh/id_ed25519
 
 Host allytesting
     Hostname 172.31.28.57
     LocalForward 4206 ally-testing.cluster-clv3ofbjzjfp.us-east-1.rds.amazonaws.com:3306
     user ubuntu
-    IdentityFile id_ed25519
-
-Host andreg
-    HostName 35.243.205.141
-    user andreg
-
-Host directmail
-    HostName qa.directmail2.com
-    user directmail
-
-Host cidm
-    HostName ci.dm20.com
-    user directmail
+    IdentityFile ~/.ssh/id_ed25519
 
 host jfly
     HostName clark.jflei.com
@@ -37,10 +25,6 @@ host clark
     HostName clark
     user clark
 
-Host csnades
-    HostName csnades.com
-    user james
-
 Host ctdev
     HostName 3.135.210.172
     user ubuntu
@@ -48,7 +32,7 @@ Host ctdev
 Host ctdevui
     HostName 52.14.11.191
     user ubuntu
-    IdentityFile id_ed25519
+    IdentityFile ~/.ssh/id_ed25519
 
 Host ctdevlaravel
     HostName 18.191.208.192
