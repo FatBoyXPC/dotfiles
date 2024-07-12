@@ -38,8 +38,9 @@ runtime! mappings.vim
 
 " UI: {
     set notermguicolors
-    set background=light
+    set background=dark
     colorscheme dim
+    highlight ColorColumn ctermfg=8 ctermbg=7
     set number
     set relativenumber
     set showmatch
