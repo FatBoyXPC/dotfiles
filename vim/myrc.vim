@@ -37,7 +37,8 @@ runtime! mappings.vim
 " }
 
 " UI: {
-    set background=dark
+    set notermguicolors
+    set background=light
     colorscheme dim
     set number
     set relativenumber
