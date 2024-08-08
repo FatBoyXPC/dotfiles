@@ -23,6 +23,7 @@ symlinkJoin {
   name = "my-nix";
   paths = with pkgs; [
     chromiumAlt
+    direnv
     flameshotAlt
     mycli
     shtuff

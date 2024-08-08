@@ -20,6 +20,7 @@
     ~/.bash_aliases: aliases
     ~/.config/bat: config/bat
     ~/.config/chromium-flags.conf: config/chromium-flags.conf
+    ~/.config/direnv/direnv.toml: config/direnv.toml
     ~/.config/dunst: config/dunst
     ~/.config/fontconfig: config/fontconfig
     ~/.config/gtk-3.0: config/gtk-3.0
