@@ -54,7 +54,7 @@ export UPDATE_ZSH_DAYS=1
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer docker docker-compose chucknorris z artisan zsh-syntax-highlighting)
+plugins=(git composer docker docker-compose chucknorris z artisan zsh-syntax-highlighting direnv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,7 +71,7 @@ fi
 # export MANPATH="/usr/local/man:$MANPATH"
 export XDEBUG_CONFIG="idekey=sublime.xdebug"
 export TERM="xterm-256color"
-export EDITOR="vim"
+export EDITOR="nvim"
 export VISUAL=$EDITOR
 export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
 export OPEN_ON_MAKE_EDITOR=dvo
