@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    shtuff.url = "github:FatBoyXPC/shtuff/flake";
+    shtuff.url = "github:jfly/shtuff";
     with-alacritty.url = "github:FatBoyXPC/with-alacritty";
     nixgl.url = "github:nix-community/nixGL";
   };
