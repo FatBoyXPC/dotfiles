@@ -1,4 +1,4 @@
-autoperipherals
+autoperipherals sync
 
 # Load X resources (fixes some font issues)
 xrdb -merge .Xresources

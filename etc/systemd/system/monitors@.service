@@ -6,7 +6,7 @@ Type=simple
 # Don't kill child processes started by autoperipherals
 KillMode=none
 
-ExecStart=/home/%i/bin/x11-run-as %i autoperipherals
+ExecStart=/home/%i/bin/x11-run-as %i autoperipherals sync
 
 [Install]
 WantedBy=multi-user.target

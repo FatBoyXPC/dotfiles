@@ -2,20 +2,23 @@
 
 set -e
 
+# Mouse accel nixos way
+#https://github.com/jfly/snow/blob/120b7ade88d84e3cce7d6883166ef5896b5cf858/hosts/pattern/hardware-configuration-custom.nix#L27-L36
 # https://wiki.archlinux.org/index.php/Mouse_acceleration
 xset m 2.5 0
 
-# Turn off capslock just in case it's on.
-# Normally, I run fixinputs right after noticing that my capslock key is
-# actually doing capslock and not escape. I then run fixinputs, and it's
-# nice for fixinputs to actually disable capslock, because I didn't want
-# it on in the first place!
-capslockx off
-
+# Set up a pretty fast keyrepeat.
+#https://github.com/jfly/snow/blob/120b7ade88d84e3cce7d6883166ef5896b5cf858/hosts/pattern/desktop/default.nix#L73-L75
 # Speed up keyrepeat
 xset r rate 200 30
 
 # First reset keys before running xmodmap. It seems like /etc/default/keyboard
 # is getting ignored, so let's set the compose key here.
 setxkbmap -option compose:rctrl
+# move to interception tools
 xmodmap ~/.Xmodmap || true # <<< this exits 1, but still does what I need it to do???
+
+
+
+# todo
+# when moving to nixos, see all the github links and interception tools!
