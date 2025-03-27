@@ -15,6 +15,15 @@ let
       '';
     };
   flameshotAlt = pkgs.callPackage ./flameshot {};
+  slackAlt = symlinkJoin {
+    name = "slack";
+    paths = [ pkgs.slack ];
+    buildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/slack \
+          --set BROWSER chromium
+      '';
+    };
   withAlacrittyAlt = wrap-nixgl with-alacritty;
   wrap-nixgl = pkgs.callPackage ./wrap-nixgl.nix {};
 in
@@ -27,7 +36,9 @@ symlinkJoin {
     flameshotAlt
     mycli
     shtuff
+    slackAlt
     tldr
+    uhk-agent
     withAlacrittyAlt
     xcwd
   ];
