@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-server=$(grep -Po '(?<=\[)[a-z0-9]+(?=\])' ~/.my.cnf | fzf)
+server=$(grep -Po '(?<=\[client)[a-zA-Z0-9]+(?=\])' ~/.my.cnf | fzf)
 
 if [ -n "$server" ]; then
     echo -e "\e]2;$server - db\007"
-    mycli --login-path "$server"
+    mycli --defaults-group-suffix="$server"
 fi

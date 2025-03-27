@@ -14,14 +14,12 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-vdebug/vdebug', { 'for': 'php' }
 Plug 'janko-m/vim-test'
 Plug 'phpactor/phpactor', { 'for': 'php', 'do': 'composer install' }
-Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'markonm/traces.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
 Plug 'SirVer/ultisnips'
-Plug 'w0rp/ale'
 Plug 'jesseleite/vim-agriculture'
 Plug 'noahfrederick/vim-laravel'
 Plug 'tpope/vim-projectionist'
@@ -29,7 +27,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'metakirby5/codi.vim'
 Plug 'kamykn/spelunker.vim'
 Plug 'jeffkreeftmeijer/vim-dim', {'branch': 'main'}
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Let's move this to neovim (init.vim or something after?) specifically sometime
 Plug 'neovim/nvim-lspconfig'

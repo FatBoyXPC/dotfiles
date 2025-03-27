@@ -11,10 +11,10 @@
                 "logging.fingers_crossed": false,
                 "logging.path": "/tmp\/phpactor.log",
                 "logging.level": "debug",
-                "logging.formatter": "pretty",
+                "logging.formatter": "pretty"
             },
             "settings": {
             }
         }
-    },
+    }
 }
