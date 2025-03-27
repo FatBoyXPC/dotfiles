@@ -3,7 +3,7 @@
     email = fatboyxpc@gmail.com
     signingkey = C4ED3CA232118969
 [core]
-    editor = vim
+    editor = nvim
     pager = diff-so-fancy | less $LESS
     excludesfile = ~/.gitignore_global
 [init]
