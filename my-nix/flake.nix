@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     shtuff.url = "github:jfly/shtuff";
+    with-alacritty.inputs.nixpkgs.follows = "nixpkgs";
     with-alacritty.url = "github:FatBoyXPC/with-alacritty";
     nixgl.url = "github:nix-community/nixGL";
   };
