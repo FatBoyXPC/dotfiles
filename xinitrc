@@ -12,29 +12,30 @@ numlockx on
 # Restore brightness to previous level
 xbacklight -set `cat ~/.brightness`
 
-if [ -x /usr/bin/pasystray ]; then
+if command -v pasystray; then
     pasystray &
 fi
 
-if [ -x /usr/bin/nm-applet ]; then
+if command -v nm-applet; then
     nm-applet &
 fi
 
-if [ -x /usr/bin/xcape ]; then
+# REMOVE when moving to nixos!
+if command -v xcape; then
     xcape
 fi
 
-if [ -x /usr/bin/xsettingsd ]; then
+if command -v xsettingsd; then
     touch ~/.xsettingsd
-    /usr/bin/xsettingsd &
+    xsettingsd &
 fi
 
-if [ -x /usr/bin/polybar ]; then
-    /usr/bin/polybar &
+if command -v polybar; then
+    polybar &
 fi
 
-if [ -x /home/james/dotfiles/my-nix/result/bin/flameshot ]; then
-    /home/james/dotfiles/my-nix/result/bin/flameshot &
+if command -v flameshot; then
+    flameshot &
 fi
 
 # From https://wiki.archlinux.org/index.php/GNOME/Keyring#xinitrc_method

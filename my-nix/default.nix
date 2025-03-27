@@ -35,6 +35,7 @@ symlinkJoin {
     direnv
     flameshotAlt
     mycli
+    polybarFull
     shtuff
     slackAlt
     steam
