@@ -37,6 +37,7 @@ symlinkJoin {
     mycli
     shtuff
     slackAlt
+    steam
     tldr
     uhk-agent
     withAlacrittyAlt

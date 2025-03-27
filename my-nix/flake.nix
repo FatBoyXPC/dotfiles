@@ -9,8 +9,18 @@
   };
 
   outputs = { self, nixpkgs, shtuff, with-alacritty, nixgl }:
-    let pkgs = import nixpkgs {
+  let
+    lib = nixpkgs.lib;
+    pkgs = import nixpkgs {
       system = "x86_64-linux";
+      config.allowUnfreePredicate =
+        pkg:
+        builtins.elem (lib.getName pkg) [
+          "slack"
+          "steam"
+          "steam-unwrapped"
+          "uhk-agent"
+        ];
       overlays = [ nixgl.overlay ];
     };
     in
