@@ -7,6 +7,7 @@
     /etc/systemd/logind.conf.d/suspend-on-powerbutton.conf: etc/systemd/logind.conf.d/suspend-on-powerbutton.conf
     /etc/systemd/system/docker.service.d/override.conf: etc/systemd/system/docker.service.d/override.conf
     /etc/udev/rules.d/10-local.rules: etc/udev/rules.d/10-local.rules
+    /etc/udev/rules.d/50-uhk60.rules: etc/udev/rules.d/50-uhk60.rules
     /etc/systemd/system/monitors@.service: etc/systemd/system/monitors@.service
     /etc/vconsole.conf: etc/vconsole.conf
     /etc/X11/xorg.conf.d/20-intel.conf: etc/X11/xorg.conf.d/20-intel.conf
