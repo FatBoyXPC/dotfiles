@@ -17,13 +17,12 @@ let
   };
   flameshotAlt = pkgs.callPackage ./packages/flameshot {};
   mycliAlt = pkgs.mycli.overridePythonAttrs {
-    #patches = [
-      #(pkgs.fetchpatch {
-        #url = "https://github.com/dbcli/mycli/compare/main...FatBoyXPC:mycli:add-collapsed-output-to-special-commands.patch";
-        #hash = "sha256-vvTuGlYeFanSj3H1vn1KMMqzc6GajcSwlbbPO1DZIzk=";
-      #})
-    #];
-    src = /home/james/dev/mycli;
+    patches = [
+      (pkgs.fetchpatch {
+        url = "https://patch-diff.githubusercontent.com/raw/dbcli/mycli/pull/1198.patch";
+        hash = "sha256-NntPUeNgKjRCHXhBfYqyXhFSysk317a/pdDwvUyFx44=";
+      })
+    ];
   };
   slackAlt = symlinkJoin {
     name = "slack";
@@ -45,7 +44,7 @@ symlinkJoin {
     chromiumAlt
     direnv
     flameshotAlt
-    mycli
+    mycliAlt
     polybarFull
     shtuff
     slackAlt
