@@ -60,6 +60,10 @@ symlinkJoin {
     docker-compose
     flameshotAlt
     fzf
+    git
+    gnugrep
+    imagemagick
+    jq
     kitty # only because alacritty was slow <<<
     libreoffice-fresh
     mycliAlt
@@ -74,6 +78,7 @@ symlinkJoin {
     tldr
     tmux
     uhk-agent
+    unzip
     weechat
     whois
     withAlacrittyAlt

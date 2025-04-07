@@ -43,7 +43,6 @@ fortune-mod
 gawk
 gdb
 gimp
-git
 gnome-keyring
 gnome-network-displays
 gnu-free-fonts
@@ -76,7 +75,6 @@ make
 man-db
 man-pages
 mariadb
-miraclecast-git
 mono
 mons
 mtr
@@ -88,7 +86,6 @@ noto-fonts-emoji
 ntfs-3g
 obs-studio
 openssh
-pacaur
 pacman-contrib
 pamixer
 pasystray
@@ -133,7 +130,6 @@ sysdig
 systemd-sysvcompat
 tar
 terminus-font
-tig
 transmission-gtk
 tree
 ttf-bitstream-vera
