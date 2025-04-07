@@ -50,12 +50,21 @@ symlinkJoin {
   name = "my-nix";
   paths = with pkgs; [
     autoperipherals
+    bc
+    calibre
     chromiumAlt
+    darktable
+    diff-so-fancy
     direnv
+    docker
+    docker-compose
     flameshotAlt
     fzf
+    kitty # only because alacritty was slow <<<
+    libreoffice-fresh
     mycliAlt
     neovim
+    networkmanagerapplet
     passAlt
     polybarFull
     shtuff
@@ -63,7 +72,10 @@ symlinkJoin {
     slackAlt
     steam
     tldr
+    tmux
     uhk-agent
+    weechat
+    whois
     withAlacrittyAlt
     xcwd
   ];
