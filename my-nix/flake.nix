@@ -22,7 +22,10 @@
           "steam-unwrapped"
           "uhk-agent"
         ];
-      overlays = [ nixgl.overlay ];
+        overlays = [
+          nixgl.overlay
+          (import ./overlay.nix)
+        ];
     };
     in
     {
