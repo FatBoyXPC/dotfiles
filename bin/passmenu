@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-command /usr/bin/passmenu -fn "Ubuntu Mono Regular:size=8:bold:antialias=true" "$@"

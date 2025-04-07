@@ -24,6 +24,15 @@ let
       })
     ];
   };
+  passAlt = symlinkJoin {
+    name = "pass";
+    paths = [ pkgs.pass ];
+    buildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/passmenu \
+          --add-flags "-fn 'Ubuntu Mono Regular:size=8:bold:antialias=true'"
+      '';
+    };
   slackAlt = symlinkJoin {
     name = "slack";
     paths = [ pkgs.slack ];
@@ -45,6 +54,7 @@ symlinkJoin {
     direnv
     flameshotAlt
     mycliAlt
+    passAlt
     polybarFull
     shtuff
     slackAlt
