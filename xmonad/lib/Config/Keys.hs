@@ -53,8 +53,7 @@ myKeys =
         -- Toggle last workspace
         ((myModMask, xK_z), toggleWS),
 
-        -- Run dmenu2 with custom font
-        ((myModMask, xK_p), spawn "dmenu_run -fn 'Ubuntu Mono Regular:size=8:bold:antialias=true'"),
+        ((myModMask, xK_p), spawn "dmenu_run"),
 
         ((0, xF86XK_AudioMute), spawn muteAndShowVolume),
         ((0, xF86XK_AudioRaiseVolume), spawn $ changeVolume "5+"),

@@ -24,15 +24,18 @@ let
       })
     ];
   };
-  passAlt = symlinkJoin {
-    name = "pass";
-    paths = [ pkgs.pass ];
+  dmenuAlt = symlinkJoin {
+    name = "dmenu_run";
+    paths = [ pkgs.dmenu ];
     buildInputs = [ pkgs.makeWrapper ];
       postBuild = ''
-        wrapProgram $out/bin/passmenu \
+        for prog in dmenu dmenu_run; do
+        wrapProgram $out/bin/$prog \
           --add-flags "-fn 'Ubuntu Mono Regular:size=8:bold:antialias=true'"
+        done
       '';
     };
+  passAlt = pkgs.pass.override { dmenu = dmenuAlt; };
   slackAlt = symlinkJoin {
     name = "slack";
     paths = [ pkgs.slack ];
@@ -56,7 +59,7 @@ symlinkJoin {
     darktable
     diff-so-fancy
     direnv
-    dmenu
+    dmenuAlt
     docker
     docker-compose
     flameshotAlt
