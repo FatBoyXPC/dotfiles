@@ -54,7 +54,7 @@ export UPDATE_ZSH_DAYS=1
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer docker docker-compose chucknorris z artisan zsh-syntax-highlighting direnv)
+plugins=(git composer docker docker-compose chucknorris z artisan zsh-syntax-highlighting direnv fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,9 +126,6 @@ function de {
 }
 
 bindkey '\ev' edit-command-line
-
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
 
 ###
 ### Bash-like navigation - stolen from https://github.com/jfly/dotfiles/blob/d0e0fa39442783b299be741aa2e171b97fef5357/zshrc

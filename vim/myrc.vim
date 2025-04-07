@@ -41,6 +41,7 @@ runtime! mappings.vim
     set background=dark
     colorscheme dim
     highlight ColorColumn ctermfg=8 ctermbg=7
+    highlight TabLineFill cterm=NONE
     set number
     set relativenumber
     set showmatch
@@ -85,7 +86,6 @@ runtime! mappings.vim
     set tabstop=4
     set softtabstop=4
     set nojoinspaces
-    set pastetoggle=<F12>
 " }
 
 " Search: {

@@ -44,9 +44,7 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 
 call plug#end()
 
-runtime! macros/matchit.vim
-
-set rtp+=/usr/bin/fzf
+set rtp+=~/dotfiles/my-nix/result/share/vim-plugins/fzf
 let g:fzf_layout = { 'down': '~40%' }
 
 let g:ale_fixers = {

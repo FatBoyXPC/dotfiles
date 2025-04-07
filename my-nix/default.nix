@@ -53,10 +53,13 @@ symlinkJoin {
     chromiumAlt
     direnv
     flameshotAlt
+    fzf
     mycliAlt
+    neovim
     passAlt
     polybarFull
     shtuff
+    silver-searcher
     slackAlt
     steam
     tldr
