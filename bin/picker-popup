@@ -19,9 +19,8 @@ def remove_if_exists(filename):
 def main():
     remove_if_exists(SELECTION_FILENAME)
     options = shlex.quote("\n".join(sys.argv[1:]))
-    bash_cmd = shlex.quote(f'echo {options} | fzf > {SELECTION_FILENAME}')
-
-    subprocess.check_call(["termite", "-r", "picker", "-e", f"bash -c {bash_cmd}"])
+    bash_cmd = f'echo {options} | fzf > {SELECTION_FILENAME}'
+    subprocess.check_call(["alacritty", "--class", "picker", "-e", "bash", "-c", bash_cmd])
     time.sleep(0.1)  # Hackity hack
 
     with open(SELECTION_FILENAME, "r") as f:
