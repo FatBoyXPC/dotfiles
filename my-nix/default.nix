@@ -56,6 +56,7 @@ symlinkJoin {
     darktable
     diff-so-fancy
     direnv
+    dmenu
     docker
     docker-compose
     flameshotAlt
