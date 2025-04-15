@@ -84,6 +84,12 @@ Host fatboyxpc
     HostName 192.168.2.109
     user james
 
+Host fbproxy
+    HostName fatboyxpc.com
+    SessionType none
+    DynamicForward 9090
+    user james
+
 Host htpc
     HostName 192.168.2.90
     user james
