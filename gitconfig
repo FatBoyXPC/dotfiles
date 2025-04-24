@@ -33,6 +33,8 @@
     old = 196 bold
     new = 34 bold
     whitespace = red reverse
+[log]
+    follow = true
 [pull]
     rebase = false
 [rerere]
