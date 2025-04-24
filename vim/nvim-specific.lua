@@ -213,3 +213,12 @@ cmp.setup {
         { name = 'buffer' },
     }
 }
+
+--require'nvim-treesitter.configs'.setup {
+    ----ensure_installed = { "lua", "vim", "vimdoc", "query", "php" },
+    --ensure_installed = { "php" },
+    --highlight = {
+        --enable = true,
+        --additional_vim_regex_highlighting = false,
+    --}
+--}

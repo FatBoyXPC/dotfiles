@@ -1,6 +1,9 @@
 let mapleader = ' '
 
 nnoremap <Leader>fr :w<CR>:call system("fat-rerunner " . shellescape(g:shtuff_receiver))<CR>
+nnoremap <Leader>tw :w<CR>:call system("fat-rerunner " . shellescape(g:shtuff_receiver))<CR>
+nnoremap <Leader>tw "ayy:call system("shtuff into " . shellescape(g:shtuff_receiver) . ' ' . shellescape(trim("<C-r>a")))<CR>
+vnoremap <Leader>tw "ayiw:call agriculture#trim_and_escape_register_a()<CR>:call system("shtuff into " . shellescape(g:shtuff_receiver) . ' ' . <C-r>a)<CR>
 
 nnoremap <Leader>c :update\|bd<CR>
 nnoremap <Leader>w :w<CR>
@@ -10,7 +13,7 @@ nnoremap <Leader>mp :MarkdownPreview<CR>
 nnoremap <Leader>ms :w<CR>:MarkdownPreviewStop<CR>:bd<CR>
 
 " Files: {
-    nnoremap <Leader>pc :let @+ = expand("%")<CR> " copy file path
+    nnoremap <Leader>pc :let @+ = fnamemodify(expand("%"), ":~:.")<CR> " copy file path
 
     nnoremap <Leader>sp :e ~/scratchpad<CR>
 
